@@ -97,7 +97,7 @@
       repeating-linear-gradient(115deg, rgba(255,220,170,.035) 0 2px, transparent 2px 9px); }
   #D .poeira { background-image: radial-gradient(rgba(255,230,190,.10) 1.2px, transparent 1.6px); background-size: 23px 31px; mix-blend-mode: screen; }
   /* placa de madeira com a data */
-  #D .corda { position: absolute; top: 230px; width: 10px; height: 110px;
+  #D .corda { position: absolute; top: -20px; width: 11px; z-index: 3; box-shadow: 3px 4px 6px rgba(0,0,0,.5);
     background: repeating-linear-gradient(35deg, #c9a46a 0 6px, #8a6431 6px 11px); border-radius: 4px; }
   #D .placa { position: absolute; left: 150px; top: 320px; width: 780px; height: 230px; border-radius: 14px;
     background:
@@ -108,7 +108,7 @@
     display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(-1.5deg); }
   #D .placa .p1 { font-family: "Rye"; font-size: 46px; letter-spacing: 8px; color: #f3e2bf; text-shadow: 3px 3px 0 #2a1406; }
   #D .placa .p2 { font-family: "Rye"; font-size: 80px; line-height: 1; white-space: nowrap; text-align: center; margin-top: 6px; color: #ffcf6b; text-shadow: 4px 5px 0 #2a1406, 0 0 18px rgba(255,170,60,.35); }
-  #D .prego { position: absolute; top: 22px; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #e8d3a8, #5b4126); }
+  #D .prego { position: absolute; top: 22px; z-index: 2; box-shadow: 0 2px 3px rgba(0,0,0,.6); width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #e8d3a8, #5b4126); }
   /* artistas */
   #D .art { -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%); mask-image: linear-gradient(to bottom, #000 80%, transparent 100%); }
   #D .art img { filter: sepia(.18) saturate(1.05) drop-shadow(0 0 3px rgba(243,226,191,.55)) drop-shadow(0 22px 30px rgba(0,0,0,.75)); }
@@ -192,10 +192,11 @@
   <img class="full bg" src="assets/cantor-bone.jpg" />
   <div class="full couro"></div>
   <div class="full poeira"></div>
-  <div class="corda" style="left:260px;transform:rotate(-8deg)"></div>
-  <div class="corda" style="left:810px;transform:rotate(8deg)"></div>
-  <div class="placa"><div class="prego" style="left:110px"></div><div class="prego" style="right:110px"></div>
+  <div class="corda" style="left:263px;height:378px"></div>
+  <div class="corda" style="left:806px;height:364px"></div>
+  <div class="placa">
     <div class="p1">★ SÁBADO ★</div><div class="p2">19 DE DEZEMBRO</div></div>
+  <div class="prego" style="left:259px;top:340px;z-index:4"></div><div class="prego" style="left:802px;top:326px;z-index:4"></div>
   <div class="art" id="a1"><img src="assets/artista1.png" /></div>
   <div class="art" id="a2"><img src="assets/artista2.png" /></div>
   <div class="art" id="a3"><img src="assets/artista3.png" /></div>
