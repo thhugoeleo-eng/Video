@@ -1,0 +1,467 @@
+{
+  "arquivo": "bruto/celio/chamada1.mov",
+  "idioma": "pt",
+  "duracao": 28.759,
+  "modelo": "medium",
+  "frases": [
+    {
+      "id": 1,
+      "inicio": 1.0,
+      "fim": 6.3,
+      "texto": "Fala, turma! Você já sabe que o Finca Pé é dia 12 de dezembro aqui no Bar do Célio,",
+      "palavras": [
+        {
+          "inicio": 1.0,
+          "fim": 1.44,
+          "palavra": "Fala,"
+        },
+        {
+          "inicio": 1.62,
+          "fim": 1.86,
+          "palavra": "turma!"
+        },
+        {
+          "inicio": 2.84,
+          "fim": 3.14,
+          "palavra": "Você"
+        },
+        {
+          "inicio": 3.14,
+          "fim": 3.38,
+          "palavra": "já"
+        },
+        {
+          "inicio": 3.38,
+          "fim": 3.5,
+          "palavra": "sabe"
+        },
+        {
+          "inicio": 3.5,
+          "fim": 3.68,
+          "palavra": "que"
+        },
+        {
+          "inicio": 3.68,
+          "fim": 3.76,
+          "palavra": "o"
+        },
+        {
+          "inicio": 3.76,
+          "fim": 4.14,
+          "palavra": "Finca"
+        },
+        {
+          "inicio": 4.14,
+          "fim": 4.3,
+          "palavra": "Pé"
+        },
+        {
+          "inicio": 4.3,
+          "fim": 4.34,
+          "palavra": "é"
+        },
+        {
+          "inicio": 4.34,
+          "fim": 4.52,
+          "palavra": "dia"
+        },
+        {
+          "inicio": 4.52,
+          "fim": 4.8,
+          "palavra": "12"
+        },
+        {
+          "inicio": 4.8,
+          "fim": 5.04,
+          "palavra": "de"
+        },
+        {
+          "inicio": 5.04,
+          "fim": 5.24,
+          "palavra": "dezembro"
+        },
+        {
+          "inicio": 5.24,
+          "fim": 5.42,
+          "palavra": "aqui"
+        },
+        {
+          "inicio": 5.42,
+          "fim": 5.56,
+          "palavra": "no"
+        },
+        {
+          "inicio": 5.56,
+          "fim": 5.72,
+          "palavra": "Bar"
+        },
+        {
+          "inicio": 5.72,
+          "fim": 6.02,
+          "palavra": "do"
+        },
+        {
+          "inicio": 6.02,
+          "fim": 6.3,
+          "palavra": "Célio,"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "inicio": 6.4,
+      "fim": 8.04,
+      "texto": "mas vamos reforçar o endereço, né?",
+      "palavras": [
+        {
+          "inicio": 6.4,
+          "fim": 6.5,
+          "palavra": "mas"
+        },
+        {
+          "inicio": 6.5,
+          "fim": 6.72,
+          "palavra": "vamos"
+        },
+        {
+          "inicio": 6.72,
+          "fim": 7.2,
+          "palavra": "reforçar"
+        },
+        {
+          "inicio": 7.2,
+          "fim": 7.34,
+          "palavra": "o"
+        },
+        {
+          "inicio": 7.34,
+          "fim": 7.72,
+          "palavra": "endereço,"
+        },
+        {
+          "inicio": 7.74,
+          "fim": 8.04,
+          "palavra": "né?"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "inicio": 8.92,
+      "fim": 13.36,
+      "texto": "Avenida São Nicolau, 172, Santa Luzia, Bar do Célio, né?",
+      "palavras": [
+        {
+          "inicio": 8.92,
+          "fim": 9.36,
+          "palavra": "Avenida"
+        },
+        {
+          "inicio": 9.36,
+          "fim": 9.66,
+          "palavra": "São"
+        },
+        {
+          "inicio": 9.66,
+          "fim": 10.3,
+          "palavra": "Nicolau,"
+        },
+        {
+          "inicio": 10.48,
+          "fim": 11.42,
+          "palavra": "172,"
+        },
+        {
+          "inicio": 11.6,
+          "fim": 11.82,
+          "palavra": "Santa"
+        },
+        {
+          "inicio": 11.82,
+          "fim": 12.32,
+          "palavra": "Luzia,"
+        },
+        {
+          "inicio": 12.5,
+          "fim": 12.64,
+          "palavra": "Bar"
+        },
+        {
+          "inicio": 12.64,
+          "fim": 12.88,
+          "palavra": "do"
+        },
+        {
+          "inicio": 12.88,
+          "fim": 13.12,
+          "palavra": "Célio,"
+        },
+        {
+          "inicio": 13.12,
+          "fim": 13.36,
+          "palavra": "né?"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "inicio": 13.8,
+      "fim": 17.0,
+      "texto": "É isso aí, não esquece, dia 12 de dezembro.",
+      "palavras": [
+        {
+          "inicio": 13.8,
+          "fim": 14.0,
+          "palavra": "É"
+        },
+        {
+          "inicio": 14.0,
+          "fim": 14.14,
+          "palavra": "isso"
+        },
+        {
+          "inicio": 14.14,
+          "fim": 14.32,
+          "palavra": "aí,"
+        },
+        {
+          "inicio": 14.34,
+          "fim": 14.5,
+          "palavra": "não"
+        },
+        {
+          "inicio": 14.5,
+          "fim": 15.1,
+          "palavra": "esquece,"
+        },
+        {
+          "inicio": 15.2,
+          "fim": 15.44,
+          "palavra": "dia"
+        },
+        {
+          "inicio": 15.44,
+          "fim": 15.8,
+          "palavra": "12"
+        },
+        {
+          "inicio": 15.8,
+          "fim": 16.0,
+          "palavra": "de"
+        },
+        {
+          "inicio": 16.0,
+          "fim": 17.0,
+          "palavra": "dezembro."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "inicio": 17.24,
+      "fim": 21.04,
+      "texto": "Moçada, cerveja barata e moda, cinco horas de moda.",
+      "palavras": [
+        {
+          "inicio": 17.24,
+          "fim": 17.64,
+          "palavra": "Moçada,"
+        },
+        {
+          "inicio": 17.84,
+          "fim": 18.18,
+          "palavra": "cerveja"
+        },
+        {
+          "inicio": 18.18,
+          "fim": 18.84,
+          "palavra": "barata"
+        },
+        {
+          "inicio": 18.84,
+          "fim": 19.16,
+          "palavra": "e"
+        },
+        {
+          "inicio": 19.16,
+          "fim": 19.58,
+          "palavra": "moda,"
+        },
+        {
+          "inicio": 19.76,
+          "fim": 20.1,
+          "palavra": "cinco"
+        },
+        {
+          "inicio": 20.1,
+          "fim": 20.34,
+          "palavra": "horas"
+        },
+        {
+          "inicio": 20.34,
+          "fim": 20.58,
+          "palavra": "de"
+        },
+        {
+          "inicio": 20.58,
+          "fim": 21.04,
+          "palavra": "moda."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "inicio": 21.26,
+      "fim": 23.34,
+      "texto": "Cinco horas de moda, estava faltando.",
+      "palavras": [
+        {
+          "inicio": 21.26,
+          "fim": 21.58,
+          "palavra": "Cinco"
+        },
+        {
+          "inicio": 21.58,
+          "fim": 21.76,
+          "palavra": "horas"
+        },
+        {
+          "inicio": 21.76,
+          "fim": 22.0,
+          "palavra": "de"
+        },
+        {
+          "inicio": 22.0,
+          "fim": 22.06,
+          "palavra": "moda,"
+        },
+        {
+          "inicio": 22.32,
+          "fim": 22.52,
+          "palavra": "estava"
+        },
+        {
+          "inicio": 22.52,
+          "fim": 23.34,
+          "palavra": "faltando."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "inicio": 23.5,
+      "fim": 27.22,
+      "texto": "A partir das 14 horas, o seu nosso convidado, Finca Pé, aqui no Bar do Célio.",
+      "palavras": [
+        {
+          "inicio": 23.5,
+          "fim": 23.66,
+          "palavra": "A"
+        },
+        {
+          "inicio": 23.66,
+          "fim": 23.92,
+          "palavra": "partir"
+        },
+        {
+          "inicio": 23.92,
+          "fim": 24.1,
+          "palavra": "das"
+        },
+        {
+          "inicio": 24.1,
+          "fim": 24.58,
+          "palavra": "14"
+        },
+        {
+          "inicio": 24.58,
+          "fim": 24.92,
+          "palavra": "horas,"
+        },
+        {
+          "inicio": 25.04,
+          "fim": 25.08,
+          "palavra": "o"
+        },
+        {
+          "inicio": 25.08,
+          "fim": 25.16,
+          "palavra": "seu"
+        },
+        {
+          "inicio": 25.16,
+          "fim": 25.32,
+          "palavra": "nosso"
+        },
+        {
+          "inicio": 25.32,
+          "fim": 25.8,
+          "palavra": "convidado,"
+        },
+        {
+          "inicio": 25.84,
+          "fim": 26.2,
+          "palavra": "Finca"
+        },
+        {
+          "inicio": 26.2,
+          "fim": 26.3,
+          "palavra": "Pé,"
+        },
+        {
+          "inicio": 26.42,
+          "fim": 26.5,
+          "palavra": "aqui"
+        },
+        {
+          "inicio": 26.5,
+          "fim": 26.56,
+          "palavra": "no"
+        },
+        {
+          "inicio": 26.56,
+          "fim": 26.68,
+          "palavra": "Bar"
+        },
+        {
+          "inicio": 26.68,
+          "fim": 26.9,
+          "palavra": "do"
+        },
+        {
+          "inicio": 26.9,
+          "fim": 27.22,
+          "palavra": "Célio."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "inicio": 27.4,
+      "fim": 28.58,
+      "texto": "Vem com nós, rapaz.",
+      "palavras": [
+        {
+          "inicio": 27.4,
+          "fim": 27.58,
+          "palavra": "Vem"
+        },
+        {
+          "inicio": 27.58,
+          "fim": 27.76,
+          "palavra": "com"
+        },
+        {
+          "inicio": 27.76,
+          "fim": 28.06,
+          "palavra": "nós,"
+        },
+        {
+          "inicio": 28.1,
+          "fim": 28.58,
+          "palavra": "rapaz."
+        }
+      ]
+    }
+  ]
+}
