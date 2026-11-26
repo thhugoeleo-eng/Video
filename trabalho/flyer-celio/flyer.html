@@ -36,6 +36,15 @@
   body.feed #topo { top: 24px; }
   body.feed .logo { width: 360px; height: 148px; }
 
+  /* Nomes dos artistas */
+  #nomes { position: absolute; left: 0; top: 1215px; width: 1080px; height: 80px; }
+  .art-nome { position: absolute; top: 0; text-align: center; font-size: 56px; letter-spacing: 2px; color: var(--creme); white-space: nowrap;
+    text-shadow: 0 4px 0 #2a0309, 0 0 14px rgba(0,0,0,.95), 0 0 28px rgba(0,0,0,.8); }
+  .art-nome b { color: var(--ouro-claro); font-weight: 400; }
+  #n1 { left: 0; width: 300px; } #n2 { left: 250px; width: 300px; } #n3 { left: 590px; width: 440px; }
+  body.feed #nomes { top: 935px; }
+  body.feed .art-nome { font-size: 50px; }
+
   /* Data grande */
   #data { position: absolute; left: 0; top: 1330px; width: 1080px; text-align: center; }
   #data .dia { font-family: "Oswald"; font-weight: 700; font-size: 44px; letter-spacing: 14px; color: var(--creme); }
@@ -43,7 +52,7 @@
     text-shadow: 0 10px 0 #2a0309, 0 0 40px rgba(200,32,47,.7); }
   #data .hora { display: inline-block; margin-top: 8px; padding: 8px 26px 6px; border-radius: 12px; background: var(--ouro); color: #4a0711;
     font-size: 52px; letter-spacing: 3px; }
-  body.feed #data { top: 1010px; display: flex; align-items: center; justify-content: center; gap: 26px; }
+  body.feed #data { top: 1030px; display: flex; align-items: center; justify-content: center; gap: 26px; }
   body.feed #data .dia { font-size: 40px; letter-spacing: 8px; }
   body.feed #data .num { font-size: 140px; }
   body.feed #data .hora { font-size: 44px; padding: 6px 18px 4px; margin-top: 0; }
@@ -72,6 +81,12 @@
   <div id="topo">
     <div class="sub">ENDEREÇO NOVO DO</div>
     <div class="logo"><div class="sombra"></div><div class="glow"></div><div class="ouro"></div></div>
+  </div>
+
+  <div id="nomes">
+    <div class="art-nome" id="n1">PAULO FIAPO</div>
+    <div class="art-nome" id="n2">JOÃO PAULO</div>
+    <div class="art-nome" id="n3">THIAGO <b>&amp;</b> VINICIUS</div>
   </div>
 
   <div id="data">
