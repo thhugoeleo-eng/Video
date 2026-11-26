@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Teste Jardim</title>
+<style>
+  @font-face { font-family: "Bebas"; src: url("assets/bebasneue.woff2"); }
+  @font-face { font-family: "ArchivoBlack"; src: url("assets/archivoblack.woff2"); }
+  @font-face { font-family: "Marker"; src: url("assets/permanentmarker.woff2"); }
+  @font-face { font-family: "Anton"; src: url("assets/anton.woff2"); }
+  @font-face { font-family: "Oswald"; src: url("assets/600-normal-80787391b94b.woff2"); font-weight: 600; }
+  @font-face { font-family: "Oswald"; src: url("assets/500-normal-80787391b94b.woff2"); font-weight: 500; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  .arte { position: relative; width: 1080px; height: 1920px; overflow: hidden; display: none; }
+  body.a #A, body.b #B, body.c #C { display: block; }
+  .full { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  img.full { object-fit: cover; }
+  .logo { position: absolute; -webkit-mask: url("assets/fincape.png") center / contain no-repeat; mask: url("assets/fincape.png") center / contain no-repeat; }
+  .art { position: absolute; }
+  .art img { display: block; width: 100%; }
+
+  /* ============ A · NEON ROXO ============ */
+  #A { background: #07031a; font-family: "Bebas"; }
+  #A .bg { filter: blur(6px) saturate(1.3) brightness(.55); transform: scale(1.06); }
+  #A .tint { background: linear-gradient(180deg, rgba(40,0,90,.55), rgba(10,0,40,.2) 40%, rgba(5,0,25,.95) 88%); }
+  #A .scan { background: repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 2px, transparent 2px 6px); mix-blend-mode: overlay; }
+  #A .topo { position: absolute; top: 214px; width: 100%; text-align: center; font-family: "Oswald"; font-weight: 500; font-size: 30px; letter-spacing: 6px; color: #e9dcff; }
+  #A .topo b { color: #00f0ff; font-weight: 600; }
+  #A .logoA { left: 110px; top: 300px; width: 860px; height: 355px; }
+  #A .logoA.glow1 { background: #ff2bd6; filter: blur(26px); opacity: .9; }
+  #A .logoA.glow2 { background: #00e5ff; filter: blur(8px); transform: translate(-8px, 4px); opacity: .9; }
+  #A .logoA.core { background: #fff; }
+  #A .neonbox { position: absolute; left: 190px; top: 690px; width: 700px; height: 150px; border: 6px solid #00f0ff; border-radius: 22px;
+    box-shadow: 0 0 18px #00f0ff, inset 0 0 18px #00f0ff, 0 0 60px rgba(0,240,255,.5); display: flex; align-items: center; justify-content: center; gap: 30px; }
+  #A .neonbox span { font-size: 124px; color: #fff; text-shadow: 0 0 10px #ff2bd6, 0 0 30px #ff2bd6, 0 0 60px #ff2bd6; letter-spacing: 4px; }
+  #A .neonbox i { font-style: normal; font-size: 64px; color: #00f0ff; text-shadow: 0 0 12px #00f0ff; }
+  #A .art img { filter: drop-shadow(-6px 0 0 rgba(255,43,214,.75)) drop-shadow(6px 0 0 rgba(0,229,255,.75)) drop-shadow(0 20px 30px rgba(0,0,0,.7)); }
+  #A #a1 { left: -20px; top: 905px; width: 330px; } #A #a2 { left: 215px; top: 950px; width: 340px; }
+  #A #a3 { left: 500px; top: 960px; width: 360px; } #A #a4 { left: 760px; top: 920px; width: 330px; }
+  #A .fade { position: absolute; left: 0; top: 1350px; width: 1080px; height: 570px; background: linear-gradient(to bottom, transparent, #07031a 55%); }
+  #A .nomes { position: absolute; top: 1440px; width: 100%; text-align: center; font-size: 52px; white-space: nowrap; color: #fff; letter-spacing: 2px; text-shadow: 0 0 14px #ff2bd6; }
+  #A .nomes em { font-style: normal; color: #00f0ff; text-shadow: 0 0 14px #00f0ff; }
+  #A .local { position: absolute; top: 1560px; width: 100%; text-align: center; font-size: 96px; color: #fff; letter-spacing: 6px;
+    text-shadow: 0 0 10px #00f0ff, 0 0 40px #00f0ff; }
+  #A .hora { position: absolute; top: 1680px; width: 100%; text-align: center; font-family: "Oswald"; font-weight: 500; font-size: 34px; letter-spacing: 8px; color: #e9dcff; }
+
+  /* ============ B · PÔR DO SOL / PÔSTER ============ */
+  #B { background: #ff6a3d; font-family: "ArchivoBlack"; }
+  #B .bg { filter: grayscale(1) contrast(1.2) brightness(.9); }
+  #B .duo { background: linear-gradient(180deg, #ffb03a 0%, #ff5e3a 40%, #c2186b 75%, #3b0a57 100%); opacity: .84; }
+  #B .dots { background-image: radial-gradient(rgba(255,255,255,.22) 2.2px, transparent 2.6px); background-size: 16px 16px; mix-blend-mode: screen; }
+  #B .topo { position: absolute; top: 214px; width: 100%; text-align: center; font-family: "Oswald"; font-weight: 600; font-size: 30px; letter-spacing: 5px; color: #fff; }
+  #B .selo { position: absolute; right: 60px; top: 300px; width: 250px; height: 250px; border-radius: 50%; background: #ffe14a; color: #3b0a57;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(12deg); box-shadow: 8px 10px 0 #3b0a57; text-align: center; }
+  #B .selo b { font-size: 30px; line-height: 1; } #B .selo span { font-size: 92px; line-height: .95; } #B .selo i { font-family: "Marker"; font-style: normal; font-size: 34px; }
+  #B .grande { position: absolute; left: 60px; top: 300px; font-size: 140px; line-height: .86; color: #fff; text-shadow: 10px 10px 0 #3b0a57; }
+  #B .mao { position: absolute; left: 70px; top: 560px; font-family: "Marker"; font-size: 64px; color: #ffe14a; transform: rotate(-5deg); text-shadow: 4px 4px 0 #3b0a57; }
+  #B .card { position: absolute; width: 430px; height: 440px; background: #fff8ec; padding: 16px 16px 70px; box-shadow: 10px 12px 0 rgba(59,10,87,.85); overflow: hidden; }
+  #B .card .foto { position: relative; width: 100%; height: 100%; background: linear-gradient(180deg, #ffcf6b, #ff7a59); overflow: hidden; }
+  #B .card .foto img { position: absolute; left: 50%; top: 18px; width: 92%; transform: translateX(-50%); }
+  #B .card .nm { position: absolute; left: 0; bottom: 14px; width: 100%; text-align: center; font-size: 40px; color: #3b0a57; }
+  #B .fita { position: absolute; width: 150px; height: 44px; background: rgba(255,225,74,.85); }
+  #B #c1 { left: 75px; top: 690px; transform: rotate(-4deg); } #B #c2 { left: 575px; top: 670px; transform: rotate(3deg); }
+  #B #c3 { left: 95px; top: 1170px; transform: rotate(3deg); } #B #c4 { left: 565px; top: 1150px; transform: rotate(-3deg); }
+  #B .logoB { left: 220px; top: 1640px; width: 640px; height: 190px; background: #fff; filter: drop-shadow(8px 8px 0 #3b0a57); }
+  #B .rod { position: absolute; top: 1845px; width: 100%; text-align: center; font-family: "Oswald"; font-weight: 600; font-size: 28px; letter-spacing: 5px; color: #ffe14a; }
+
+  /* ============ C · PRETO & DOURADO / CINEMA ============ */
+  #C { background: #050505; font-family: "Anton"; }
+  #C .bg { filter: grayscale(1) contrast(1.35) brightness(.45); }
+  #C .grain { background-image: repeating-radial-gradient(circle at 17% 32%, rgba(255,255,255,.05) 0 1px, transparent 1px 3px); mix-blend-mode: screen; }
+  #C .bar { position: absolute; left: 0; width: 1080px; height: 170px; background: #000; }
+  #C .topo { position: absolute; top: 214px; width: 100%; text-align: center; font-family: "Oswald"; font-weight: 500; font-size: 28px; letter-spacing: 10px; color: #bfa45a; }
+  #C .data { position: absolute; left: 0; top: 270px; width: 100%; text-align: center; font-size: 400px; line-height: 1; color: transparent; -webkit-text-stroke: 4px #d9b45a; letter-spacing: 6px; }
+  #C .sab { position: absolute; top: 700px; width: 100%; text-align: center; font-size: 64px; letter-spacing: 26px; color: #fff; }
+  #C .sab b { color: #e0242b; font-weight: 400; }
+  #C .art img { filter: grayscale(1) contrast(1.15) brightness(1.05) drop-shadow(0 0 2px rgba(217,180,90,.9)) drop-shadow(0 25px 35px rgba(0,0,0,.9)); }
+  #C #a1 { left: 0; top: 850px; width: 320px; } #C #a2 { left: 230px; top: 890px; width: 330px; }
+  #C #a3 { left: 500px; top: 900px; width: 350px; } #C #a4 { left: 760px; top: 860px; width: 320px; }
+  #C .fade { position: absolute; left: 0; top: 1250px; width: 1080px; height: 670px; background: linear-gradient(to bottom, transparent, #050505 45%); }
+  #C .linha { position: absolute; left: 140px; width: 800px; height: 2px; background: linear-gradient(90deg, transparent, #d9b45a, transparent); }
+  #C .logoC { left: 190px; top: 1395px; width: 700px; height: 290px; background: linear-gradient(180deg, #f3dc95, #b8902f); }
+  #C .nomes { position: absolute; top: 1330px; width: 100%; text-align: center; font-family: "Oswald"; font-weight: 500; font-size: 32px; letter-spacing: 6px; color: #fff; }
+  #C .nomes em { font-style: normal; color: #d9b45a; margin: 0 10px; }
+  #C .rod { position: absolute; top: 1710px; width: 100%; text-align: center; font-size: 52px; letter-spacing: 12px; color: #fff; }
+  #C .rod span { color: #d9b45a; }
+</style>
+</head>
+<body>
+<!-- A · NEON ROXO -->
+<div class="arte" id="A">
+  <img class="full bg" src="assets/palco-roxo.jpg" />
+  <div class="full tint"></div>
+  <div class="topo">REALIZAÇÃO: <b>RÔMULO BARROS</b> + FINCAPÉ</div>
+  <div class="logo logoA glow1"></div><div class="logo logoA glow2"></div><div class="logo logoA core"></div>
+  <div class="neonbox"><span>SÁB</span><i>•</i><span>19.12</span></div>
+  <div class="art" id="a1"><img src="assets/artista1.png" /></div>
+  <div class="art" id="a2"><img src="assets/artista2.png" /></div>
+  <div class="art" id="a3"><img src="assets/artista3.png" /></div>
+  <div class="art" id="a4"><img src="assets/artista4.png" /></div>
+  <div class="fade"></div>
+  <div class="nomes">JOÃO PAULO <em>✦</em> PAULO FIAPO <em>✦</em> THIAGO & VINICIUS</div>
+  <div class="local">JARDIM - MS</div>
+  <div class="hora">A PARTIR DAS 14 HORAS</div>
+  <div class="full scan"></div>
+</div>
+
+<!-- B · PÔR DO SOL / PÔSTER -->
+<div class="arte" id="B">
+  <img class="full bg" src="assets/bar.jpg" />
+  <div class="full duo"></div>
+  <div class="full dots"></div>
+  <div class="topo">REALIZAÇÃO: RÔMULO BARROS + FINCAPÉ</div>
+  <div class="grande">JARDIM<br>MS</div>
+  <div class="mao">pela 1ª vez!</div>
+  <div class="selo"><b>SÁBADO</b><span>19</span><b>DEZEMBRO</b><i>14h</i></div>
+  <div class="card" id="c1"><div class="foto"><img src="assets/artista1.png" /></div><div class="nm">JOÃO PAULO</div></div>
+  <div class="card" id="c2"><div class="foto"><img src="assets/artista2.png" /></div><div class="nm">PAULO FIAPO</div></div>
+  <div class="card" id="c3"><div class="foto"><img src="assets/artista3.png" /></div><div class="nm">THIAGO</div></div>
+  <div class="card" id="c4"><div class="foto"><img src="assets/artista4.png" /></div><div class="nm">VINICIUS</div></div>
+  <div class="fita" style="left:220px;top:672px;transform:rotate(-10deg)"></div>
+  <div class="fita" style="left:720px;top:650px;transform:rotate(8deg)"></div>
+  <div class="fita" style="left:240px;top:1155px;transform:rotate(6deg)"></div>
+  <div class="fita" style="left:700px;top:1132px;transform:rotate(-7deg)"></div>
+  <div class="logo logoB"></div>
+  <div class="rod">A PARTIR DAS 14H · JARDIM - MS</div>
+</div>
+
+<!-- C · PRETO & DOURADO / CINEMA -->
+<div class="arte" id="C">
+  <img class="full bg" src="assets/close-lanternas.jpg" />
+  <div class="full grain"></div>
+  <div class="bar" style="top:0"></div><div class="bar" style="bottom:0"></div>
+  <div class="topo">REALIZAÇÃO · RÔMULO BARROS + FINCAPÉ</div>
+  <div class="data">19.12</div>
+  <div class="sab">SÁBADO <b>•</b> 14H</div>
+  <div class="art" id="a1"><img src="assets/artista1.png" /></div>
+  <div class="art" id="a2"><img src="assets/artista2.png" /></div>
+  <div class="art" id="a3"><img src="assets/artista3.png" /></div>
+  <div class="art" id="a4"><img src="assets/artista4.png" /></div>
+  <div class="fade"></div>
+  <div class="nomes">JOÃO PAULO<em>|</em>PAULO FIAPO<em>|</em>THIAGO & VINICIUS</div>
+  <div class="linha" style="top:1385px"></div>
+  <div class="logo logoC"></div>
+  <div class="linha" style="top:1695px"></div>
+  <div class="rod">JARDIM <span>—</span> MS</div>
+</div>
+<script>document.body.classList.add(new URLSearchParams(location.search).get("d") || "a");</script>
+</body>
+</html>
