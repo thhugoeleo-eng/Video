@@ -1,0 +1,403 @@
+{
+  "arquivo": "bruto/violada/video.mov",
+  "idioma": "pt",
+  "duracao": 20.27,
+  "modelo": "small",
+  "frases": [
+    {
+      "id": 1,
+      "inicio": 0.0,
+      "fim": 4.74,
+      "texto": "Fala turmo! A gente tá passando aqui pra dar um recado muito importante, né Thiago?",
+      "palavras": [
+        {
+          "inicio": 0.0,
+          "fim": 0.7,
+          "palavra": "Fala"
+        },
+        {
+          "inicio": 0.7,
+          "fim": 1.16,
+          "palavra": "turmo!"
+        },
+        {
+          "inicio": 1.56,
+          "fim": 1.84,
+          "palavra": "A"
+        },
+        {
+          "inicio": 1.84,
+          "fim": 2.0,
+          "palavra": "gente"
+        },
+        {
+          "inicio": 2.0,
+          "fim": 2.18,
+          "palavra": "tá"
+        },
+        {
+          "inicio": 2.18,
+          "fim": 2.52,
+          "palavra": "passando"
+        },
+        {
+          "inicio": 2.52,
+          "fim": 2.66,
+          "palavra": "aqui"
+        },
+        {
+          "inicio": 2.66,
+          "fim": 2.82,
+          "palavra": "pra"
+        },
+        {
+          "inicio": 2.82,
+          "fim": 2.96,
+          "palavra": "dar"
+        },
+        {
+          "inicio": 2.96,
+          "fim": 3.04,
+          "palavra": "um"
+        },
+        {
+          "inicio": 3.04,
+          "fim": 3.42,
+          "palavra": "recado"
+        },
+        {
+          "inicio": 3.42,
+          "fim": 3.58,
+          "palavra": "muito"
+        },
+        {
+          "inicio": 3.58,
+          "fim": 4.1,
+          "palavra": "importante,"
+        },
+        {
+          "inicio": 4.22,
+          "fim": 4.32,
+          "palavra": "né"
+        },
+        {
+          "inicio": 4.32,
+          "fim": 4.74,
+          "palavra": "Thiago?"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "inicio": 5.38,
+      "fim": 10.52,
+      "texto": "O final do ano tá aí e junto com ele a gente preparou a última edição da violada TV, rapaz.",
+      "palavras": [
+        {
+          "inicio": 5.38,
+          "fim": 5.4,
+          "palavra": "O"
+        },
+        {
+          "inicio": 5.4,
+          "fim": 5.58,
+          "palavra": "final"
+        },
+        {
+          "inicio": 5.58,
+          "fim": 5.82,
+          "palavra": "do"
+        },
+        {
+          "inicio": 5.82,
+          "fim": 5.92,
+          "palavra": "ano"
+        },
+        {
+          "inicio": 5.92,
+          "fim": 6.14,
+          "palavra": "tá"
+        },
+        {
+          "inicio": 6.14,
+          "fim": 6.38,
+          "palavra": "aí"
+        },
+        {
+          "inicio": 6.38,
+          "fim": 6.7,
+          "palavra": "e"
+        },
+        {
+          "inicio": 6.7,
+          "fim": 6.94,
+          "palavra": "junto"
+        },
+        {
+          "inicio": 6.94,
+          "fim": 7.2,
+          "palavra": "com"
+        },
+        {
+          "inicio": 7.2,
+          "fim": 7.32,
+          "palavra": "ele"
+        },
+        {
+          "inicio": 7.32,
+          "fim": 7.38,
+          "palavra": "a"
+        },
+        {
+          "inicio": 7.38,
+          "fim": 7.5,
+          "palavra": "gente"
+        },
+        {
+          "inicio": 7.5,
+          "fim": 8.06,
+          "palavra": "preparou"
+        },
+        {
+          "inicio": 8.06,
+          "fim": 8.32,
+          "palavra": "a"
+        },
+        {
+          "inicio": 8.32,
+          "fim": 8.62,
+          "palavra": "última"
+        },
+        {
+          "inicio": 8.62,
+          "fim": 9.08,
+          "palavra": "edição"
+        },
+        {
+          "inicio": 9.08,
+          "fim": 9.24,
+          "palavra": "da"
+        },
+        {
+          "inicio": 9.24,
+          "fim": 9.56,
+          "palavra": "violada"
+        },
+        {
+          "inicio": 9.56,
+          "fim": 9.94,
+          "palavra": "TV,"
+        },
+        {
+          "inicio": 10.16,
+          "fim": 10.52,
+          "palavra": "rapaz."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "inicio": 10.56,
+      "fim": 15.18,
+      "texto": "Dia 26 de dezembro você não pode ficar de fora, tem uma atração nacional que você vai curtir muito.",
+      "palavras": [
+        {
+          "inicio": 10.56,
+          "fim": 10.6,
+          "palavra": "Dia"
+        },
+        {
+          "inicio": 10.6,
+          "fim": 10.92,
+          "palavra": "26"
+        },
+        {
+          "inicio": 10.92,
+          "fim": 11.14,
+          "palavra": "de"
+        },
+        {
+          "inicio": 11.14,
+          "fim": 11.68,
+          "palavra": "dezembro"
+        },
+        {
+          "inicio": 11.68,
+          "fim": 11.86,
+          "palavra": "você"
+        },
+        {
+          "inicio": 11.86,
+          "fim": 11.98,
+          "palavra": "não"
+        },
+        {
+          "inicio": 11.98,
+          "fim": 12.06,
+          "palavra": "pode"
+        },
+        {
+          "inicio": 12.06,
+          "fim": 12.24,
+          "palavra": "ficar"
+        },
+        {
+          "inicio": 12.24,
+          "fim": 12.32,
+          "palavra": "de"
+        },
+        {
+          "inicio": 12.32,
+          "fim": 12.66,
+          "palavra": "fora,"
+        },
+        {
+          "inicio": 12.8,
+          "fim": 12.96,
+          "palavra": "tem"
+        },
+        {
+          "inicio": 12.96,
+          "fim": 13.08,
+          "palavra": "uma"
+        },
+        {
+          "inicio": 13.08,
+          "fim": 13.36,
+          "palavra": "atração"
+        },
+        {
+          "inicio": 13.36,
+          "fim": 13.86,
+          "palavra": "nacional"
+        },
+        {
+          "inicio": 13.86,
+          "fim": 14.36,
+          "palavra": "que"
+        },
+        {
+          "inicio": 14.36,
+          "fim": 14.5,
+          "palavra": "você"
+        },
+        {
+          "inicio": 14.5,
+          "fim": 14.6,
+          "palavra": "vai"
+        },
+        {
+          "inicio": 14.6,
+          "fim": 14.86,
+          "palavra": "curtir"
+        },
+        {
+          "inicio": 14.86,
+          "fim": 15.18,
+          "palavra": "muito."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "inicio": 15.4,
+      "fim": 16.22,
+      "texto": "Fazer um par desse evento.",
+      "palavras": [
+        {
+          "inicio": 15.4,
+          "fim": 15.64,
+          "palavra": "Fazer"
+        },
+        {
+          "inicio": 15.64,
+          "fim": 15.68,
+          "palavra": "um"
+        },
+        {
+          "inicio": 15.68,
+          "fim": 15.8,
+          "palavra": "par"
+        },
+        {
+          "inicio": 15.8,
+          "fim": 16.0,
+          "palavra": "desse"
+        },
+        {
+          "inicio": 16.0,
+          "fim": 16.22,
+          "palavra": "evento."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "inicio": 16.34,
+      "fim": 20.24,
+      "texto": "E mais uma vez aqui na Dega número um. Fiquem ligados, rapazes.",
+      "palavras": [
+        {
+          "inicio": 16.34,
+          "fim": 16.42,
+          "palavra": "E"
+        },
+        {
+          "inicio": 16.42,
+          "fim": 16.68,
+          "palavra": "mais"
+        },
+        {
+          "inicio": 16.68,
+          "fim": 16.92,
+          "palavra": "uma"
+        },
+        {
+          "inicio": 16.92,
+          "fim": 17.2,
+          "palavra": "vez"
+        },
+        {
+          "inicio": 17.2,
+          "fim": 17.48,
+          "palavra": "aqui"
+        },
+        {
+          "inicio": 17.48,
+          "fim": 17.66,
+          "palavra": "na"
+        },
+        {
+          "inicio": 17.66,
+          "fim": 17.9,
+          "palavra": "Dega"
+        },
+        {
+          "inicio": 17.9,
+          "fim": 18.1,
+          "palavra": "número"
+        },
+        {
+          "inicio": 18.1,
+          "fim": 18.42,
+          "palavra": "um."
+        },
+        {
+          "inicio": 18.58,
+          "fim": 18.84,
+          "palavra": "Fiquem"
+        },
+        {
+          "inicio": 18.84,
+          "fim": 19.3,
+          "palavra": "ligados,"
+        },
+        {
+          "inicio": 19.4,
+          "fim": 20.24,
+          "palavra": "rapazes."
+        }
+      ]
+    }
+  ]
+}
