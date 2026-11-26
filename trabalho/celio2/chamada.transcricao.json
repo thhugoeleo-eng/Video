@@ -1,0 +1,659 @@
+{
+  "arquivo": "trabalho/celio2/assets/chamada.mp4",
+  "idioma": "pt",
+  "duracao": 35.925,
+  "modelo": "medium",
+  "frases": [
+    {
+      "id": 1,
+      "inicio": 0.0,
+      "fim": 5.32,
+      "texto": "Fala, turma! Estamos reunidos aqui hoje para fazer uma pergunta para vocês.",
+      "palavras": [
+        {
+          "inicio": 0.0,
+          "fim": 0.92,
+          "palavra": "Fala,"
+        },
+        {
+          "inicio": 1.06,
+          "fim": 1.3,
+          "palavra": "turma!"
+        },
+        {
+          "inicio": 1.5,
+          "fim": 1.76,
+          "palavra": "Estamos"
+        },
+        {
+          "inicio": 1.76,
+          "fim": 2.26,
+          "palavra": "reunidos"
+        },
+        {
+          "inicio": 2.26,
+          "fim": 2.66,
+          "palavra": "aqui"
+        },
+        {
+          "inicio": 2.66,
+          "fim": 3.12,
+          "palavra": "hoje"
+        },
+        {
+          "inicio": 3.12,
+          "fim": 3.8,
+          "palavra": "para"
+        },
+        {
+          "inicio": 3.8,
+          "fim": 4.02,
+          "palavra": "fazer"
+        },
+        {
+          "inicio": 4.02,
+          "fim": 4.2,
+          "palavra": "uma"
+        },
+        {
+          "inicio": 4.2,
+          "fim": 4.6,
+          "palavra": "pergunta"
+        },
+        {
+          "inicio": 4.6,
+          "fim": 4.92,
+          "palavra": "para"
+        },
+        {
+          "inicio": 4.92,
+          "fim": 5.32,
+          "palavra": "vocês."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "inicio": 5.6,
+      "fim": 9.92,
+      "texto": "A primeira eu vou fazer. Vocês gostam de tomar uma cerveja de garrafa gelada?",
+      "palavras": [
+        {
+          "inicio": 5.6,
+          "fim": 5.6,
+          "palavra": "A"
+        },
+        {
+          "inicio": 5.6,
+          "fim": 6.02,
+          "palavra": "primeira"
+        },
+        {
+          "inicio": 6.02,
+          "fim": 6.36,
+          "palavra": "eu"
+        },
+        {
+          "inicio": 6.36,
+          "fim": 6.62,
+          "palavra": "vou"
+        },
+        {
+          "inicio": 6.62,
+          "fim": 6.94,
+          "palavra": "fazer."
+        },
+        {
+          "inicio": 7.02,
+          "fim": 7.22,
+          "palavra": "Vocês"
+        },
+        {
+          "inicio": 7.22,
+          "fim": 7.56,
+          "palavra": "gostam"
+        },
+        {
+          "inicio": 7.56,
+          "fim": 7.56,
+          "palavra": "de"
+        },
+        {
+          "inicio": 7.56,
+          "fim": 7.8,
+          "palavra": "tomar"
+        },
+        {
+          "inicio": 7.8,
+          "fim": 8.02,
+          "palavra": "uma"
+        },
+        {
+          "inicio": 8.02,
+          "fim": 8.38,
+          "palavra": "cerveja"
+        },
+        {
+          "inicio": 8.38,
+          "fim": 8.62,
+          "palavra": "de"
+        },
+        {
+          "inicio": 8.62,
+          "fim": 9.08,
+          "palavra": "garrafa"
+        },
+        {
+          "inicio": 9.08,
+          "fim": 9.92,
+          "palavra": "gelada?"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "inicio": 10.12,
+      "fim": 15.02,
+      "texto": "Aquela cadeira de plástico raizona, uma sombrinha no solzão também para dar mais sede, né?",
+      "palavras": [
+        {
+          "inicio": 10.12,
+          "fim": 10.38,
+          "palavra": "Aquela"
+        },
+        {
+          "inicio": 10.38,
+          "fim": 10.8,
+          "palavra": "cadeira"
+        },
+        {
+          "inicio": 10.8,
+          "fim": 10.98,
+          "palavra": "de"
+        },
+        {
+          "inicio": 10.98,
+          "fim": 11.34,
+          "palavra": "plástico"
+        },
+        {
+          "inicio": 11.34,
+          "fim": 12.44,
+          "palavra": "raizona,"
+        },
+        {
+          "inicio": 12.54,
+          "fim": 12.76,
+          "palavra": "uma"
+        },
+        {
+          "inicio": 12.76,
+          "fim": 13.22,
+          "palavra": "sombrinha"
+        },
+        {
+          "inicio": 13.22,
+          "fim": 13.44,
+          "palavra": "no"
+        },
+        {
+          "inicio": 13.44,
+          "fim": 13.82,
+          "palavra": "solzão"
+        },
+        {
+          "inicio": 13.82,
+          "fim": 14.06,
+          "palavra": "também"
+        },
+        {
+          "inicio": 14.06,
+          "fim": 14.18,
+          "palavra": "para"
+        },
+        {
+          "inicio": 14.18,
+          "fim": 14.3,
+          "palavra": "dar"
+        },
+        {
+          "inicio": 14.3,
+          "fim": 14.6,
+          "palavra": "mais"
+        },
+        {
+          "inicio": 14.6,
+          "fim": 14.78,
+          "palavra": "sede,"
+        },
+        {
+          "inicio": 14.78,
+          "fim": 15.02,
+          "palavra": "né?"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "inicio": 15.02,
+      "fim": 15.84,
+      "texto": "É bom demais, né?",
+      "palavras": [
+        {
+          "inicio": 15.02,
+          "fim": 15.02,
+          "palavra": "É"
+        },
+        {
+          "inicio": 15.02,
+          "fim": 15.22,
+          "palavra": "bom"
+        },
+        {
+          "inicio": 15.22,
+          "fim": 15.54,
+          "palavra": "demais,"
+        },
+        {
+          "inicio": 15.54,
+          "fim": 15.84,
+          "palavra": "né?"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "inicio": 16.08,
+      "fim": 19.66,
+      "texto": "Ouvindo umas modas e comendo uma calabresinha frita.",
+      "palavras": [
+        {
+          "inicio": 16.08,
+          "fim": 16.52,
+          "palavra": "Ouvindo"
+        },
+        {
+          "inicio": 16.52,
+          "fim": 16.8,
+          "palavra": "umas"
+        },
+        {
+          "inicio": 16.8,
+          "fim": 17.66,
+          "palavra": "modas"
+        },
+        {
+          "inicio": 17.66,
+          "fim": 17.94,
+          "palavra": "e"
+        },
+        {
+          "inicio": 17.94,
+          "fim": 18.18,
+          "palavra": "comendo"
+        },
+        {
+          "inicio": 18.18,
+          "fim": 18.34,
+          "palavra": "uma"
+        },
+        {
+          "inicio": 18.34,
+          "fim": 19.04,
+          "palavra": "calabresinha"
+        },
+        {
+          "inicio": 19.04,
+          "fim": 19.66,
+          "palavra": "frita."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "inicio": 19.88,
+      "fim": 21.68,
+      "texto": "Pode faltar uma sinuquinha, sinuquinha também tem.",
+      "palavras": [
+        {
+          "inicio": 19.88,
+          "fim": 19.98,
+          "palavra": "Pode"
+        },
+        {
+          "inicio": 19.98,
+          "fim": 20.3,
+          "palavra": "faltar"
+        },
+        {
+          "inicio": 20.3,
+          "fim": 20.44,
+          "palavra": "uma"
+        },
+        {
+          "inicio": 20.44,
+          "fim": 20.88,
+          "palavra": "sinuquinha,"
+        },
+        {
+          "inicio": 20.88,
+          "fim": 21.32,
+          "palavra": "sinuquinha"
+        },
+        {
+          "inicio": 21.32,
+          "fim": 21.64,
+          "palavra": "também"
+        },
+        {
+          "inicio": 21.64,
+          "fim": 21.68,
+          "palavra": "tem."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "inicio": 21.92,
+      "fim": 25.58,
+      "texto": "Minha, nossa senhora, olha, em Brão, o fim capeta é de endereço novo.",
+      "palavras": [
+        {
+          "inicio": 21.92,
+          "fim": 22.26,
+          "palavra": "Minha,"
+        },
+        {
+          "inicio": 22.28,
+          "fim": 22.56,
+          "palavra": "nossa"
+        },
+        {
+          "inicio": 22.56,
+          "fim": 22.86,
+          "palavra": "senhora,"
+        },
+        {
+          "inicio": 22.86,
+          "fim": 23.02,
+          "palavra": "olha,"
+        },
+        {
+          "inicio": 23.12,
+          "fim": 23.16,
+          "palavra": "em"
+        },
+        {
+          "inicio": 23.16,
+          "fim": 23.62,
+          "palavra": "Brão,"
+        },
+        {
+          "inicio": 23.84,
+          "fim": 23.96,
+          "palavra": "o"
+        },
+        {
+          "inicio": 23.96,
+          "fim": 24.08,
+          "palavra": "fim"
+        },
+        {
+          "inicio": 24.08,
+          "fim": 24.5,
+          "palavra": "capeta"
+        },
+        {
+          "inicio": 24.5,
+          "fim": 24.7,
+          "palavra": "é"
+        },
+        {
+          "inicio": 24.7,
+          "fim": 24.8,
+          "palavra": "de"
+        },
+        {
+          "inicio": 24.8,
+          "fim": 25.2,
+          "palavra": "endereço"
+        },
+        {
+          "inicio": 25.2,
+          "fim": 25.58,
+          "palavra": "novo."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "inicio": 25.7,
+      "fim": 27.7,
+      "texto": "Estamos aqui no Santa Luzia, né, João?",
+      "palavras": [
+        {
+          "inicio": 25.7,
+          "fim": 25.88,
+          "palavra": "Estamos"
+        },
+        {
+          "inicio": 25.88,
+          "fim": 26.26,
+          "palavra": "aqui"
+        },
+        {
+          "inicio": 26.26,
+          "fim": 26.66,
+          "palavra": "no"
+        },
+        {
+          "inicio": 26.66,
+          "fim": 27.02,
+          "palavra": "Santa"
+        },
+        {
+          "inicio": 27.02,
+          "fim": 27.4,
+          "palavra": "Luzia,"
+        },
+        {
+          "inicio": 27.4,
+          "fim": 27.56,
+          "palavra": "né,"
+        },
+        {
+          "inicio": 27.58,
+          "fim": 27.7,
+          "palavra": "João?"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "inicio": 28.08,
+      "fim": 31.98,
+      "texto": "Bar do Célio, rapaz, o Finca Pê vai ser aqui dia 12 de dezembro, né não?",
+      "palavras": [
+        {
+          "inicio": 28.08,
+          "fim": 28.42,
+          "palavra": "Bar"
+        },
+        {
+          "inicio": 28.42,
+          "fim": 28.76,
+          "palavra": "do"
+        },
+        {
+          "inicio": 28.76,
+          "fim": 29.14,
+          "palavra": "Célio,"
+        },
+        {
+          "inicio": 29.32,
+          "fim": 29.62,
+          "palavra": "rapaz,"
+        },
+        {
+          "inicio": 29.76,
+          "fim": 29.82,
+          "palavra": "o"
+        },
+        {
+          "inicio": 29.82,
+          "fim": 30.04,
+          "palavra": "Finca"
+        },
+        {
+          "inicio": 30.04,
+          "fim": 30.14,
+          "palavra": "Pê"
+        },
+        {
+          "inicio": 30.14,
+          "fim": 30.3,
+          "palavra": "vai"
+        },
+        {
+          "inicio": 30.3,
+          "fim": 30.46,
+          "palavra": "ser"
+        },
+        {
+          "inicio": 30.46,
+          "fim": 30.66,
+          "palavra": "aqui"
+        },
+        {
+          "inicio": 30.66,
+          "fim": 30.84,
+          "palavra": "dia"
+        },
+        {
+          "inicio": 30.84,
+          "fim": 31.14,
+          "palavra": "12"
+        },
+        {
+          "inicio": 31.14,
+          "fim": 31.4,
+          "palavra": "de"
+        },
+        {
+          "inicio": 31.4,
+          "fim": 31.72,
+          "palavra": "dezembro,"
+        },
+        {
+          "inicio": 31.72,
+          "fim": 31.86,
+          "palavra": "né"
+        },
+        {
+          "inicio": 31.86,
+          "fim": 31.98,
+          "palavra": "não?"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "inicio": 32.12,
+      "fim": 34.36,
+      "texto": "É isso aí, todo mundo convidado pro Finca Pê aqui, viu?",
+      "palavras": [
+        {
+          "inicio": 32.12,
+          "fim": 32.14,
+          "palavra": "É"
+        },
+        {
+          "inicio": 32.14,
+          "fim": 32.3,
+          "palavra": "isso"
+        },
+        {
+          "inicio": 32.3,
+          "fim": 32.4,
+          "palavra": "aí,"
+        },
+        {
+          "inicio": 32.54,
+          "fim": 32.6,
+          "palavra": "todo"
+        },
+        {
+          "inicio": 32.6,
+          "fim": 32.74,
+          "palavra": "mundo"
+        },
+        {
+          "inicio": 32.74,
+          "fim": 33.22,
+          "palavra": "convidado"
+        },
+        {
+          "inicio": 33.22,
+          "fim": 33.38,
+          "palavra": "pro"
+        },
+        {
+          "inicio": 33.38,
+          "fim": 33.8,
+          "palavra": "Finca"
+        },
+        {
+          "inicio": 33.8,
+          "fim": 33.94,
+          "palavra": "Pê"
+        },
+        {
+          "inicio": 33.94,
+          "fim": 34.14,
+          "palavra": "aqui,"
+        },
+        {
+          "inicio": 34.14,
+          "fim": 34.36,
+          "palavra": "viu?"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "inicio": 34.56,
+      "fim": 34.86,
+      "texto": "Isso aí!",
+      "palavras": [
+        {
+          "inicio": 34.56,
+          "fim": 34.56,
+          "palavra": "Isso"
+        },
+        {
+          "inicio": 34.56,
+          "fim": 34.86,
+          "palavra": "aí!"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "inicio": 35.0,
+      "fim": 35.82,
+      "texto": "Fota, rapaz!",
+      "palavras": [
+        {
+          "inicio": 35.0,
+          "fim": 35.2,
+          "palavra": "Fota,"
+        },
+        {
+          "inicio": 35.28,
+          "fim": 35.82,
+          "palavra": "rapaz!"
+        }
+      ]
+    }
+  ]
+}

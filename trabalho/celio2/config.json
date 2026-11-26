@@ -1,0 +1,9 @@
+{
+  "juntar": [["finca", "pé"], ["fim", "-capé"]],
+  "correcoes": [["calabrezinha", "calabresinha"]],
+  "titulo_final": "ANOTA AÍ!",
+  "fim_na_ultima_frase": "anota",
+  "destaque_endereco": "endereço",
+  "destaque_data": ["dia", 28],
+  "faixa": {"nome": "BAR DO CÉLIO", "endereco": "AV. SÃO NICOLAU, 172 – SANTA LUZIA<br>CAMPO GRANDE - MS", "data": "SÁBADO 12/12 · A PARTIR DAS 14H"}
+}

@@ -5,26 +5,100 @@
   "duracao_original": 39.97,
   "duracao_estimada_final": 35.8,
   "cortes": [
-    {"id": "c1", "inicio": 1.36, "fim": 1.88, "tipo": "pausa", "motivo": "Pausa depois de 'Fala, turma!'"},
-    {"id": "c2", "inicio": 10.50, "fim": 10.90, "tipo": "pausa", "motivo": "Pausa depois de 'cerveja de garrafa gelada?'"},
-    {"id": "c3", "inicio": 16.84, "fim": 17.22, "tipo": "pausa", "motivo": "Pausa depois de 'É bom demais, né?'"},
-    {"id": "c4", "inicio": 20.96, "fim": 21.34, "tipo": "pausa", "motivo": "Pausa depois de 'calabresinha frita'"},
-    {"id": "c5", "inicio": 23.40, "fim": 23.84, "tipo": "pausa", "motivo": "Pausa depois da sinuquinha"},
-    {"id": "c6", "inicio": 24.94, "fim": 25.38, "tipo": "pausa", "motivo": "Pausa depois de 'Minha nossa senhora!'"},
-    {"id": "c7", "inicio": 37.36, "fim": 37.84, "tipo": "pausa", "motivo": "Pausa antes de 'Anota, rapaz!'"},
-    {"id": "c8", "inicio": 38.84, "fim": 39.97, "tipo": "pausa", "motivo": "Final parado"}
+    {
+      "id": "c1",
+      "inicio": 1.36,
+      "fim": 1.88,
+      "tipo": "pausa",
+      "motivo": "Pausa depois de 'Fala, turma!'"
+    },
+    {
+      "id": "c2",
+      "inicio": 10.5,
+      "fim": 10.9,
+      "tipo": "pausa",
+      "motivo": "Pausa depois de 'cerveja de garrafa gelada?'"
+    },
+    {
+      "id": "c3",
+      "inicio": 16.84,
+      "fim": 17.22,
+      "tipo": "pausa",
+      "motivo": "Pausa depois de 'É bom demais, né?'"
+    },
+    {
+      "id": "c4",
+      "inicio": 20.96,
+      "fim": 21.34,
+      "tipo": "pausa",
+      "motivo": "Pausa depois de 'calabresinha frita'"
+    },
+    {
+      "id": "c5",
+      "inicio": 23.4,
+      "fim": 23.84,
+      "tipo": "pausa",
+      "motivo": "Pausa depois da sinuquinha"
+    },
+    {
+      "id": "c6",
+      "inicio": 24.94,
+      "fim": 25.38,
+      "tipo": "pausa",
+      "motivo": "Pausa depois de 'Minha nossa senhora!'"
+    },
+    {
+      "id": "c7",
+      "inicio": 37.36,
+      "fim": 37.84,
+      "tipo": "pausa",
+      "motivo": "Pausa antes de 'Anota, rapaz!'"
+    },
+    {
+      "id": "c8",
+      "inicio": 38.84,
+      "fim": 39.97,
+      "tipo": "pausa",
+      "motivo": "Final parado"
+    }
   ],
   "insercoes": [
-    {"id": "i1", "tipo": "letreiro", "descricao": "Legendas dinâmicas iguais às da chamada 1 (palavra falada em dourado)"},
-    {"id": "i2", "tipo": "letreiro", "descricao": "Mesma faixa fixa: logo Fincapé + BAR DO CÉLIO + endereço + SÁBADO 12/12 · A PARTIR DAS 14H"},
-    {"id": "i3", "tipo": "zoom", "inicio": 25.48, "fim": 31.6, "descricao": "Zoom leve em 'endereço novo… Santa Luzia… Bar do Célio', com brilho na faixa"},
-    {"id": "i4", "tipo": "zoom", "inicio": 33.12, "fim": 34.4, "descricao": "Punch-in com flash em 'dia 12 de dezembro'"},
-    {"id": "i5", "tipo": "letreiro", "inicio": 37.94, "fim": 38.84, "descricao": "Final 'ANOTA AÍ!' grande, como o 'VEM COM NÓS!' da chamada 1"}
+    {
+      "id": "i1",
+      "tipo": "letreiro",
+      "descricao": "Legendas dinâmicas iguais às da chamada 1 (palavra falada em dourado)"
+    },
+    {
+      "id": "i2",
+      "tipo": "letreiro",
+      "descricao": "Mesma faixa fixa: logo Fincapé + BAR DO CÉLIO + endereço + SÁBADO 12/12 · A PARTIR DAS 14H"
+    },
+    {
+      "id": "i3",
+      "tipo": "zoom",
+      "inicio": 25.48,
+      "fim": 31.6,
+      "descricao": "Zoom leve em 'endereço novo… Santa Luzia… Bar do Célio', com brilho na faixa"
+    },
+    {
+      "id": "i4",
+      "tipo": "zoom",
+      "inicio": 33.12,
+      "fim": 34.4,
+      "descricao": "Punch-in com flash em 'dia 12 de dezembro'"
+    },
+    {
+      "id": "i5",
+      "tipo": "letreiro",
+      "inicio": 37.94,
+      "fim": 38.84,
+      "descricao": "Final 'ANOTA AÍ!' grande, como o 'VEM COM NÓS!' da chamada 1"
+    }
   ],
   "observacoes": [
     "Legenda: 'fim-capé' e 'Finca Pé' escritos FINCAPÉ; 'calabrezinha' escrito CALABRESINHA.",
     "Mantém a fala 'É isso aí!' (37 s): é reação, não repetição.",
     "Mesmo visual vinho/dourado da chamada 1."
   ],
-  "status": "aguardando_aprovacao"
+  "status": "aprovado"
 }
