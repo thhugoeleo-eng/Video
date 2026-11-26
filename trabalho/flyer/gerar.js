@@ -1,4 +1,4 @@
-// Gera os PNGs do flyer: node gerar.js  (precisa do Playwright)
+// Gera os PNGs do flyer (1080 px e 2x): node gerar.js  (precisa do Playwright)
 const { chromium } = require('playwright');
 const path = require('path');
 const http = require('http');
@@ -15,13 +15,13 @@ const fs = require('fs');
   const base = `http://127.0.0.1:${srv.address().port}/`;
   const b = await chromium.launch();
   const out = path.resolve(__dirname, '../../final');
-  for (const [f, h] of [['story', 1920], ['feed', 1350]]) {
-    const p = await b.newPage({ viewport: { width: 1080, height: h }, deviceScaleFactor: 1 });
+  for (const escala of [1, 2]) for (const [f, h] of [['story', 1920], ['feed', 1350]]) {
+    const p = await b.newPage({ viewport: { width: 1080, height: h }, deviceScaleFactor: escala });
     await p.goto(base + 'flyer.html?f=' + f);
     await p.evaluate(() => document.fonts.ready);
     await p.waitForTimeout(300);
-    await p.locator('#arte').screenshot({ path: path.join(out, `fincape-flyer-${f}.png`) });
-    console.log('ok', f);
+    await p.locator('#arte').screenshot({ path: path.join(out, `fincape-flyer-${f}${escala === 2 ? '-2x' : ''}.png`) });
+    console.log('ok', f, escala + 'x');
   }
   await b.close();
   srv.close();
