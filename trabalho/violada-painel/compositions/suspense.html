@@ -14,8 +14,12 @@
     #su-q { left: 0; top: 200px; width: 1920px; text-align: center; font-weight: 700; font-size: 440px; line-height: 1; color: #d9a8ff; text-shadow: 0 0 60px #7b2fe0, 0 14px 0 #4a1f6b; }
     #su-pill { left: 0; top: 70px; width: 1920px; text-align: center; }
     #su-pill span { display: inline-block; background: #8a3f8c; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 48px; letter-spacing: 10px; padding: 8px 40px 8px 50px; border-radius: 60px; }
-    #su-ag { left: 0; top: 860px; width: 1920px; text-align: center; font-weight: 700; font-size: 150px; letter-spacing: 26px; padding-left: 26px; color: #d9a8ff; text-shadow: 0 0 40px #7b2fe0, 0 10px 0 #4a1f6b; line-height: 1; }
+    #su-ag { left: 0; top: 880px; width: 1920px; text-align: center; font-weight: 700; font-size: 130px; letter-spacing: 26px; padding-left: 26px; color: #d9a8ff; text-shadow: 0 0 40px #7b2fe0, 0 10px 0 #4a1f6b; line-height: 1; }
     #su-glitch { left: 0; top: 0; width: 1920px; height: 1080px; background: repeating-linear-gradient(0deg, rgba(185,120,255,.0) 0 6px, rgba(185,120,255,.18) 6px 8px); opacity: 0; }
+    #su-row { left: 0; top: 755px; width: 1920px; display: flex; justify-content: center; align-items: center; gap: 22px; z-index: 5; }
+    #su-row .dot { font-size: 44px; color: #b25caa; font-weight: 700; font-family: "Oswald"; }
+    #su-row .an { font-family: "Oswald"; font-weight: 700; font-size: 50px; color: #fff; letter-spacing: 2px; }
+    #su-row .an b { color: #d9a8ff; }
   </style>
   <div id="root" data-composition-id="suspense" data-width="1920" data-height="1080" data-layout-allow-overlap data-layout-allow-overflow>
     <div id="su-wrap" class="a">
@@ -27,6 +31,7 @@
       <img id="su-j" class="a sil" src="assets/f_silj.png" alt="" />
       <div id="su-q" class="a">?</div>
       <div id="su-pill" class="a"><span>ATRAÇÃO NACIONAL</span></div>
+      <div id="su-row" class="a"><img style="height:56px" src="assets/f_antony_logo.png" alt="" /><span class="dot">•</span><img style="height:54px" src="assets/f_tv_logo.png" alt="" /><span class="dot">•</span><span class="an">ATRAÇÃO NACIONAL <b>???</b></span><span class="dot">•</span><img style="height:74px" src="assets/f_lino_logo.png" alt="" /></div>
       <div id="su-ag" class="a">AGUARDEM</div>
     </div>
     <div id="su-glitch" class="a" data-layout-ignore></div>
@@ -40,6 +45,7 @@
       tl.fromTo("#su-pill", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.4);
       tl.fromTo("#su-q", { opacity: 0, scale: 0.3, rotation: -18 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2.2)" }, 0.9);
       tl.to("#su-q", { scale: 1.1, duration: 0.45, yoyo: true, repeat: 7, ease: "sine.inOut" }, 1.6);
+      tl.fromTo("#su-row", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 1.6);
       tl.fromTo("#su-ag", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power4.out" }, 2.2);
       tl.fromTo("#su-wrap", { scale: 1 }, { scale: 1.12, duration: 7.6, ease: "none" }, 0.4);
       [3.4, 5.3, 6.6].forEach((t) => {
