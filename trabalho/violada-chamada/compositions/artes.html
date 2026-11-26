@@ -1,0 +1,103 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Oswald", sans-serif; }
+    #scrim-base { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px;
+      background: linear-gradient(to bottom, rgba(18,6,29,0) 50%, rgba(18,6,29,.55) 62%, rgba(18,6,29,.85) 100%); }
+    .scrim { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: rgba(21,8,34,.72); opacity: 0; }
+    .flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #f3e6ff; opacity: 0; }
+
+    /* 1. logo da dupla */
+    #tv { position: absolute; left: 0; top: 1010px; width: 1080px; text-align: center; opacity: 0; }
+    #tv img { width: 600px; filter: drop-shadow(0 4px 14px rgba(18,6,29,.9)); }
+
+    /* 2. Violada */
+    #vio { position: absolute; left: 0; top: 400px; width: 1080px; text-align: center; opacity: 0; }
+    #vio .k { font-weight: 500; font-size: 46px; letter-spacing: 20px; padding-left: 20px; color: #fff; }
+    #vio img { width: 600px; margin-top: 10px; }
+
+    /* 3. Data */
+    #dat { position: absolute; left: 0; top: 380px; width: 1080px; text-align: center; opacity: 0; }
+    #dat .sab { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 58px; letter-spacing: 18px; padding-left: 18px; color: #e8384a; }
+    #dat .n { font-weight: 700; font-size: 400px; line-height: .9; color: #fff; text-shadow: 0 12px 0 #4a1f6b; }
+    #dat .m { font-weight: 700; font-size: 120px; line-height: 1; color: #d9a8ff; letter-spacing: 4px; }
+
+    /* 4. Atração (suspense) */
+    #atr { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+    #atr .pill { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; }
+    #atr .pill span { display: inline-block; background: #8a3f8c; color: #fff; font-family: "Montserrat", sans-serif; font-weight: 800;
+      font-size: 40px; letter-spacing: 8px; padding: 8px 30px 8px 38px; border-radius: 50px; }
+    #sils { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #sj { position: absolute; left: 150px; top: 470px; width: 420px; filter: drop-shadow(0 0 3px #b77ad6) drop-shadow(0 0 22px #7b2fe0); }
+    #sv { position: absolute; left: 500px; top: 476px; width: 428px; filter: drop-shadow(0 0 3px #b77ad6) drop-shadow(0 0 22px #7b2fe0); }
+    #q { position: absolute; left: 0; top: 520px; width: 1080px; text-align: center; font-weight: 700; font-size: 440px; line-height: 1;
+      color: #d9a8ff; text-shadow: 0 0 40px #7b2fe0, 0 10px 0 #4a1f6b; }
+    #eb { position: absolute; left: 0; top: 965px; width: 1080px; text-align: center; font-weight: 700; font-size: 72px; letter-spacing: 16px;
+      padding-left: 16px; color: #fff; text-shadow: 0 4px 16px rgba(18,6,29,.9); }
+
+    /* 5. Adega */
+    #adg { position: absolute; left: 700px; top: 300px; width: 180px; opacity: 0; filter: drop-shadow(0 3px 12px rgba(0,0,0,.8)); }
+  </style>
+
+  <div id="root" data-composition-id="artes" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="scrim-base" data-layout-ignore></div>
+
+    <div id="tv"><img src="assets/tv_logo.png" alt="Thiago &amp; Vinicius" /></div>
+
+    <div class="scrim" id="s-vio" data-layout-ignore></div>
+    <div id="vio"><div class="k">ÚLTIMA DO ANO</div><img src="assets/logo_b.png" alt="Violada T&amp;V" /></div>
+
+    <div class="scrim" id="s-dat" data-layout-ignore></div>
+    <div class="flash" id="f-dat" data-layout-ignore></div>
+    <div id="dat"><div class="sab">SÁBADO</div><div class="n">26</div><div class="m">DE DEZEMBRO</div></div>
+
+    <div class="scrim" id="s-atr" data-layout-ignore></div>
+    <div id="atr">
+      <div id="sils"><img id="sv" src="assets/sil_vin2.png" alt="" /><img id="sj" src="assets/sil_juan.png" alt="" /></div>
+      <div id="q">?</div>
+      <div class="pill"><span>ATRAÇÃO NACIONAL</span></div>
+      <div id="eb">EM BREVE</div>
+    </div>
+
+    <img id="adg" src="assets/adega_w.png" alt="Adega Nº1" />
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      // 1. logo da dupla 0.3–4.6
+      tl.fromTo("#tv", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.3);
+      tl.to("#tv", { opacity: 0, y: -10, duration: 0.3, ease: "power2.in" }, 4.3);
+
+      // 2. Violada 7.8–10.1
+      tl.fromTo("#s-vio", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 7.8);
+      tl.fromTo("#vio", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 7.85);
+      tl.to("#vio", { scale: 1.05, duration: 1.7, ease: "none" }, 8.3);
+      tl.to(["#vio", "#s-vio"], { opacity: 0, duration: 0.15, ease: "power2.in" }, 9.97);
+
+      // 3. Data 10.12–12.3
+      tl.fromTo("#f-dat", { opacity: 0 }, { opacity: 0.9, duration: 0.05 }, 10.1);
+      tl.to("#f-dat", { opacity: 0, duration: 0.3, ease: "power2.out" }, 10.15);
+      tl.fromTo("#s-dat", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 10.12);
+      tl.fromTo("#dat", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power4.out" }, 10.12);
+      tl.fromTo("#dat .n", { y: 0 }, { y: -8, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.inOut" }, 10.6);
+      tl.to("#dat", { scale: 1.06, duration: 1.6, ease: "none" }, 10.5);
+      tl.to(["#dat", "#s-dat"], { opacity: 0, duration: 0.15, ease: "power2.in" }, 12.15);
+
+      // 4. Atração 12.36–15.85
+      tl.fromTo("#s-atr", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 12.36);
+      tl.set("#atr", { opacity: 1 }, 12.36);
+      tl.fromTo(".pill span", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 12.4);
+      tl.fromTo("#sils", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 12.5);
+      tl.fromTo("#q", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2)" }, 13.1);
+      tl.to("#q", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, 13.7);
+      tl.fromTo("#eb", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 14.4);
+      tl.to(["#atr", "#s-atr"], { opacity: 0, duration: 0.2, ease: "power2.in" }, 15.65);
+
+      // 5. Adega 16.6–18.2
+      tl.fromTo("#adg", { opacity: 0, scale: 0.5, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2)" }, 16.6);
+      tl.to("#adg", { opacity: 0, duration: 0.25, ease: "power2.in" }, 18.0);
+
+      window.__timelines["artes"] = tl;
+    })();
+  </script>
+</template>

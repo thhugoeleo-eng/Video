@@ -66,13 +66,14 @@
       "tipo": "letreiro",
       "inicio": 20.27,
       "fim": 22.9,
-      "descricao": "Encerramento de ~2,6 s focado na data: logo VIOLADA T&V, 'SÁBADO · 26 DE DEZEMBRO' grande, 'ADEGA Nº1 · CAMPO GRANDE/MS', 'ATRAÇÃO NACIONAL EM BREVE'; sem Juan Marcus & Vinícius. Música sobe",
+      "descricao": "Encerramento de ~2,6 s focado na data: logo VIOLADA T&V, 'SÁBADO · 26 DE DEZEMBRO' grande, 'ADEGA Nº1 · CAMPO GRANDE/MS', 'ATRAÇÃO NACIONAL EM BREVE'; sem Juan Marcus & Vinícius. Música sobe; DJ Antony e DJ Lino aparecem (fotos recortadas + logos) com 'AFTER'",
       "texto": "SÁBADO · 26 DE DEZEMBRO"
     }
   ],
   "legendas": {
     "estilo": "Legenda dinâmica palavra a palavra, Montserrat branca com contorno escuro, palavra atual em lilás; terço inferior, dentro da área segura do Instagram",
-    "trecho": "0,0 a 20,2 s"
+    "trecho": "0,0 a 20,2 s",
+    "ativo": true
   },
   "audio": {
     "musica": "Música de fundo baixa (~-20 dB) sob a fala, sobe no encerramento; aguardando arquivo do usuário",
@@ -80,9 +81,9 @@
   },
   "observacoes": [
     "Juan Marcus & Vinícius não aparecem: suspense até a revelação",
-    "Legendas em todo o vídeo: sim ou não?",
-    "DJ Antony e DJ Lino também ficam em segredo ou aparecem no encerramento?",
+    "DJ Antony e DJ Lino aparecem no encerramento",
+    "Música: aguardando arquivo do usuário; vídeo montado sem música até lá",
     "Formato final: 1080x1920 para reels/story"
   ],
-  "status": "aguardando_aprovacao"
+  "status": "aprovado"
 }

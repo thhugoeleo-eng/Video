@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #12061d; }
+      #root { width: 100%; height: 100%; position: relative; }
+      #cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 760px; }
+      #chamada { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="23.3" data-width="1080" data-height="1920">
+      <div id="cam">
+        <video id="chamada" class="clip" src="assets/chamada.mp4" data-start="0" data-duration="19.9" data-track-index="0" data-has-audio="true" playsinline></video>
+      </div>
+      <div id="artes" data-composition-id="artes" data-composition-src="compositions/artes.html" data-start="0" data-duration="19.9"
+        data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="legendas" data-composition-id="legendas" data-composition-src="compositions/legendas.html" data-start="0" data-duration="19.9"
+        data-track-index="2" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+      <div id="final" data-composition-id="final" data-composition-src="compositions/final.html" data-start="19.9" data-duration="3.4"
+        data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#cam", { scale: 1.12, duration: 0.5, ease: "power2.out" }, 11.24);
+      tl.to("#cam", { scale: 1, duration: 0.35, ease: "power2.inOut" }, 12.0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
