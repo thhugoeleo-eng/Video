@@ -37,13 +37,13 @@
   body.feed .logo { width: 360px; height: 148px; }
 
   /* Nomes dos artistas */
-  #nomes { position: absolute; left: 0; top: 1215px; width: 1080px; height: 80px; }
-  .art-nome { position: absolute; top: 0; text-align: center; font-size: 56px; letter-spacing: 2px; color: var(--creme); white-space: nowrap;
+  #nomes { position: absolute; left: 0; top: 1215px; width: 1080px; height: 80px; display: flex; justify-content: center; align-items: center; gap: 22px; }
+  .art-nome { font-size: 54px; letter-spacing: 2px; color: var(--creme); white-space: nowrap;
     text-shadow: 0 4px 0 #2a0309, 0 0 14px rgba(0,0,0,.95), 0 0 28px rgba(0,0,0,.8); }
   .art-nome b { color: var(--ouro-claro); font-weight: 400; }
-  #n1 { left: 0; width: 300px; } #n2 { left: 250px; width: 300px; } #n3 { left: 590px; width: 440px; }
+  .estrela { font-size: 30px; color: var(--ouro-claro); text-shadow: 0 0 10px rgba(0,0,0,.9); }
   body.feed #nomes { top: 935px; }
-  body.feed .art-nome { font-size: 50px; }
+  body.feed .art-nome { font-size: 48px; }
 
   /* Data grande */
   #data { position: absolute; left: 0; top: 1330px; width: 1080px; text-align: center; }
@@ -84,8 +84,8 @@
   </div>
 
   <div id="nomes">
-    <div class="art-nome" id="n1">PAULO FIAPO</div>
-    <div class="art-nome" id="n2">JOÃO PAULO</div>
+    <div class="art-nome" id="n1">PAULO FIAPO</div><div class="estrela">✦</div>
+    <div class="art-nome" id="n2">JOÃO PAULO</div><div class="estrela">✦</div>
     <div class="art-nome" id="n3">THIAGO <b>&amp;</b> VINICIUS</div>
   </div>
 
