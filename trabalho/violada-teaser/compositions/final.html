@@ -1,0 +1,44 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Oswald", sans-serif; color: #fff; }
+    #root .a { position: absolute; }
+    #f-ask { left: 0; top: 0; width: 1080px; height: 1920px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-bottom: 120px; }
+    #f-ask .t { font-weight: 700; font-size: 170px; line-height: .95; text-shadow: 0 8px 0 #4a1f6b, 0 0 40px rgba(123,47,224,.6); }
+    #f-ask .t span { color: #d9a8ff; }
+    #f-flash { left: 0; top: 0; width: 1080px; height: 1920px; background: #f3e6ff; opacity: 0; }
+    #f-stack { left: 0; top: 0; width: 1080px; height: 1720px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; }
+    #f-logo { width: 540px; display: block; }
+    #f-data { text-align: center; margin-top: 34px; }
+    #f-data .s { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 44px; letter-spacing: 14px; padding-left: 14px; color: #e8384a; }
+    #f-data .d { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 90px; line-height: 1.05; }
+    #f-ag { font-weight: 700; font-size: 116px; letter-spacing: 14px; padding-left: 14px; color: #d9a8ff; text-shadow: 0 0 30px #7b2fe0, 0 8px 0 #4a1f6b; }
+    #f-adega { width: 150px; display: block; }
+  </style>
+  <div id="root" data-composition-id="final" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="f-ask" class="a"><div class="t">JÁ SABE<br /><span>QUEM É?</span></div></div>
+    <div id="f-flash" class="a" data-layout-ignore></div>
+    <div id="f-stack" class="a">
+      <img id="f-logo" src="assets/logo_b.png" alt="Violada T&amp;V" />
+      <div id="f-data"><div class="s">SÁBADO</div><div class="d">26 DE DEZEMBRO</div></div>
+      <div id="f-ag">AGUARDEM</div>
+      <img id="f-adega" src="assets/adega_w.png" alt="Adega Nº1" />
+    </div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#f-ask", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power4.out" }, 0);
+      tl.to("#f-ask .t", { scale: 1.05, duration: 1.4, ease: "none" }, 0.35);
+      tl.to("#f-ask", { opacity: 0, duration: 0.15 }, 1.75);
+      tl.fromTo("#f-flash", { opacity: 0 }, { opacity: 0.85, duration: 0.05 }, 1.85);
+      tl.to("#f-flash", { opacity: 0, duration: 0.35, ease: "power2.out" }, 1.9);
+      tl.fromTo("#f-logo", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 1.9);
+      tl.fromTo("#f-data", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power4.out" }, 2.25);
+      tl.fromTo("#f-ag", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 2.55);
+      tl.fromTo("#f-adega", { opacity: 0, scale: 0.5, rotation: -20 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2)" }, 2.8);
+      tl.to("#f-ag", { opacity: 0.6, duration: 0.35, yoyo: true, repeat: 3, ease: "sine.inOut" }, 3.1);
+      tl.to("#f-logo", { scale: 1.04, duration: 2.4, ease: "none" }, 2.4);
+      window.__timelines["final"] = tl;
+    })();
+  </script>
+</template>

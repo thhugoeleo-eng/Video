@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #12061d; }
+      #root { width: 100%; height: 100%; position: relative;
+        background: radial-gradient(ellipse 70% 40% at 15% 30%, #5a1f6e40, transparent 70%), radial-gradient(ellipse 60% 35% at 90% 12%, #3d1c6b40, transparent 70%), linear-gradient(#150822, #1f0b2e 45%, #0d0516); }
+      #bg-bokeh { position: absolute; left: 0; top: 0; }
+      #bg-tree { position: absolute; left: -110px; top: 300px; width: 1300px; opacity: .3; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
+      .vl { position: absolute; top: 250px; width: 3px; height: 1200px; background: linear-gradient(#b77ad600, #b77ad6 15%, #b77ad6 85%, #b77ad600); opacity: .7; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="19.5" data-width="1080" data-height="1920">
+      <canvas id="bg-bokeh" width="1080" height="1920"></canvas>
+      <img id="bg-tree" src="assets/tree2.png" alt="" />
+      <div class="vl" style="left:58px" data-layout-ignore></div><div class="vl" style="right:58px" data-layout-ignore></div>
+      <div id="pistas" data-composition-id="pistas" data-composition-src="compositions/pistas.html" data-start="0" data-duration="14.6"
+        data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="final" data-composition-id="final" data-composition-src="compositions/final.html" data-start="14.6" data-duration="4.9"
+        data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+    </div>
+    <script>
+      const c = document.getElementById("bg-bokeh").getContext("2d");
+      let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+      const cols = ["120,60,150", "90,50,140", "140,80,170", "100,40,120"];
+      for (let i = 0; i < 80; i++) { const x = r() * 1080, y = r() * 1920, rad = 6 + r() * 22, cl = cols[Math.floor(r() * 4)], al = .08 + r() * .22;
+        const g = c.createRadialGradient(x, y, 0, x, y, rad); g.addColorStop(0, `rgba(${cl},${al})`); g.addColorStop(.7, `rgba(${cl},${al * .6})`); g.addColorStop(1, `rgba(${cl},0)`);
+        c.fillStyle = g; c.beginPath(); c.arc(x, y, rad, 0, 7); c.fill(); }
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#bg-bokeh", { y: 40 }, { y: -80, duration: 19.5, ease: "none" }, 0);
+      tl.fromTo("#bg-tree", { scale: 1.1, opacity: 0 }, { scale: 1, opacity: 0.3, duration: 2, ease: "power2.out" }, 0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

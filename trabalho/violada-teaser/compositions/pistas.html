@@ -1,0 +1,87 @@
+<template>
+  <style>
+    @font-face { font-family: "Rye"; src: url("assets/fonts/rye.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Oswald", sans-serif; color: #fff; }
+    #root .a { position: absolute; }
+    #p-sils { left: 0; top: 0; width: 1080px; height: 1920px; }
+    #p-silj { left: 120px; top: 560px; width: 470px; filter: drop-shadow(0 0 3px #b77ad6) drop-shadow(0 0 26px #7b2fe0);
+      -webkit-mask-image: linear-gradient(#000 45%, transparent 82%); mask-image: linear-gradient(#000 45%, transparent 82%); }
+    #p-silv { left: 500px; top: 566px; width: 476px; filter: drop-shadow(0 0 3px #b77ad6) drop-shadow(0 0 26px #7b2fe0);
+      -webkit-mask-image: linear-gradient(#000 45%, transparent 82%); mask-image: linear-gradient(#000 45%, transparent 82%); }
+    #p-q { left: 0; top: 560px; width: 1080px; text-align: center; font-weight: 700; font-size: 380px; line-height: 1; color: #d9a8ff; text-shadow: 0 0 50px #7b2fe0, 0 12px 0 #4a1f6b; }
+    #p-dim { left: 0; top: 0; width: 1080px; height: 1920px; background: rgba(18,6,29,.72); opacity: 0; }
+    .beat { left: 0; top: 0; width: 1080px; height: 1920px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; opacity: 0; padding-bottom: 120px; }
+    .k { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 46px; letter-spacing: 6px; color: #ece0f6; }
+    .big { font-weight: 700; font-size: 250px; line-height: .95; color: #fff; text-shadow: 0 10px 0 #4a1f6b, 0 0 40px rgba(123,47,224,.6); }
+    .mid { font-weight: 700; font-size: 120px; line-height: 1; color: #d9a8ff; letter-spacing: 4px; text-shadow: 0 6px 0 #4a1f6b; }
+    .sub { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 40px; color: #ece0f6; margin-top: 18px; }
+    .sub b { color: #e8384a; }
+    #b1 .k1 { font-family: "Rye"; font-size: 60px; color: #ece0f6; line-height: 1.2; }
+    #b1 .k2 { font-family: "Montserrat"; font-weight: 800; font-size: 44px; letter-spacing: 8px; color: #e8384a; margin-bottom: 10px; }
+    .nm { font-weight: 700; font-size: 104px; line-height: 1.08; color: #fff; text-shadow: 0 6px 0 #4a1f6b; }
+    .nm.alt { color: #d9a8ff; }
+    #b1 { justify-content: flex-start; padding-top: 300px; }
+  </style>
+  <div id="root" data-composition-id="pistas" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="p-sils" class="a">
+      <img id="p-silv" class="a" src="assets/f_silv.png" alt="" />
+      <img id="p-silj" class="a" src="assets/f_silj.png" alt="" />
+      <div id="p-q" class="a">?</div>
+    </div>
+    <div id="p-dim" class="a" data-layout-ignore></div>
+
+    <div id="b1" class="a beat"><div class="k2">ATRAÇÃO NACIONAL</div><div class="k1">DA ÚLTIMA VIOLADA<br />DO ANO…</div></div>
+    <div id="b2" class="a beat"><div class="k">TEM</div><div class="big"><span id="n2">0,0</span></div><div class="mid">MILHÃO</div><div class="sub">de ouvintes por mês no <b>Spotify</b></div></div>
+    <div id="b3" class="a beat"><div class="big"><span id="n3">0</span></div><div class="mid">MILHÕES</div><div class="sub">de plays em um só hit</div></div>
+    <div id="b4" class="a beat"><div class="k">COMPÔS SUCESSOS DE</div><div class="nm" id="nm1">MARÍLIA MENDONÇA</div><div class="nm alt" id="nm2">GUSTTAVO LIMA</div><div class="nm" id="nm3">SIMONE &amp; SIMARIA</div></div>
+    <div id="b5" class="a beat"><div class="k">VIROU AS</div><div class="big">4</div><div class="mid">CADEIRAS</div><div class="sub">do <b>The Voice Brasil</b></div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      const IN = (sel, t) => tl.fromTo(sel, { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, t);
+      const OUT = (sel, t) => tl.to(sel, { opacity: 0, scale: 0.92, duration: 0.2, ease: "power2.in" }, t);
+
+      // silhuetas sobem e ficam ao fundo
+      tl.fromTo("#p-sils", { opacity: 0, y: 140 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.1);
+      tl.fromTo("#p-q", { opacity: 0, scale: 0.4, rotation: -14 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2.2)" }, 0.7);
+      tl.to("#p-q", { scale: 1.08, duration: 0.4, yoyo: true, repeat: 1, ease: "sine.inOut" }, 1.4);
+      tl.fromTo("#p-sils", { scale: 1 }, { scale: 1.06, duration: 14.4, ease: "none" }, 0.9);
+
+      // 1 abertura 0.2–2.6
+      tl.fromTo("#b1", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.2);
+      tl.to("#b1", { opacity: 0, duration: 0.2, ease: "power2.in" }, 2.4);
+      tl.to("#p-dim", { opacity: 1, duration: 0.3 }, 2.5);
+      tl.to("#p-q", { opacity: 0, duration: 0.2 }, 2.5);
+
+      // 2 ouvintes 2.6–5.6
+      IN("#b2", 2.6);
+      const c2 = { v: 0 };
+      tl.to(c2, { v: 1.6, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n2").textContent = c2.v.toFixed(1).replace(".", ","); } }, 2.75);
+      tl.to("#b2 .big", { scale: 1.08, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 3.95);
+      OUT("#b2", 5.4);
+
+      // 3 plays 5.6–8.6
+      IN("#b3", 5.6);
+      const c3 = { v: 0 };
+      tl.to(c3, { v: 11, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n3").textContent = Math.round(c3.v); } }, 5.75);
+      tl.to("#b3 .big", { scale: 1.08, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 6.95);
+      OUT("#b3", 8.4);
+
+      // 4 compositores 8.6–11.8
+      IN("#b4 .k", 8.6); tl.set("#b4", { opacity: 1 }, 8.6);
+      tl.fromTo("#nm1", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 8.9);
+      tl.fromTo("#nm2", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 9.5);
+      tl.fromTo("#nm3", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 10.1);
+      OUT("#b4", 11.6);
+
+      // 5 The Voice 11.8–14.6
+      IN("#b5", 11.8);
+      tl.fromTo("#b5 .big", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, 12.0);
+      OUT("#b5", 14.4);
+      tl.set("#b2,#b3,#b4,#b5", { opacity: 0, visibility: "hidden" }, 14.6);
+
+      window.__timelines["pistas"] = tl;
+    })();
+  </script>
+</template>
