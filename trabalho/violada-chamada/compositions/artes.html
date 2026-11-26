@@ -41,8 +41,6 @@
   <div id="root" data-composition-id="artes" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
     <div id="scrim-base" data-layout-ignore></div>
 
-    <div id="tv"><img src="assets/tv_logo.png" alt="Thiago &amp; Vinicius" /></div>
-
     <div class="scrim" id="s-vio" data-layout-ignore></div>
     <div id="vio"><div class="k">ÚLTIMA DO ANO</div><img src="assets/logo_b.png" alt="Violada T&amp;V" /></div>
 
@@ -64,9 +62,6 @@
   <script>
     (function () {
       const tl = gsap.timeline({ paused: true });
-      // 1. logo da dupla 0.3–4.6
-      tl.fromTo("#tv", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.3);
-      tl.to("#tv", { opacity: 0, y: -10, duration: 0.3, ease: "power2.in" }, 4.3);
 
       // 2. Violada 7.8–10.1
       tl.fromTo("#s-vio", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power2.out" }, 7.8);
