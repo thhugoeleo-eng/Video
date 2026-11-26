@@ -12,6 +12,13 @@
       #bg-bokeh { position: absolute; left: 0; top: 0; }
       #bg-tree { position: absolute; left: -110px; top: 300px; width: 1300px; opacity: .3; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
       .vl { position: absolute; top: 250px; width: 3px; height: 1200px; background: linear-gradient(#b77ad600, #b77ad6 15%, #b77ad6 85%, #b77ad600); opacity: .7; }
+      #barra { position: absolute; z-index: 20; left: 0; top: 1310px; width: 1080px; display: flex; justify-content: center; align-items: center; gap: 30px; }
+      #barra .lg { height: 190px; }
+      #barra .dt { text-align: center; font-family: "Montserrat", sans-serif; font-weight: 800; line-height: 1.05; }
+      #barra .dt .s { font-size: 30px; letter-spacing: 8px; padding-left: 8px; color: #e8384a; }
+      #barra .dt .d { font-size: 50px; color: #fff; }
+      #barra .dt .m { font-family: "Oswald", sans-serif; font-weight: 700; font-size: 70px; color: #d9a8ff; line-height: .95; }
+      #barra .ad { height: 120px; }
     </style>
   </head>
   <body>
@@ -37,6 +44,7 @@
       <audio id="sx-riser" class="clip" src="assets/sfx/riser.mp3" data-start="6.42" data-duration="10.03" data-track-index="12" data-volume="0.28"></audio>
       <audio id="sx-reveal" class="clip" src="assets/sfx/impact-bass-1.mp3" data-start="16.47" data-duration="2.00" data-track-index="13" data-volume="0.50"></audio>
       <audio id="sx-adega" class="clip" src="assets/sfx/pop.mp3" data-start="17.42" data-duration="0.72" data-track-index="11" data-volume="0.35"></audio>
+      <div id="barra"><img class="lg" src="assets/logo_b.png" alt="Violada T&amp;V" /><div class="dt"><div class="s">SÁBADO</div><div class="d">26 DE</div><div class="m">DEZEMBRO</div></div><img class="ad" src="assets/adega_w.png" alt="Adega Nº1" /></div>
       <div id="pistas" data-composition-id="pistas" data-composition-src="compositions/pistas.html" data-start="0" data-duration="14.6"
         data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
       <div id="final" data-composition-id="final" data-composition-src="compositions/final.html" data-start="14.6" data-duration="4.9"
@@ -52,6 +60,8 @@
       const tl = gsap.timeline({ paused: true });
       tl.fromTo("#bg-bokeh", { y: 40 }, { y: -80, duration: 19.5, ease: "none" }, 0);
       tl.fromTo("#bg-tree", { scale: 1.1, opacity: 0 }, { scale: 1, opacity: 0.3, duration: 2, ease: "power2.out" }, 0);
+      tl.fromTo("#barra", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.4);
+      tl.to("#barra", { opacity: 0, y: 20, duration: 0.25, ease: "power2.in" }, 14.35);
       window.__timelines["main"] = tl;
     </script>
   </body>
