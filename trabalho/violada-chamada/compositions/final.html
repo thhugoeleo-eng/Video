@@ -1,28 +1,106 @@
 <template>
   <style>
+    @font-face { font-family: "Rye"; src: url("assets/fonts/rye.woff2") format("woff2"); }
     #root { position: absolute; inset: 0; overflow: hidden; font-family: "Oswald", sans-serif;
-      background: radial-gradient(ellipse 70% 40% at 15% 30%, #5a1f6e66, transparent 70%), radial-gradient(ellipse 60% 35% at 90% 12%, #3d1c6b66, transparent 70%), linear-gradient(#150822, #1f0b2e 45%, #0d0516); }
-    #fx-tree { position: absolute; left: -110px; top: 330px; width: 1300px; opacity: .3; }
-    #fx-stack { position: absolute; left: 0; top: 0; width: 1080px; height: 1640px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
-    #fx-logo { width: 540px; display: block; }
-    #fx-data { width: 1080px; text-align: center; }
-    #fx-data .sab { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 44px; letter-spacing: 14px; padding-left: 14px; color: #e8384a; }
-    #fx-data .d { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 92px; line-height: 1.05; color: #fff; }
+      background: radial-gradient(ellipse 70% 40% at 15% 30%, #5a1f6e40, transparent 70%), radial-gradient(ellipse 60% 35% at 90% 12%, #3d1c6b40, transparent 70%), linear-gradient(#150822, #1f0b2e 45%, #0d0516); }
+    #root .a { position: absolute; }
+    #f-bokeh { left: 0; top: 0; }
+    #f-content { left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 230px; transform: translateY(2px) scale(.765); }
+    #f-tree { left: -110px; top: -10px; width: 1300px; opacity: .38; -webkit-mask-image: linear-gradient(#000 75%, transparent); mask-image: linear-gradient(#000 75%, transparent); }
+    #f-group { left: -400px; top: 0; width: 1880px; height: 1460px; -webkit-mask-image: linear-gradient(#000 80%, transparent 99%); mask-image: linear-gradient(#000 80%, transparent 99%); }
+    .back { -webkit-mask-image: linear-gradient(#000 70%, transparent 95%); mask-image: linear-gradient(#000 70%, transparent 95%); }
+    #f-thiago { left: 240px; top: 230px; width: 940px; }
+    #f-vini { left: 920px; top: 262px; width: 510px; }
+    #f-silj { left: 360px; top: 695px; width: 680px; filter: drop-shadow(0 0 3px #b77ad6) drop-shadow(0 0 26px #7b2fe0); }
+    #f-silv { left: 840px; top: 701px; width: 690px; filter: drop-shadow(0 0 3px #b77ad6) drop-shadow(0 0 26px #7b2fe0); }
+    #f-qq { left: 305px; width: 1280px; top: 700px; text-align: center; font-weight: 700; font-size: 400px; line-height: 1; color: #d9a8ff; text-shadow: 0 0 50px #7b2fe0, 0 12px 0 #4a1f6b; }
+    #f-l1 { left: 0; width: 1080px; top: 1822px; display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 6; }
+    #f-l1 .snt { background: #8a3f8c; color: #fff; font-weight: 700; border-radius: 30px; padding: 5px 28px; font-size: 42px; letter-spacing: 7px; }
+    #f-q3 { font-weight: 700; font-size: 150px; line-height: .9; letter-spacing: 24px; padding-left: 24px; color: #d9a8ff; text-shadow: 0 0 30px #7b2fe0, 0 8px 0 #4a1f6b; }
+    #f-lineup { left: -160px; width: 1400px; top: 2108px; display: flex; align-items: center; justify-content: center; gap: 16px; z-index: 6; }
+    #f-lineup .dot { font-size: 46px; color: #b25caa; font-weight: 700; }
+    #f-antony { left: -180px; top: 1185px; width: 490px; z-index: 4; filter: drop-shadow(0 0 18px #b25caa55); -webkit-mask-image: linear-gradient(#000 70%, transparent 96%); mask-image: linear-gradient(#000 70%, transparent 96%); }
+    #f-lino { left: 755px; top: 1215px; width: 500px; z-index: 4; filter: drop-shadow(0 0 18px #b25caa55); -webkit-mask-image: linear-gradient(#000 72%, transparent 97%); mask-image: linear-gradient(#000 72%, transparent 97%); }
+    #f-logo { left: 180px; top: 1130px; width: 720px; z-index: 5; }
+    #f-title { left: 110px; top: 60px; z-index: 7; }
+    #f-date { left: 66px; top: 248px; text-align: center; font-weight: 700; line-height: .9; z-index: 6; }
+    #f-date em { display: block; font-style: normal; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 25px; letter-spacing: 3px; padding-left: 3px; color: #d63240; margin-bottom: 8px; }
+    #f-date b { display: block; font-size: 118px; color: #fff; }
+    #f-date span { display: block; font-size: 82px; color: #b77ad6; letter-spacing: 2px; margin-top: 6px; }
+    #f-adega { left: 872px; top: 285px; width: 156px; z-index: 6; }
+    #f-cidade { left: 0; width: 1080px; top: 1786px; text-align: center; color: #e9ddf5; font-weight: 500; font-size: 30px; letter-spacing: 8px; z-index: 6; }
+    #f-footer { left: 0; width: 1080px; top: 1844px; display: flex; justify-content: center; align-items: center; gap: 16px; z-index: 5; }
+    #f-footer .imp { display: inline-flex; flex-direction: column; align-items: center; color: #fff; font-family: "Montserrat", sans-serif; line-height: 1; }
+    #f-footer .imp i { font-style: normal; font-weight: 700; font-size: 4.5px; letter-spacing: 2.2px; margin-top: -3px; margin-left: -4px; }
+    #f-shine { left: -600px; top: 0; width: 400px; height: 1920px; background: linear-gradient(100deg, transparent, rgba(240,220,255,.16), transparent); z-index: 8; }
   </style>
   <div id="root" data-composition-id="final" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
-    <img id="fx-tree" src="assets/tree2.png" alt="" />
-    <div id="fx-stack">
-      <img id="fx-logo" src="assets/logo_b.png" alt="Violada T&amp;V" />
-      <div id="fx-data"><div class="sab">SÁBADO</div><div class="d">26 DE DEZEMBRO</div></div>
+    <canvas id="f-bokeh" class="a" width="1080" height="1920"></canvas>
+    <div id="f-content" class="a">
+      <img id="f-tree" class="a" src="assets/tree2.png" alt="" />
+      <div id="f-group" class="a">
+        <img id="f-thiago" class="a back" src="assets/f_thiago.png" alt="Thiago" />
+        <img id="f-vini" class="a back" src="assets/f_vini.png" alt="Vinicius" />
+        <img id="f-silv" class="a" src="assets/f_silv.png" alt="" />
+        <img id="f-silj" class="a" src="assets/f_silj.png" alt="" />
+        <div id="f-qq" class="a">?</div>
+      </div>
+      <div id="f-l1" class="a"><span class="snt">SHOW NACIONAL</span><span id="f-q3">???</span></div>
+      <div id="f-lineup" class="a">
+        <img style="height:62px" src="assets/f_antony_logo.png" alt="Antony DJ" /><span class="dot">•</span>
+        <img style="height:60px" src="assets/f_tv_logo.png" alt="Thiago &amp; Vinicius" /><span class="dot">•</span>
+        <img style="height:80px" src="assets/f_lino_logo.png" alt="DJ Lino" />
+      </div>
+      <img id="f-antony" class="a" src="assets/f_antony.png" alt="DJ Antony" />
+      <img id="f-lino" class="a" src="assets/f_lino.png" alt="DJ Lino" />
+      <img id="f-logo" class="a" src="assets/logo_b.png" alt="Violada T&amp;V" />
     </div>
+    <svg id="f-title" class="a" width="860" height="150" viewBox="0 0 860 150">
+      <text x="430" y="100" font-family="Rye" font-size="42" fill="#ece0f6" text-anchor="middle">ÚLTIMA VIOLADA DO ANO</text>
+      <line x1="160" y1="124" x2="700" y2="124" stroke="#b25caa" stroke-width="4" />
+      <text x="138" y="136" font-size="34" fill="#b25caa" text-anchor="middle">★</text><text x="722" y="136" font-size="34" fill="#b25caa" text-anchor="middle">★</text>
+    </svg>
+    <div id="f-date" class="a"><em>SÁBADO</em><b>26</b><span>DEZ</span></div>
+    <img id="f-adega" class="a" src="assets/adega_w.png" alt="Adega Nº1" />
+    <div id="f-cidade" class="a">CAMPO GRANDE - MS</div>
+    <div id="f-footer" class="a"><img src="assets/f_tv_logo.png" style="height:16px" alt="" /><div class="imp"><img src="assets/impetus_word.png" style="height:21px" alt="Impetus" /><i>MUSIC</i></div></div>
+    <div id="f-shine" class="a" data-layout-ignore></div>
   </div>
   <script>
     (function () {
+      const c = document.getElementById("f-bokeh").getContext("2d");
+      let s = 7; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+      const cols = ["120,60,150", "90,50,140", "140,80,170", "100,40,120"];
+      for (let i = 0; i < 70; i++) { const x = r() * 1080, y = r() * 1300, rad = 6 + r() * 22, cl = cols[Math.floor(r() * 4)], al = .08 + r() * .22;
+        const g = c.createRadialGradient(x, y, 0, x, y, rad); g.addColorStop(0, `rgba(${cl},${al})`); g.addColorStop(.7, `rgba(${cl},${al * .6})`); g.addColorStop(1, `rgba(${cl},0)`);
+        c.fillStyle = g; c.beginPath(); c.arc(x, y, rad, 0, 7); c.fill(); }
+
+      const D = 4.5;
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#fx-tree", { opacity: 0, scale: 1.08 }, { opacity: 0.3, scale: 1, duration: 1.2, ease: "power2.out" }, 0);
-      tl.fromTo("#fx-logo", { opacity: 0, scale: 0.75 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, 0.05);
-      tl.fromTo("#fx-data", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power4.out" }, 0.4);
-      tl.to("#fx-logo", { scale: 1.04, duration: 2.4, ease: "none" }, 0.55);
+      // fundo vivo o tempo todo
+      tl.fromTo("#f-bokeh", { y: 30, opacity: 0.4 }, { y: -50, opacity: 1, duration: D, ease: "none" }, 0);
+      tl.fromTo("#f-tree", { scale: 1.12, opacity: 0 }, { scale: 1, opacity: 0.38, duration: 1.4, ease: "power2.out" }, 0);
+      tl.fromTo("#f-group", { scale: 1.06 }, { scale: 1.0, duration: D, ease: "none" }, 0);
+      // entradas
+      tl.fromTo("#f-title", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.05);
+      tl.fromTo(["#f-thiago", "#f-vini"], { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.08 }, 0.1);
+      tl.fromTo(["#f-silj", "#f-silv"], { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.08 }, 0.3);
+      tl.fromTo("#f-qq", { opacity: 0, scale: 0.4, rotation: -14 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2.2)" }, 0.65);
+      tl.fromTo("#f-logo", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 0.55);
+      tl.fromTo("#f-antony", { opacity: 0, x: -160 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 0.75);
+      tl.fromTo("#f-lino", { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 0.75);
+      tl.fromTo("#f-date", { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 0.9);
+      tl.fromTo("#f-adega", { opacity: 0, scale: 0.4, rotation: -25 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2)" }, 0.95);
+      tl.fromTo("#f-l1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 1.05);
+      tl.fromTo("#f-lineup", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 1.2);
+      tl.fromTo(["#f-cidade", "#f-footer"], { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 1.35);
+      // movimento contínuo depois que tudo entrou
+      tl.to("#f-qq", { scale: 1.08, duration: 0.45, yoyo: true, repeat: 5, ease: "sine.inOut" }, 1.2);
+      tl.to("#f-q3", { opacity: 0.55, duration: 0.3, yoyo: true, repeat: 7, ease: "sine.inOut" }, 1.5);
+      tl.to("#f-logo", { scale: 1.04, duration: 2.8, ease: "sine.inOut" }, 1.1);
+      tl.to("#f-antony", { y: -14, duration: 2.6, ease: "sine.inOut" }, 1.4);
+      tl.to("#f-lino", { y: -14, duration: 2.6, ease: "sine.inOut" }, 1.4);
+      tl.fromTo("#f-shine", { x: 0 }, { x: 2000, duration: 1.1, ease: "power1.inOut" }, 1.6);
       window.__timelines["final"] = tl;
     })();
   </script>
