@@ -1,0 +1,227 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0c0503; }
+    #cam { position: absolute; inset: 0; transform-origin: 540px 900px; }
+    #pn-bg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    #pn-fence { position: absolute; left: -60px; top: -60px; width: 1200px; height: 2040px; opacity: .42;
+      -webkit-mask-image: radial-gradient(75% 60% at 50% 50%, rgba(0,0,0,.35) 0%, #000 70%);
+              mask-image: radial-gradient(75% 60% at 50% 50%, rgba(0,0,0,.35) 0%, #000 70%); }
+    #pn-halo { position: absolute; left: -60px; top: 420px; width: 1200px; height: 960px; mix-blend-mode: screen;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255,150,40,.55) 0%, rgba(255,100,20,.22) 40%, transparent 72%); }
+    #logo { position: absolute; left: 40px; top: 650px; width: 1000px; height: 500px; transform-origin: 500px 250px; }
+    #logo img { position: absolute; left: 0; top: 0; width: 1000px; height: 500px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.75)); }
+    #shine { position: absolute; left: 0; top: 0; width: 1000px; height: 500px; mix-blend-mode: screen;
+      -webkit-mask-image: url(assets/logo.png); -webkit-mask-size: 1000px 500px;
+              mask-image: url(assets/logo.png); mask-size: 1000px 500px;
+      background: linear-gradient(105deg, transparent 0%, transparent 46%, rgba(255,232,180,.5) 50%, transparent 54%, transparent 100%);
+      background-size: 300% 100%; background-position: 100% 0; }
+    .bulb { position: absolute; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; mix-blend-mode: screen;
+      background: radial-gradient(circle, rgba(255,255,235,1) 0%, rgba(255,220,130,.9) 14%, rgba(255,150,40,.45) 34%, rgba(255,110,20,0) 68%); }
+    #pn-fx { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; mix-blend-mode: screen; }
+    .leak { position: absolute; mix-blend-mode: screen; border-radius: 50%; }
+    #leak-l { left: -420px; top: 1180px; width: 760px; height: 1100px;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255,190,90,.9), rgba(255,110,20,.45) 40%, transparent 70%); }
+    #leak-r { left: 760px; top: -260px; width: 760px; height: 1000px;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255,170,70,.75), rgba(255,90,10,.35) 42%, transparent 70%); }
+    #leak-r2 { left: 820px; top: 1350px; width: 560px; height: 900px;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255,140,40,.7), rgba(230,70,10,.3) 45%, transparent 70%); }
+    #flare { position: absolute; left: -540px; top: 880px; width: 2160px; height: 60px; mix-blend-mode: screen; opacity: 0;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255,245,220,1) 0%, rgba(255,180,80,.7) 18%, rgba(255,120,30,.25) 45%, transparent 70%); }
+    #flash { position: absolute; inset: 0; background: #ffb060; mix-blend-mode: screen; opacity: 0; }
+    #vig { position: absolute; inset: 0;
+      background: radial-gradient(72% 58% at 50% 47%, transparent 45%, rgba(6,2,1,.55) 78%, rgba(4,1,0,.92) 100%); }
+    #grain { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: .09; mix-blend-mode: overlay; image-rendering: pixelated; }
+  </style>
+
+  <div id="root" data-composition-id="painel" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="cam" data-layout-ignore>
+      <canvas id="pn-bg" width="1080" height="1920"></canvas>
+      <svg id="pn-fence" viewBox="0 0 1200 2040" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="wire" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e0a050" />
+            <stop offset=".5" stop-color="#6a3a14" />
+            <stop offset="1" stop-color="#c8843a" />
+          </linearGradient>
+          <pattern id="mesh" width="64" height="64" patternUnits="userSpaceOnUse">
+            <path d="M0 32 L32 0 L64 32 L32 64 Z" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="7" />
+            <path d="M0 32 L32 0 L64 32 L32 64 Z" fill="none" stroke="url(#wire)" stroke-width="3.2" stroke-linejoin="round" />
+          </pattern>
+        </defs>
+        <rect width="1200" height="2040" fill="url(#mesh)" />
+      </svg>
+      <div id="pn-halo"></div>
+    </div>
+
+    <div id="logo">
+      <img src="assets/logo.png" alt="Boteco do Marco Viola" />
+      <div id="shine"></div>
+      <div id="bulbs"></div>
+    </div>
+
+    <canvas id="pn-fx" width="1080" height="1920"></canvas>
+    <div id="flare"></div>
+    <div id="flash"></div>
+    <div id="vig"></div>
+    <div class="leak" id="leak-l"></div>
+    <div class="leak" id="leak-r"></div>
+    <div class="leak" id="leak-r2"></div>
+    <canvas id="grain" width="270" height="480"></canvas>
+  </div>
+
+  <script>
+    (function () {
+      const D = 20, FPS = 30, TAU = Math.PI * 2;
+      const W = 1080, H = 1920;
+      const root = document.querySelector('[data-composition-id="painel"]');
+      const $ = (s) => root.querySelector(s);
+
+      function rng(seed) { return function () { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+      const R = rng(1977);
+      const wave = (t, k, ph) => Math.sin(TAU * k * t / D + (ph || 0)); // loops cleanly every 20 s
+      const mod = (a, n) => ((a % n) + n) % n;
+      const bump = (t, c, w) => Math.exp(-((t - c) * (t - c)) / (2 * w * w));
+
+      // ---- lâmpadas da logo (posições medidas na arte) ----
+      const BULBS = [[200.1,116.1],[203.5,215.9],[203.5,271.7],[204.1,159.5],[256.5,266.6],[260.4,109.9],[263.2,157.8],[265.5,235.6],[315.7,128.0],[316.2,180.4],[316.2,233.9],[376.0,91.3],[378.8,159.5],[378.8,219.8],[430.7,75.0],[456.0,109.9],[456.0,159.5],[456.0,212.5],[527.1,118.9],[527.1,164.0],[527.1,214.2],[528.2,72.2],[620.6,159.5],[621.2,218.2],[622.9,86.2],[684.9,232.2],[685.5,107.1],[736.8,159.5],[737.3,213.6],[739.6,104.3],[741.3,259.9],[801.0,192.2],[801.0,265.5],[801.6,130.8]];
+      const bulbHost = $("#bulbs");
+      const bulbs = BULBS.map(([x, y], i) => {
+        const el = document.createElement("div");
+        el.className = "bulb"; el.style.left = x + "px"; el.style.top = y + "px";
+        bulbHost.appendChild(el);
+        return { el, x, y, k: 3 + Math.floor(R() * 7), ph: R() * TAU, k2: 11 + Math.floor(R() * 9) };
+      });
+
+      // ---- partículas ----
+      const bokeh = Array.from({ length: 34 }, () => ({ x: R() * W, y: R() * (H + 300), r: 18 + R() * 60, a: .08 + R() * .22, laps: 1 + Math.floor(R() * 2), sw: 20 + R() * 60, ph: R() * TAU, hue: R() }));
+      const embers = Array.from({ length: 70 }, () => ({ x: R() * W, y: R() * (H + 200), s: 1.6 + R() * 2.6, laps: 1 + Math.floor(R() * 3), sw: 15 + R() * 70, k: 1 + Math.floor(R() * 4), ph: R() * TAU, fk: 20 + Math.floor(R() * 40), a: .5 + R() * .5 }));
+      const beams = [
+        { x: 140, k: 1, amp: .32, base: .18, ph: 0 }, { x: 400, k: 2, amp: .22, base: .05, ph: 1.3 },
+        { x: 680, k: 2, amp: .24, base: -.06, ph: 2.6 }, { x: 940, k: 1, amp: .30, base: -.18, ph: 4.1 },
+      ];
+
+      // ---- canvases ----
+      const bg = $("#pn-bg").getContext("2d");
+      const fx = $("#pn-fx").getContext("2d");
+      const grainC = $("#grain"), gr = grainC.getContext("2d");
+      const low = document.createElement("canvas"); low.width = 180; low.height = 320; const lw = low.getContext("2d");
+      const gImg = gr.createImageData(270, 480);
+
+      function drawBg(t) {
+        // fundo de palco em baixa resolução (vira desfoque natural ao ampliar)
+        const s = 180 / W;
+        lw.globalCompositeOperation = "source-over";
+        const g = lw.createLinearGradient(0, 0, 0, 320);
+        g.addColorStop(0, "#120602"); g.addColorStop(.55, "#1c0b04"); g.addColorStop(1, "#060201");
+        lw.fillStyle = g; lw.fillRect(0, 0, 180, 320);
+        // painel de LED do palco
+        lw.globalCompositeOperation = "lighter";
+        const cols = 9, rows = 12, cw = 180 / cols, ch = 210 / rows;
+        for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+          const v = .18 + .5 * Math.max(0, wave(t, 2, -(r * .45 + Math.abs(c - 4) * .55))) + .12 * wave(t, 5, r * 1.7 + c * 2.3);
+          lw.fillStyle = `rgba(255,${120 + 40 * ((r + c) % 2)},40,${Math.max(0, v) * .2})`;
+          lw.fillRect(c * cw + 1.2, r * ch + 6 + 1.2, cw - 2.4, ch - 2.4);
+        }
+        // fachos de luz vindos do teto
+        for (const b of beams) {
+          const ang = b.base + b.amp * wave(t, b.k, b.ph);
+          const len = 360, half = .13;
+          const x0 = b.x * s, y0 = -4;
+          const gg = lw.createLinearGradient(x0, y0, x0 + Math.sin(ang) * len, y0 + Math.cos(ang) * len);
+          gg.addColorStop(0, "rgba(255,210,140,.34)"); gg.addColorStop(.6, "rgba(255,140,40,.07)"); gg.addColorStop(1, "rgba(255,120,30,0)");
+          lw.fillStyle = gg; lw.beginPath(); lw.moveTo(x0, y0);
+          lw.lineTo(x0 + Math.sin(ang - half) * len, y0 + Math.cos(ang - half) * len);
+          lw.lineTo(x0 + Math.sin(ang + half) * len, y0 + Math.cos(ang + half) * len);
+          lw.closePath(); lw.fill();
+        }
+        bg.imageSmoothingEnabled = true; bg.imageSmoothingQuality = "high";
+        bg.globalCompositeOperation = "source-over";
+        bg.drawImage(low, 0, 0, W, H);
+        // bokeh
+        bg.globalCompositeOperation = "lighter";
+        for (const p of bokeh) {
+          const y = mod(p.y - p.laps * (H + 300) * t / D, H + 300) - 150;
+          const x = p.x + p.sw * wave(t, 1, p.ph);
+          const a = p.a * (.75 + .25 * wave(t, 3, p.ph));
+          const gr2 = bg.createRadialGradient(x, y, 0, x, y, p.r);
+          const col = p.hue > .5 ? "255,170,70" : "255,120,40";
+          gr2.addColorStop(0, `rgba(${col},${a})`); gr2.addColorStop(.7, `rgba(${col},${a * .6})`); gr2.addColorStop(1, `rgba(${col},0)`);
+          bg.fillStyle = gr2; bg.beginPath(); bg.arc(x, y, p.r, 0, TAU); bg.fill();
+        }
+      }
+
+      function drawFx(t) {
+        fx.clearRect(0, 0, W, H);
+        fx.globalCompositeOperation = "lighter";
+        for (const e of embers) {
+          const span = H + 200;
+          const y = mod(e.y - e.laps * span * t / D, span) - 100;
+          const x = e.x + e.sw * wave(t, e.k, e.ph + y * .004);
+          const fl = .55 + .45 * wave(t, e.fk, e.ph);
+          const a = e.a * fl * Math.min(1, (H - y) / 500 + .2);
+          const vy = e.laps * span / D / FPS * 1.2;
+          fx.strokeStyle = `rgba(255,${150 + 60 * fl},70,${a})`; fx.lineWidth = e.s; fx.lineCap = "round";
+          fx.beginPath(); fx.moveTo(x, y); fx.lineTo(x - 3 * wave(t, e.k, e.ph + .3), y + vy); fx.stroke();
+          fx.fillStyle = `rgba(255,130,30,${a * .25})`; fx.beginPath(); fx.arc(x, y, e.s * 3, 0, TAU); fx.fill();
+          fx.fillStyle = `rgba(255,240,200,${a})`; fx.beginPath(); fx.arc(x, y, e.s * .7, 0, TAU); fx.fill();
+        }
+      }
+
+      function drawGrain(frame) {
+        const r = rng(9000 + frame), d = gImg.data;
+        for (let i = 0; i < d.length; i += 4) { const v = r() * 255; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+        gr.putImageData(gImg, 0, 0);
+      }
+
+      // momentos de brilho (flare + flash), longe da emenda do loop
+      const HITS = [5, 15];
+      const SHINES = [2.4, 9.6, 12.4, 18.0];
+
+      function render(t) {
+        t = Math.min(Math.max(t, 0), D);
+        const frame = Math.round(t * FPS) % (D * FPS);
+        drawBg(t); drawFx(t); drawGrain(frame);
+
+        let hit = 0; for (const h of HITS) hit = Math.max(hit, bump(t, h, .18));
+
+        // câmera e logo
+        gsap.set("#cam", { scale: 1.06 + .03 * wave(t, 1, 0), x: 14 * wave(t, 1, 1.2), y: 10 * wave(t, 2, .4) });
+        gsap.set("#logo", { y: 14 * wave(t, 2, 0), rotation: .7 * wave(t, 1, .8), scale: 1 + .012 * wave(t, 10, 0) + .05 * hit });
+        gsap.set("#pn-halo", { opacity: .6 + .2 * wave(t, 4, 0) + .4 * hit, scale: 1 + .05 * wave(t, 2, 1) });
+
+        // brilho passando pela logo
+        let sp = 100;
+        for (const c of SHINES) { const u = (t - c) / 1.3; if (u >= 0 && u <= 1) sp = 100 - 100 * gsap.parseEase("power2.inOut")(u); }
+        $("#shine").style.backgroundPosition = sp + "% 0";
+
+        // lâmpadas: cintilar + corrida (letreiro de palco) + todas acesas nos flashes
+        const chaseA = bump(t, 7, 1.4), chaseB = bump(t, 17, 1.4);
+        for (const b of bulbs) {
+          const tw = .55 + .3 * wave(t, b.k, b.ph) + .15 * wave(t, b.k2, b.ph * 2);
+          const runA = Math.pow(Math.max(0, Math.sin(TAU * (t * 1.6) - b.x / 70)), 6);
+          const runB = Math.pow(Math.max(0, Math.sin(TAU * (t * 1.6) + b.x / 70)), 6);
+          const chase = chaseA * (.25 + .9 * runA) + chaseB * (.25 + .9 * runB);
+          const mixC = Math.max(chaseA, chaseB);
+          let v = tw * (1 - .7 * mixC) + chase + hit;
+          v = Math.min(1.25, Math.max(.08, v));
+          b.el.style.opacity = Math.min(1, v);
+          b.el.style.transform = `scale(${.75 + .45 * v})`;
+        }
+
+        // luzes laranja nas bordas (como no flyer)
+        gsap.set("#leak-l", { opacity: .8 + .2 * wave(t, 2, 0) + .3 * hit, x: 40 * wave(t, 1, .5), rotation: 15 + 6 * wave(t, 1, 0) });
+        gsap.set("#leak-r", { opacity: .7 + .25 * wave(t, 2, 2) + .3 * hit, y: 50 * wave(t, 1, 2), rotation: -20 + 6 * wave(t, 1, 1) });
+        gsap.set("#leak-r2", { opacity: .6 + .3 * wave(t, 3, 4) + .2 * hit, x: -30 * wave(t, 1, 3) });
+
+        gsap.set("#flare", { opacity: hit, scaleX: .4 + .9 * hit, scaleY: .6 + 1.2 * hit });
+        gsap.set("#flash", { opacity: .32 * hit });
+      }
+
+      const tl = gsap.timeline({ paused: true });
+      const clock = { t: 0 };
+      tl.to(clock, { t: D, duration: D, ease: "none", onUpdate: () => render(clock.t) }, 0);
+      render(0);
+      window.__timelines["painel"] = tl;
+    })();
+  </script>
+</template>
