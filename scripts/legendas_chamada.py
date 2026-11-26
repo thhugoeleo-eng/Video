@@ -66,12 +66,12 @@ pin = '<svg viewBox="0 0 24 32"><path fill="#e9cf8f" d="M12 0C5.4 0 0 5.2 0 11.7
 comp = f'''<template>
   <style>
     #root {{ position: absolute; inset: 0; overflow: hidden; font-family: "League Gothic", "Oswald", sans-serif; }}
-    .grupo {{ position: absolute; left: 0; top: 1170px; width: 1080px; height: 200px; display: flex; align-items: center; justify-content: center; }}
+    .grupo {{ position: absolute; left: 0; top: 1150px; width: 1080px; height: 200px; display: flex; align-items: center; justify-content: center; }}
     .caixa {{ display: flex; gap: 34px; padding: 0 30px; font-size: 118px; line-height: 1; letter-spacing: 2px; color: #fff8ee; white-space: nowrap;
       text-shadow: 0 6px 0 #3a0710, 0 0 14px rgba(0,0,0,.85), 0 0 34px rgba(0,0,0,.6); }}
     .caixa span {{ display: inline-block; }}
     .caixa span.ativa {{ color: #f3d58f; transform: scale(1.08); text-shadow: 0 6px 0 #5a0b18, 0 0 22px rgba(200,32,47,.85), 0 0 40px rgba(200,32,47,.5); }}
-    #faixa {{ position: absolute; left: 30px; top: 1430px; width: 1020px; height: 330px; border-radius: 26px; overflow: hidden;
+    #faixa {{ position: absolute; left: 30px; top: 1400px; width: 1020px; height: 400px; border-radius: 26px; overflow: hidden;
       background: linear-gradient(180deg, rgba(122,15,31,.94), rgba(70,6,16,.96)); box-shadow: 0 18px 40px rgba(0,0,0,.55), inset 0 0 0 3px rgba(233,207,143,.9); }}
     #faixa .brilho {{ position: absolute; top: 0; left: -300px; width: 260px; height: 100%; background: linear-gradient(100deg, transparent, rgba(255,240,200,.35), transparent); }}
     #faixa .logo {{ position: absolute; left: 34px; top: 92px; width: 300px; height: 124px;
@@ -82,6 +82,10 @@ comp = f'''<template>
     #faixa .nome {{ font-size: 96px; line-height: .95; color: #f3d58f; letter-spacing: 2px; text-shadow: 0 4px 0 #2a0309; }}
     #faixa .end {{ font-family: "Oswald"; font-weight: 600; font-size: 31px; color: #fff8ee; letter-spacing: 1.5px; margin-top: 8px; line-height: 1.25; }}
     #faixa .data {{ display: inline-block; margin-top: 14px; padding: 6px 18px 4px; border-radius: 10px; background: #e9cf8f; color: #4a0711; font-size: 48px; letter-spacing: 2px; }}
+    #faixa .artistas {{ position: absolute; left: 30px; right: 30px; bottom: 22px; height: 52px; border-top: 2px solid rgba(233,207,143,.45);
+      display: flex; align-items: flex-end; justify-content: center; gap: 18px; font-size: 44px; letter-spacing: 2px; color: #fff8ee; white-space: nowrap; }}
+    #faixa .artistas i {{ font-style: normal; font-size: 24px; color: #e9cf8f; padding-bottom: 10px; }}
+    #faixa .artistas b {{ color: #f3d58f; font-weight: 400; }}
     #faixa svg {{ width: 20px; height: 26px; vertical-align: -3px; margin-right: 8px; }}
     #fim {{ position: absolute; left: 0; top: 560px; width: 1080px; text-align: center; }}
     #fim .t {{ font-size: 230px; line-height: .9; color: #f3d58f; letter-spacing: 4px; text-shadow: 0 10px 0 #5a0b18, 0 0 40px rgba(200,32,47,.8), 0 0 90px rgba(200,32,47,.5); }}
@@ -99,6 +103,7 @@ comp = f'''<template>
         <div class="data" id="data">{F["data"]}</div>
       </div>
       <div class="brilho" id="brilho"></div>
+      <div class="artistas">PAULO FIAPO <i>✦</i> JOÃO PAULO <i>✦</i> THIAGO <b>&amp;</b> VINICIUS</div>
     </div>
     <div id="fim"><div class="t" id="fim-t">{html.escape(cfg["titulo_final"])}</div></div>
     <div id="flash" data-layout-ignore></div>
