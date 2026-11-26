@@ -2,20 +2,39 @@
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; font-family: "Oswald", sans-serif; color: #fff; }
     #root .a { position: absolute; }
-    #fe-wrap { left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center; gap: 70px; transform-origin: 960px 540px; }
-    #fe-logo { width: 560px; }
-    #fe-info { text-align: left; }
-    #fe-info .s { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 52px; letter-spacing: 16px; color: #e8384a; }
-    #fe-info .d { font-weight: 700; font-size: 150px; line-height: .95; }
-    #fe-info .m { font-weight: 700; font-size: 110px; line-height: 1; color: #d9a8ff; }
-    #fe-info .row { display: flex; align-items: center; gap: 24px; margin-top: 26px; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 36px; color: #ece0f6; letter-spacing: 3px; }
-    #fe-info .row img { height: 120px; }
+    #fe-wrap { left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 960px 540px; }
+    #fe-group { left: 0; top: 150px; width: 1920px; height: 1080px; }
+    .ph { -webkit-mask-image: linear-gradient(#000 50%, transparent 85%); mask-image: linear-gradient(#000 50%, transparent 85%); filter: drop-shadow(0 0 16px #b25caa55); }
+    .sil { filter: drop-shadow(0 0 4px #b77ad6) drop-shadow(0 0 30px #7b2fe0); -webkit-mask-image: linear-gradient(#000 45%, transparent 82%); mask-image: linear-gradient(#000 45%, transparent 82%); }
+    #fe-ant { left: -30px; top: 300px; width: 430px; }
+    #fe-lin { left: 1500px; top: 320px; width: 450px; }
+    #fe-th { left: 210px; top: 240px; width: 600px; }
+    #fe-vi { left: 1220px; top: 260px; width: 330px; }
+    #fe-j { left: 600px; top: 200px; width: 420px; }
+    #fe-v { left: 900px; top: 206px; width: 426px; }
+    #fe-q { left: 0; top: 260px; width: 1920px; text-align: center; font-weight: 700; font-size: 300px; line-height: 1; color: #d9a8ff; text-shadow: 0 0 50px #7b2fe0, 0 10px 0 #4a1f6b; opacity: .9; }
+    #fe-shade { left: 0; top: 0; width: 1920px; height: 1080px; background: linear-gradient(rgba(18,6,29,.55), rgba(18,6,29,.1) 35%, rgba(18,6,29,.3) 60%, rgba(18,6,29,.95) 88%); }
+    #fe-logo { left: 765px; top: 50px; width: 390px; }
+    #fe-info { left: 0; top: 900px; width: 1920px; display: flex; justify-content: center; align-items: center; gap: 30px; }
+    #fe-info .s { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 56px; letter-spacing: 12px; color: #e8384a; }
+    #fe-info .d { font-weight: 700; font-size: 110px; line-height: 1; color: #fff; text-shadow: 0 8px 0 #4a1f6b; }
+    #fe-info img { height: 130px; }
     #fe-flash { left: 0; top: 0; width: 1920px; height: 1080px; background: #f3e6ff; opacity: 0; }
   </style>
   <div id="root" data-composition-id="fecho" data-width="1920" data-height="1080" data-layout-allow-overlap data-layout-allow-overflow>
     <div id="fe-wrap" class="a">
-      <img id="fe-logo" src="assets/logo_b.png" alt="Violada T&amp;V" />
-      <div id="fe-info"><div class="s">SÁBADO</div><div class="d">26 DE</div><div class="m">DEZEMBRO</div><div class="row"><img src="assets/adega_w.png" alt="Adega Nº1" /><span>CAMPO GRANDE · MS</span></div></div>
+      <div id="fe-group" class="a">
+        <img id="fe-ant" class="a ph" src="assets/f_antony.png" alt="DJ Antony" />
+        <img id="fe-lin" class="a ph" src="assets/f_lino.png" alt="DJ Lino" />
+        <img id="fe-th" class="a ph" src="assets/f_thiago.png" alt="Thiago" />
+        <img id="fe-vi" class="a ph" src="assets/f_vini.png" alt="Vinicius" />
+        <img id="fe-v" class="a sil" src="assets/f_silv.png" alt="" />
+        <img id="fe-j" class="a sil" src="assets/f_silj.png" alt="" />
+        <div id="fe-q" class="a">?</div>
+      </div>
+      <div id="fe-shade" class="a"></div>
+      <img id="fe-logo" class="a" src="assets/logo_b.png" alt="Violada T&amp;V" />
+      <div id="fe-info" class="a"><span class="s">SÁBADO</span><span class="d">26 DE DEZEMBRO</span><img src="assets/adega_w.png" alt="Adega Nº1" /></div>
     </div>
     <div id="fe-flash" class="a" data-layout-ignore></div>
   </div>
@@ -23,8 +42,10 @@
     (function () {
       const tl = gsap.timeline({ paused: true });
       tl.fromTo("#fe-flash", { opacity: 0.85 }, { opacity: 0, duration: 0.45, ease: "power2.out" }, 0);
-      tl.fromTo("#fe-logo", { opacity: 0, scale: 0.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: "back.out(1.8)" }, 0.05);
-      tl.fromTo("#fe-info", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 0.35);
+      tl.fromTo("#fe-group", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.0);
+      tl.fromTo("#fe-logo", { opacity: 0, scale: 0.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: "back.out(1.8)" }, 0.15);
+      tl.fromTo("#fe-info", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.45);
+      tl.to("#fe-q", { scale: 1.08, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, 0.8);
       tl.fromTo("#fe-wrap", { scale: 1 }, { scale: 1.08, duration: 3.7, ease: "none" }, 0.3);
       tl.to("#fe-wrap", { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.7);
       window.__timelines["fecho"] = tl;

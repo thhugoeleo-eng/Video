@@ -4,9 +4,14 @@
     #root .a { position: absolute; }
     #su-wrap { left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 960px 480px; }
     .sil { filter: drop-shadow(0 0 4px #b77ad6) drop-shadow(0 0 30px #7b2fe0); -webkit-mask-image: linear-gradient(#000 45%, transparent 85%); mask-image: linear-gradient(#000 45%, transparent 85%); }
-    #su-j { left: 470px; top: 150px; width: 560px; }
-    #su-v { left: 890px; top: 156px; width: 568px; }
-    #su-q { left: 0; top: 150px; width: 1920px; text-align: center; font-weight: 700; font-size: 520px; line-height: 1; color: #d9a8ff; text-shadow: 0 0 60px #7b2fe0, 0 14px 0 #4a1f6b; }
+    .ph { -webkit-mask-image: linear-gradient(#000 55%, transparent 88%); mask-image: linear-gradient(#000 55%, transparent 88%); filter: drop-shadow(0 0 16px #b25caa55); }
+    #su-ant { left: -30px; top: 330px; width: 430px; }
+    #su-lin { left: 1500px; top: 350px; width: 450px; }
+    #su-th { left: 210px; top: 250px; width: 600px; }
+    #su-vi { left: 1220px; top: 270px; width: 330px; }
+    #su-j { left: 600px; top: 190px; width: 420px; }
+    #su-v { left: 900px; top: 196px; width: 426px; }
+    #su-q { left: 0; top: 200px; width: 1920px; text-align: center; font-weight: 700; font-size: 440px; line-height: 1; color: #d9a8ff; text-shadow: 0 0 60px #7b2fe0, 0 14px 0 #4a1f6b; }
     #su-pill { left: 0; top: 70px; width: 1920px; text-align: center; }
     #su-pill span { display: inline-block; background: #8a3f8c; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 48px; letter-spacing: 10px; padding: 8px 40px 8px 50px; border-radius: 60px; }
     #su-ag { left: 0; top: 860px; width: 1920px; text-align: center; font-weight: 700; font-size: 150px; letter-spacing: 26px; padding-left: 26px; color: #d9a8ff; text-shadow: 0 0 40px #7b2fe0, 0 10px 0 #4a1f6b; line-height: 1; }
@@ -14,6 +19,10 @@
   </style>
   <div id="root" data-composition-id="suspense" data-width="1920" data-height="1080" data-layout-allow-overlap data-layout-allow-overflow>
     <div id="su-wrap" class="a">
+      <img id="su-ant" class="a ph" src="assets/f_antony.png" alt="DJ Antony" />
+      <img id="su-lin" class="a ph" src="assets/f_lino.png" alt="DJ Lino" />
+      <img id="su-th" class="a ph" src="assets/f_thiago.png" alt="Thiago" />
+      <img id="su-vi" class="a ph" src="assets/f_vini.png" alt="Vinicius" />
       <img id="su-v" class="a sil" src="assets/f_silv.png" alt="" />
       <img id="su-j" class="a sil" src="assets/f_silj.png" alt="" />
       <div id="su-q" class="a">?</div>
@@ -25,7 +34,9 @@
   <script>
     (function () {
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo(["#su-j", "#su-v"], { opacity: 0, y: 220 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", stagger: 0.12 }, 0);
+      tl.fromTo(["#su-ant", "#su-lin"], { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.1 }, 0);
+      tl.fromTo(["#su-th", "#su-vi"], { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.1 }, 0.15);
+      tl.fromTo(["#su-j", "#su-v"], { opacity: 0, y: 220 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", stagger: 0.12 }, 0.35);
       tl.fromTo("#su-pill", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.4);
       tl.fromTo("#su-q", { opacity: 0, scale: 0.3, rotation: -18 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2.2)" }, 0.9);
       tl.to("#su-q", { scale: 1.1, duration: 0.45, yoyo: true, repeat: 7, ease: "sine.inOut" }, 1.6);
