@@ -18,7 +18,7 @@
     .sub b { color: #e8384a; }
     #b1 .k1 { font-family: "Rye"; font-size: 60px; color: #ece0f6; line-height: 1.2; }
     #b1 .k2 { font-family: "Montserrat"; font-weight: 800; font-size: 44px; letter-spacing: 8px; color: #e8384a; margin-bottom: 10px; }
-    .nm { font-weight: 700; font-size: 104px; line-height: 1.08; color: #fff; text-shadow: 0 6px 0 #4a1f6b; }
+    .nm { font-weight: 700; font-size: 88px; line-height: 1.08; color: #fff; text-shadow: 0 6px 0 #4a1f6b; }
     .nm.alt { color: #d9a8ff; }
     #b1 { justify-content: flex-start; padding-top: 300px; }
   </style>
@@ -31,9 +31,9 @@
     <div id="p-dim" class="a" data-layout-ignore></div>
 
     <div id="b1" class="a beat"><div class="k2">ATRAÇÃO NACIONAL</div><div class="k1">DA ÚLTIMA VIOLADA<br />DO ANO…</div></div>
-    <div id="b2" class="a beat"><div class="k">TEM</div><div class="big"><span id="n2">0,0</span></div><div class="mid">MILHÃO</div><div class="sub">de ouvintes por mês no <b>Spotify</b></div></div>
-    <div id="b3" class="a beat"><div class="big"><span id="n3">0</span></div><div class="mid">MILHÕES</div><div class="sub">de plays em um só hit</div></div>
-    <div id="b4" class="a beat"><div class="k">COMPÔS SUCESSOS DE</div><div class="nm" id="nm1">MARÍLIA MENDONÇA</div><div class="nm alt" id="nm2">GUSTTAVO LIMA</div><div class="nm" id="nm3">SIMONE &amp; SIMARIA</div></div>
+    <div id="b2" class="a beat"><div class="k">MAIS DE</div><div class="big"><span id="n2">0</span></div><div class="mid">MILHÕES</div><div class="sub">de visualizações no <b>YouTube</b></div></div>
+    <div id="b3" class="a beat"><div class="big"><span id="n3">0</span></div><div class="mid">MIL</div><div class="sub">inscritos no <b>YouTube</b></div></div>
+    <div id="b4" class="a beat"><div class="k">COMPÔS SUCESSOS DE</div><div class="nm" id="nm1">MARÍLIA MENDONÇA</div><div class="nm alt" id="nm2">GUSTTAVO LIMA</div><div class="nm" id="nm3">SIMONE &amp; SIMARIA</div><div class="nm alt" id="nm4">ZÉ NETO &amp; CRISTIANO</div></div>
     <div id="b5" class="a beat"><div class="k">VIROU AS</div><div class="big">4</div><div class="mid">CADEIRAS</div><div class="sub">do <b>The Voice Brasil</b></div></div>
   </div>
   <script>
@@ -57,22 +57,23 @@
       // 2 ouvintes 2.6–5.6
       IN("#b2", 2.6);
       const c2 = { v: 0 };
-      tl.to(c2, { v: 1.6, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n2").textContent = c2.v.toFixed(1).replace(".", ","); } }, 2.75);
+      tl.to(c2, { v: 98, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n2").textContent = Math.round(c2.v); } }, 2.75);
       tl.to("#b2 .big", { scale: 1.08, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 3.95);
       OUT("#b2", 5.4);
 
       // 3 plays 5.6–8.6
       IN("#b3", 5.6);
       const c3 = { v: 0 };
-      tl.to(c3, { v: 11, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n3").textContent = Math.round(c3.v); } }, 5.75);
+      tl.to(c3, { v: 300, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n3").textContent = Math.round(c3.v); } }, 5.75);
       tl.to("#b3 .big", { scale: 1.08, duration: 0.15, yoyo: true, repeat: 1, ease: "power2.out" }, 6.95);
       OUT("#b3", 8.4);
 
       // 4 compositores 8.6–11.8
       IN("#b4 .k", 8.6); tl.set("#b4", { opacity: 1 }, 8.6);
       tl.fromTo("#nm1", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 8.9);
-      tl.fromTo("#nm2", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 9.5);
-      tl.fromTo("#nm3", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 10.1);
+      tl.fromTo("#nm2", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 9.4);
+      tl.fromTo("#nm3", { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 9.9);
+      tl.fromTo("#nm4", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 10.4);
       OUT("#b4", 11.6);
 
       // 5 The Voice 11.8–14.6
