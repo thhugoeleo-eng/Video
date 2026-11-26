@@ -1,0 +1,33 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Oswald", sans-serif; color: #fff; }
+    #root .a { position: absolute; }
+    #fe-wrap { left: 0; top: 0; width: 1920px; height: 1080px; display: flex; align-items: center; justify-content: center; gap: 70px; transform-origin: 960px 540px; }
+    #fe-logo { width: 560px; }
+    #fe-info { text-align: left; }
+    #fe-info .s { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 52px; letter-spacing: 16px; color: #e8384a; }
+    #fe-info .d { font-weight: 700; font-size: 150px; line-height: .95; }
+    #fe-info .m { font-weight: 700; font-size: 110px; line-height: 1; color: #d9a8ff; }
+    #fe-info .row { display: flex; align-items: center; gap: 24px; margin-top: 26px; font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 36px; color: #ece0f6; letter-spacing: 3px; }
+    #fe-info .row img { height: 120px; }
+    #fe-flash { left: 0; top: 0; width: 1920px; height: 1080px; background: #f3e6ff; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="fecho" data-width="1920" data-height="1080" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="fe-wrap" class="a">
+      <img id="fe-logo" src="assets/logo_b.png" alt="Violada T&amp;V" />
+      <div id="fe-info"><div class="s">SÁBADO</div><div class="d">26 DE</div><div class="m">DEZEMBRO</div><div class="row"><img src="assets/adega_w.png" alt="Adega Nº1" /><span>CAMPO GRANDE · MS</span></div></div>
+    </div>
+    <div id="fe-flash" class="a" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#fe-flash", { opacity: 0.85 }, { opacity: 0, duration: 0.45, ease: "power2.out" }, 0);
+      tl.fromTo("#fe-logo", { opacity: 0, scale: 0.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.6, ease: "back.out(1.8)" }, 0.05);
+      tl.fromTo("#fe-info", { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.55, ease: "power3.out" }, 0.35);
+      tl.fromTo("#fe-wrap", { scale: 1 }, { scale: 1.08, duration: 3.7, ease: "none" }, 0.3);
+      tl.to("#fe-wrap", { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.7);
+      window.__timelines["fecho"] = tl;
+    })();
+  </script>
+</template>

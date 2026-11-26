@@ -1,0 +1,35 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "Oswald", sans-serif; color: #fff; }
+    #root .a { position: absolute; }
+    #dt-wrap { left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 960px 540px; }
+    #dt-sab { left: 0; top: 150px; width: 1920px; text-align: center; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 80px; letter-spacing: 30px; padding-left: 30px; color: #e8384a; }
+    #dt-n { left: 0; top: 230px; width: 1920px; text-align: center; font-weight: 700; font-size: 470px; line-height: 1; text-shadow: 0 14px 0 #4a1f6b, 0 0 60px rgba(123,47,224,.6); }
+    #dt-m { left: 0; top: 700px; width: 1920px; text-align: center; font-weight: 700; font-size: 150px; line-height: 1; color: #d9a8ff; letter-spacing: 8px; }
+    #dt-adega { left: 1580px; top: 760px; width: 200px; }
+    #dt-flash { left: 0; top: 0; width: 1920px; height: 1080px; background: #f3e6ff; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="data" data-width="1920" data-height="1080" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="dt-wrap" class="a">
+      <div id="dt-sab" class="a">SÁBADO</div>
+      <div id="dt-n" class="a">26</div>
+      <div id="dt-m" class="a">DE DEZEMBRO</div>
+      <img id="dt-adega" class="a" src="assets/adega_w.png" alt="Adega Nº1" />
+    </div>
+    <div id="dt-flash" class="a" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#dt-flash", { opacity: 0.85 }, { opacity: 0, duration: 0.4, ease: "power2.out" }, 0);
+      tl.fromTo("#dt-n", { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power4.out" }, 0.05);
+      tl.fromTo("#dt-sab", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.4);
+      tl.fromTo("#dt-m", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.6);
+      tl.fromTo("#dt-adega", { opacity: 0, scale: 0.4, rotation: -25 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2)" }, 1.0);
+      tl.fromTo("#dt-wrap", { scale: 1 }, { scale: 1.1, duration: 5.6, ease: "none" }, 0.4);
+      tl.to("#dt-n", { scale: 1.06, duration: 0.18, yoyo: true, repeat: 3, ease: "power2.out" }, 2.4);
+      tl.to("#dt-wrap", { opacity: 0, duration: 0.25, ease: "power2.in" }, 5.75);
+      window.__timelines["data"] = tl;
+    })();
+  </script>
+</template>

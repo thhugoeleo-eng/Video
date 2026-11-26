@@ -1,0 +1,36 @@
+<template>
+  <style>
+    @font-face { font-family: "Rye"; src: url("assets/fonts/rye.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #root .a { position: absolute; }
+    #ab-wrap { left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 960px 540px; }
+    #ab-title { left: 0; top: 110px; width: 1920px; text-align: center; font-family: "Rye"; font-size: 72px; color: #ece0f6; letter-spacing: 2px; }
+    #ab-line { left: 560px; top: 215px; width: 800px; height: 4px; background: #b25caa; transform-origin: 50% 50%; }
+    #ab-logo { left: 640px; top: 250px; width: 640px; }
+    #ab-shine { left: -500px; top: 0; width: 360px; height: 1080px; background: linear-gradient(100deg, transparent, rgba(240,220,255,.22), transparent); }
+    #ab-flash { left: 0; top: 0; width: 1920px; height: 1080px; background: #f3e6ff; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="abertura" data-width="1920" data-height="1080" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="ab-wrap" class="a">
+      <div id="ab-title" class="a">ÚLTIMA VIOLADA DO ANO</div>
+      <div id="ab-line" class="a"></div>
+      <img id="ab-logo" class="a" src="assets/logo_b.png" alt="Violada T&amp;V" />
+    </div>
+    <div id="ab-shine" class="a" data-layout-ignore></div>
+    <div id="ab-flash" class="a" data-layout-ignore></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#ab-flash", { opacity: 0.9 }, { opacity: 0, duration: 0.5, ease: "power2.out" }, 0);
+      tl.fromTo("#ab-logo", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(1.7)" }, 0.1);
+      tl.fromTo("#ab-title", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.45);
+      tl.fromTo("#ab-line", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, 0.6);
+      tl.fromTo("#ab-wrap", { scale: 1 }, { scale: 1.12, duration: 5.6, ease: "none" }, 0.4);
+      tl.fromTo("#ab-shine", { x: 0 }, { x: 3000, duration: 1.2, ease: "power1.inOut" }, 1.5);
+      tl.to("#ab-logo", { scale: 1.06, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, 3.2);
+      tl.to("#ab-wrap", { opacity: 0, duration: 0.25, ease: "power2.in" }, 5.75);
+      window.__timelines["abertura"] = tl;
+    })();
+  </script>
+</template>
