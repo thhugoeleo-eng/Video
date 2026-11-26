@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Agenda Fincapé</title>
+<style>
+  @font-face { font-family: "Anton"; src: url("assets/anton.woff2") format("woff2"); }
+  @font-face { font-family: "Oswald"; src: url("assets/500-normal-80787391b94b.woff2") format("woff2"); font-weight: 500; }
+  @font-face { font-family: "Oswald"; src: url("assets/600-normal-80787391b94b.woff2") format("woff2"); font-weight: 600; }
+  @font-face { font-family: "Oswald"; src: url("assets/700-normal-80787391b94b.woff2") format("woff2"); font-weight: 700; }
+  :root { --ouro: #e2bb63; --ouro-claro: #f6dc8c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #050403; }
+  #arte { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #050403; font-family: "Anton", sans-serif; }
+  body.feed #arte { height: 1350px; }
+
+  /* Fundo de palco */
+  #bg { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; filter: grayscale(.35) contrast(1.2) brightness(.42) blur(5px); transform: scale(1.08); }
+  #escuro { position: absolute; inset: 0; background: radial-gradient(80% 50% at 50% 30%, rgba(0,0,0,0) 0%, rgba(5,4,3,.7) 70%, #050403 100%), linear-gradient(to bottom, rgba(5,4,3,.2), rgba(5,4,3,0) 25%, rgba(5,4,3,.85) 55%, #050403 75%); }
+  #feixes { position: absolute; inset: 0; filter: blur(34px); mix-blend-mode: screen; }
+  .feixe { position: absolute; top: -120px; width: 300px; height: 1300px; transform-origin: 50% 0;
+    background: linear-gradient(to bottom, rgba(255,226,160,.32), rgba(255,200,110,.08) 55%, transparent 85%); clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%); }
+  .brilho { position: absolute; border-radius: 50%; background: #fff2cf; box-shadow: 0 0 10px 3px rgba(255,205,110,.85); }
+
+  /* Topo */
+  #topo { position: absolute; left: 0; top: 120px; width: 1080px; text-align: center; }
+  .logo { position: relative; margin: 0 auto; width: 560px; height: 231px; }
+  .logo div { position: absolute; inset: 0; -webkit-mask: url("assets/fincape.png") center / contain no-repeat; mask: url("assets/fincape.png") center / contain no-repeat; }
+  .logo .glow { background: #f0b850; filter: blur(24px); opacity: .45; }
+  .logo .metal { background: linear-gradient(180deg, #fffaf0 0%, #f6dc8c 30%, #b8862f 52%, #f8e3a2 68%, #a8782a 100%); filter: drop-shadow(0 5px 0 #2b1a05); }
+  #titulo { margin-top: 18px; display: flex; align-items: center; justify-content: center; gap: 22px; }
+  #titulo .l { width: 150px; height: 2px; background: linear-gradient(90deg, transparent, var(--ouro)); }
+  #titulo .l.r { transform: scaleX(-1); }
+  #titulo span { font-family: "Oswald"; font-weight: 600; font-size: 44px; letter-spacing: 14px; color: #fff; }
+  #titulo b { color: var(--ouro-claro); font-weight: 600; }
+  body.feed #topo { top: 40px; }
+  body.feed .logo { width: 400px; height: 165px; }
+  body.feed #titulo { margin-top: 8px; }
+  body.feed #titulo span { font-size: 34px; letter-spacing: 10px; }
+  body.feed #titulo .l { width: 110px; }
+
+  /* Artistas */
+  #artistas { position: absolute; left: 0; top: 470px; width: 1080px; height: 520px; }
+  .art { position: absolute; -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%); mask-image: linear-gradient(to bottom, #000 74%, transparent 100%); }
+  .art img { display: block; width: 100%; filter: contrast(1.08) drop-shadow(0 0 2px rgba(255,214,140,.9)) drop-shadow(0 0 18px rgba(241,190,90,.35)) drop-shadow(0 24px 30px rgba(0,0,0,.85)); }
+  #a1 { left: 0; top: 10px; width: 290px; } #a2 { left: 205px; top: 45px; width: 300px; }
+  #a3 { left: 455px; top: 55px; width: 320px; } #a4 { left: 690px; top: 25px; width: 290px; }
+  #nomes { position: absolute; left: 0; top: 455px; width: 1080px; text-align: center; font-family: "Oswald"; font-weight: 600; font-size: 34px; letter-spacing: 4px; color: #fff; white-space: nowrap;
+    text-shadow: 0 0 12px rgba(0,0,0,.95); }
+  #nomes i { font-style: normal; color: var(--ouro); margin: 0 14px; }
+  body.feed #artistas { top: 285px; transform: scale(.74); transform-origin: 50% 0; }
+
+  /* Cartões de data */
+  #lista { position: absolute; left: 60px; top: 1030px; width: 960px; display: flex; flex-direction: column; gap: 34px; }
+  .item { position: relative; height: 230px; border-radius: 26px; display: flex; align-items: center; overflow: hidden;
+    background: linear-gradient(90deg, rgba(30,22,10,.92), rgba(12,9,5,.92)); box-shadow: inset 0 0 0 2px rgba(226,187,99,.75), 0 18px 40px rgba(0,0,0,.6); }
+  .data { width: 230px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, #fff3cf 0%, #f1d27e 30%, #c39236 60%, #f3d886 100%); color: #1b1205; }
+  .data .d { font-size: 128px; line-height: .9; }
+  .data .m { font-family: "Oswald"; font-weight: 700; font-size: 36px; letter-spacing: 8px; margin-top: 2px; }
+  .info { padding: 0 40px; }
+  .info .sem { font-family: "Oswald"; font-weight: 600; font-size: 30px; letter-spacing: 8px; color: var(--ouro); }
+  .info .cid { font-size: 84px; line-height: 1; color: #fff; letter-spacing: 1px; margin-top: 4px; }
+  .info .cid small { font-size: 52px; color: var(--ouro-claro); }
+  .info .loc { font-family: "Oswald"; font-weight: 500; font-size: 30px; letter-spacing: 2px; color: #e9e2d2; margin-top: 8px; }
+  .info .loc svg { width: 18px; height: 24px; vertical-align: -3px; margin-right: 8px; }
+  body.feed #lista { top: 690px; left: 70px; width: 940px; gap: 22px; }
+  body.feed .item { height: 190px; }
+  body.feed .data { width: 190px; }
+  body.feed .data .d { font-size: 104px; }
+  body.feed .data .m { font-size: 30px; }
+  body.feed .info .cid { font-size: 70px; }
+  body.feed .info .cid small { font-size: 44px; }
+  body.feed .info .loc { font-size: 27px; }
+  body.feed .info .sem { font-size: 26px; }
+</style>
+</head>
+<body>
+<div id="arte">
+  <img id="bg" src="assets/palco-laranja.jpg" alt="" />
+  <div id="escuro"></div>
+  <div id="feixes">
+    <div class="feixe" style="left:60px;transform:rotate(-18deg)"></div>
+    <div class="feixe" style="left:390px"></div>
+    <div class="feixe" style="left:720px;transform:rotate(18deg)"></div>
+  </div>
+  <div class="brilho" style="left:140px;top:720px;width:4px;height:4px"></div>
+  <div class="brilho" style="left:930px;top:650px;width:5px;height:5px"></div>
+  <div class="brilho" style="left:860px;top:330px;width:3px;height:3px;opacity:.7"></div>
+  <div class="brilho" style="left:200px;top:340px;width:3px;height:3px;opacity:.7"></div>
+  <div class="brilho" style="left:40px;top:1200px;width:3px;height:3px;opacity:.6"></div>
+  <div class="brilho" style="left:1040px;top:1500px;width:4px;height:4px;opacity:.7"></div>
+
+  <div id="topo">
+    <div class="logo"><div class="glow"></div><div class="metal"></div></div>
+    <div id="titulo"><div class="l"></div><span>AGENDA · <b>DEZEMBRO</b></span><div class="l r"></div></div>
+  </div>
+
+  <div id="artistas">
+    <div class="art" id="a1"><img src="assets/artista1.png" alt="" /></div>
+    <div class="art" id="a2"><img src="assets/artista2.png" alt="" /></div>
+    <div class="art" id="a3"><img src="assets/artista3.png" alt="" /></div>
+    <div class="art" id="a4"><img src="assets/artista4.png" alt="" /></div>
+    <div id="nomes">JOÃO PAULO<i>|</i>PAULO FIAPO<i>|</i>THIAGO &amp; VINICIUS</div>
+  </div>
+
+  <div id="lista">
+    <div class="item">
+      <div class="data"><div class="d">12</div><div class="m">DEZ</div></div>
+      <div class="info"><div class="sem">SÁBADO</div><div class="cid">CAMPO GRANDE <small>MS</small></div>
+        <div class="loc"><svg viewBox="0 0 24 32"><path fill="#e2bb63" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>BAR DO CÉLIO</div></div>
+    </div>
+    <div class="item">
+      <div class="data"><div class="d">19</div><div class="m">DEZ</div></div>
+      <div class="info"><div class="sem">SÁBADO</div><div class="cid">JARDIM <small>MS</small></div></div>
+    </div>
+    <div class="item">
+      <div class="data"><div class="d">20</div><div class="m">DEZ</div></div>
+      <div class="info"><div class="sem">DOMINGO</div><div class="cid">BELA VISTA <small>MS</small></div>
+        <div class="loc"><svg viewBox="0 0 24 32"><path fill="#e2bb63" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>TATERSAL · PARQUE DE EXPOSIÇÕES</div></div>
+    </div>
+  </div>
+</div>
+<script>document.body.classList.add(new URLSearchParams(location.search).get("f") || "story");</script>
+</body>
+</html>
