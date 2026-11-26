@@ -2,7 +2,7 @@
   <style>
     #root { position: absolute; inset: 0; overflow: hidden; background: #140803; font-family: "League Gothic", "Oswald", sans-serif; }
     .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
-    #cam { position: absolute; inset: 0; transform-origin: 540px 790px; }
+    #cam { position: absolute; inset: 0; transform-origin: 540px 1366px; }
 
     /* Fundos */
     #bg-palco, #bg-palco2 { position: absolute; inset: 0; }
@@ -17,7 +17,7 @@
     #bottom-shade { background: linear-gradient(to top, rgba(10,4,2,.95) 0, rgba(10,4,2,.6) 18%, transparent 38%); }
 
     /* Logo Fincapé dourado (máscara com o PNG do logo) */
-    .logo { position: absolute; left: 90px; top: 600px; width: 900px; height: 372px; }
+    .logo { z-index: 6; position: absolute; left: 90px; top: 1180px; width: 900px; height: 372px; }
     .logo .gold, .logo .glow, .logo .edge {
       position: absolute; inset: 0;
       -webkit-mask: url("assets/fincape.png") center / contain no-repeat;
@@ -29,7 +29,7 @@
 
     /* Abertura caleidoscópio */
     #kaleido { position: absolute; inset: 0; mix-blend-mode: screen; }
-    #kaleido .k { position: absolute; left: 90px; top: 600px; width: 900px; height: 372px;
+    #kaleido .k { position: absolute; left: 90px; top: 714px; width: 900px; height: 372px;
       -webkit-mask: url("assets/fincape.png") center / contain no-repeat; mask: url("assets/fincape.png") center / contain no-repeat; }
     .k.c1 { background: #ff9a1a; } .k.c2 { background: #2f7bff; } .k.c3 { background: #ffe9b0; }
 
@@ -41,13 +41,13 @@
       letter-spacing: 6px; display: inline-block; transform: skewX(-12deg); text-shadow: 0 6px 18px rgba(0,0,0,.6); }
 
     /* Artistas */
-    .artista { position: absolute; bottom: 280px; }
+    .artista { position: absolute; bottom: 590px; }
     .artista img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 30px rgba(0,0,0,.65)); }
-    #a1 { left: -30px; width: 370px; z-index: 2; }
-    #a2 { left: 200px; width: 410px; z-index: 3; }
-    #a3 { left: 470px; width: 430px; z-index: 3; }
-    #a4 { left: 735px; width: 360px; z-index: 2; }
-    #artistas-shade { position: absolute; left: 0; top: 1400px; width: 1080px; height: 520px;
+    #a1 { left: -40px; width: 420px; z-index: 2; }
+    #a2 { left: 190px; width: 460px; z-index: 3; }
+    #a3 { left: 450px; width: 480px; z-index: 3; }
+    #a4 { left: 700px; width: 410px; z-index: 2; }
+    #artistas-shade { position: absolute; left: 0; top: 1100px; width: 1080px; height: 820px;
       background: linear-gradient(to top, rgba(14,5,2,1) 35%, rgba(14,5,2,0)); z-index: 4; }
 
     /* Selo da data e cidade */
@@ -157,7 +157,7 @@
       // ---------- Estados iniciais ----------
       gsap.set(["#bg-palco2", "#fence", "#bigdate", "#live2", "#live4", "#live3", "#selo", "#cidade", "#warm", "#burst", "#rays", "#flash", "#rodape", "#bottom-shade", "#logo"], { opacity: 0 });
       gsap.set(A, { opacity: 0, y: 700 });
-      gsap.set("#logo", { scale: 1, filter: "blur(0px)" });
+      gsap.set("#logo", { scale: 1, filter: "blur(0px)", y: -466 });
       gsap.set("#bg-palco", { opacity: 1, scale: 1.15 });
 
       // ---------- 0.0–0.7  Abertura caleidoscópio ----------
@@ -180,7 +180,7 @@
       tl.to("#logo", { scale: 1.6, opacity: 0, filter: "blur(18px)", duration: 0.4, ease: "power3.in" }, 2.85);
       tl.to("#fence", { opacity: 1, duration: 0.35, ease: "power2.inOut" }, 3.0);
       tl.to("#bg-palco2", { opacity: 1, duration: 0.35 }, 3.0);
-      tl.set("#logo", { filter: "blur(0px)", scale: 1 }, 3.3);
+      tl.set("#logo", { filter: "blur(0px)", scale: 1, y: 0 }, 3.3);
 
       // ---------- 3.3–5.6  Data gigante ----------
       tl.fromTo("#bigdate", { opacity: 0, scale: 2.4, filter: "blur(22px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, 3.3);
