@@ -3,27 +3,79 @@
   "transcricao": "trabalho/chamada1.transcricao.json",
   "resumo": "Chamada do Fincapé no Bar do Célio (Campo Grande-MS): quatro rapazes na frente do bar reforçam data, endereço, horário e o convite. Público: clientes e seguidores do bar e do Fincapé.",
   "duracao_original": 28.82,
-  "duracao_estimada_final": 25.8,
+  "duracao_estimada_final": 25.94,
   "cortes": [
-    {"id": "c1", "inicio": 0.0, "fim": 0.94, "tipo": "pausa", "motivo": "Silêncio antes do 'Fala, turma!'"},
-    {"id": "c2", "inicio": 1.92, "fim": 2.78, "tipo": "pausa", "motivo": "Pausa de ~1 s depois de 'Fala, turma!'"},
-    {"id": "c3", "inicio": 8.10, "fim": 8.86, "tipo": "pausa", "motivo": "Pausa antes do endereço"},
-    {"id": "c4", "inicio": 13.42, "fim": 13.74, "tipo": "pausa", "motivo": "Respiro curto antes de 'É isso aí'"},
-    {"id": "c5", "inicio": 21.10, "fim": 23.42, "tipo": "repeticao", "motivo": "OPCIONAL: repete 'cinco horas de moda, estava faltando'. Cortar deixa mais rápido; manter preserva a brincadeira.", "texto_removido": "Cinco horas de moda, estava faltando"}
+    {
+      "id": "c1",
+      "inicio": 0.0,
+      "fim": 0.94,
+      "tipo": "pausa",
+      "motivo": "Silêncio antes do 'Fala, turma!'"
+    },
+    {
+      "id": "c2",
+      "inicio": 1.92,
+      "fim": 2.78,
+      "tipo": "pausa",
+      "motivo": "Pausa de ~1 s depois de 'Fala, turma!'"
+    },
+    {
+      "id": "c3",
+      "inicio": 8.1,
+      "fim": 8.86,
+      "tipo": "pausa",
+      "motivo": "Pausa antes do endereço"
+    },
+    {
+      "id": "c4",
+      "inicio": 13.42,
+      "fim": 13.74,
+      "tipo": "pausa",
+      "motivo": "Respiro curto antes de 'É isso aí'"
+    }
   ],
   "insercoes": [
-    {"id": "i1", "tipo": "letreiro", "inicio": 0.94, "fim": 28.82, "descricao": "Legendas dinâmicas de 2 a 4 palavras, grandes, com a palavra falada em destaque (dourado-champanhe), na altura do peito dos rapazes"},
-    {"id": "i2", "tipo": "letreiro", "inicio": 0.94, "fim": 28.82, "descricao": "Faixa fixa embaixo: logo Fincapé + BAR DO CÉLIO + AV. SÃO NICOLAU, 172 – SANTA LUZIA · CAMPO GRANDE-MS + SÁBADO 12/12 · A PARTIR DAS 14H"},
-    {"id": "i3", "tipo": "zoom", "inicio": 8.9, "fim": 13.4, "descricao": "Zoom leve (110%) durante o endereço, com a faixa de endereço piscando em destaque"},
-    {"id": "i4", "tipo": "zoom", "inicio": 23.5, "fim": 25.0, "descricao": "Punch-in rápido em 'A PARTIR DAS 14 HORAS' com flash, no estilo do reel de Bela Vista"},
-    {"id": "i5", "tipo": "letreiro", "inicio": 27.4, "fim": 28.82, "descricao": "Final: 'VEM COM NÓS!' grande + logo Fincapé com brilho"}
+    {
+      "id": "i1",
+      "tipo": "letreiro",
+      "inicio": 0.94,
+      "fim": 28.82,
+      "descricao": "Legendas dinâmicas de 2 a 4 palavras, grandes, com a palavra falada em destaque (dourado-champanhe), na altura do peito dos rapazes"
+    },
+    {
+      "id": "i2",
+      "tipo": "letreiro",
+      "inicio": 0.94,
+      "fim": 28.82,
+      "descricao": "Faixa fixa embaixo: logo Fincapé + BAR DO CÉLIO + AV. SÃO NICOLAU, 172 – SANTA LUZIA · CAMPO GRANDE-MS + SÁBADO 12/12 · A PARTIR DAS 14H"
+    },
+    {
+      "id": "i3",
+      "tipo": "zoom",
+      "inicio": 8.9,
+      "fim": 13.4,
+      "descricao": "Zoom leve (110%) durante o endereço, com a faixa de endereço piscando em destaque"
+    },
+    {
+      "id": "i4",
+      "tipo": "zoom",
+      "inicio": 23.5,
+      "fim": 25.0,
+      "descricao": "Punch-in rápido em 'A PARTIR DAS 14 HORAS' com flash, no estilo do reel de Bela Vista"
+    },
+    {
+      "id": "i5",
+      "tipo": "letreiro",
+      "inicio": 27.4,
+      "fim": 28.82,
+      "descricao": "Final: 'VEM COM NÓS!' grande + logo Fincapé com brilho"
+    }
   ],
   "visual": "Mesmo estilo do reel de Bela Vista (letras condensadas, brilho, flashes) com paleta vinho/vermelho (#7a0f1f, #c8202f) e dourado-champanhe (#e9cf8f)",
   "observacoes": [
-    "Legenda: 'Finca Pé' será escrito FINCAPÉ.",
-    "Em 25 s o Whisper entendeu 'o seu nosso convidado' — confirmar o que foi dito (talvez 'e o nosso convidado').",
-    "'cinco horas de moda' — confirmar se é 'moda' ou 'modão'.",
-    "Cidade: Campo Grande-MS (não é falado no vídeo; confirmar se coloca)."
+    "Legenda: 'Finca Pé' escrito FINCAPÉ; 'o seu nosso convidado' corrigido para 'e o nosso convidado' (confirmado pelo usuário).",
+    "'cinco horas de moda' confirmado. Repetição mantida (escolha do usuário).",
+    "Faixa inclui Campo Grande-MS; sábado 12/12 confirmado."
   ],
-  "status": "aguardando_aprovacao"
+  "status": "aprovado"
 }

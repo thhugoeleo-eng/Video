@@ -1,0 +1,258 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; font-family: "League Gothic", "Oswald", sans-serif; }
+    .grupo { position: absolute; left: 0; top: 1170px; width: 1080px; height: 200px; display: flex; align-items: center; justify-content: center; }
+    .caixa { display: flex; gap: 34px; padding: 0 30px; font-size: 118px; line-height: 1; letter-spacing: 2px; color: #fff8ee; white-space: nowrap;
+      text-shadow: 0 6px 0 #3a0710, 0 0 14px rgba(0,0,0,.85), 0 0 34px rgba(0,0,0,.6); }
+    .caixa span { display: inline-block; }
+    .caixa span.ativa { color: #f3d58f; transform: scale(1.08); text-shadow: 0 6px 0 #5a0b18, 0 0 22px rgba(200,32,47,.85), 0 0 40px rgba(200,32,47,.5); }
+
+    /* Faixa de informações */
+    #faixa { position: absolute; left: 30px; top: 1430px; width: 1020px; height: 330px; border-radius: 26px; overflow: hidden;
+      background: linear-gradient(180deg, rgba(122,15,31,.94), rgba(70,6,16,.96));
+      box-shadow: 0 18px 40px rgba(0,0,0,.55), inset 0 0 0 3px rgba(233,207,143,.9); }
+    #faixa .brilho { position: absolute; top: 0; left: -300px; width: 260px; height: 100%;
+      background: linear-gradient(100deg, transparent, rgba(255,240,200,.35), transparent); }
+    #faixa .logo { position: absolute; left: 34px; top: 92px; width: 300px; height: 124px;
+      -webkit-mask: url("assets/fincape.png") center / contain no-repeat; mask: url("assets/fincape.png") center / contain no-repeat;
+      background: linear-gradient(180deg, #fff6dc, #e9cf8f 45%, #b88a3a); }
+    #faixa .div { position: absolute; left: 362px; top: 40px; width: 3px; height: 250px; background: linear-gradient(transparent, #e9cf8f, transparent); }
+    #faixa .info { position: absolute; left: 395px; top: 34px; width: 610px; }
+    #faixa .nome { font-size: 96px; line-height: .95; color: #f3d58f; letter-spacing: 2px; text-shadow: 0 4px 0 #2a0309; }
+    #faixa .end { font-family: "Oswald"; font-weight: 600; font-size: 31px; color: #fff8ee; letter-spacing: 1.5px; margin-top: 8px; line-height: 1.25; }
+    #faixa .data { display: inline-block; margin-top: 14px; padding: 6px 18px 4px; border-radius: 10px; background: #e9cf8f; color: #4a0711;
+      font-size: 48px; letter-spacing: 2px; }
+    #faixa svg { width: 20px; height: 26px; vertical-align: -3px; margin-right: 8px; }
+
+    /* Final */
+    #fim { position: absolute; left: 0; top: 560px; width: 1080px; text-align: center; }
+    #fim .t { font-size: 230px; line-height: .9; color: #f3d58f; letter-spacing: 4px;
+      text-shadow: 0 10px 0 #5a0b18, 0 0 40px rgba(200,32,47,.8), 0 0 90px rgba(200,32,47,.5); }
+    #flash { position: absolute; inset: 0; background: #fff4e8; mix-blend-mode: screen; }
+    #vinho { position: absolute; inset: 0; mix-blend-mode: multiply; background: radial-gradient(75% 60% at 50% 45%, rgba(255,255,255,1) 55%, rgba(150,40,55,1) 100%); opacity: .5; }
+  </style>
+
+  <div id="root" data-composition-id="legendas" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="vinho" data-layout-ignore></div>
+    <div id="g0" class="clip grupo" data-start="0.00" data-duration="0.64" data-track-index="2"><div class="caixa" id="cx0"><span id="w0_0">FALA</span></div></div>
+    <div id="g1" class="clip grupo" data-start="0.64" data-duration="0.56" data-track-index="2"><div class="caixa" id="cx1"><span id="w1_0">TURMA</span></div></div>
+    <div id="g2" class="clip grupo" data-start="1.20" data-duration="0.58" data-track-index="2"><div class="caixa" id="cx2"><span id="w2_0">VOCÊ</span> <span id="w2_1">JÁ</span> <span id="w2_2">SABE</span></div></div>
+    <div id="g3" class="clip grupo" data-start="1.78" data-duration="0.78" data-track-index="2"><div class="caixa" id="cx3"><span id="w3_0">QUE</span> <span id="w3_1">O</span> <span id="w3_2">FINCAPÉ</span></div></div>
+    <div id="g4" class="clip grupo" data-start="2.56" data-duration="0.48" data-track-index="2"><div class="caixa" id="cx4"><span id="w4_0">É</span> <span id="w4_1">DIA</span> <span id="w4_2">12</span></div></div>
+    <div id="g5" class="clip grupo" data-start="3.04" data-duration="0.64" data-track-index="2"><div class="caixa" id="cx5"><span id="w5_0">DE</span> <span id="w5_1">DEZEMBRO</span> <span id="w5_2">AQUI</span></div></div>
+    <div id="g6" class="clip grupo" data-start="3.68" data-duration="0.98" data-track-index="2"><div class="caixa" id="cx6"><span id="w6_0">NO</span> <span id="w6_1">BAR</span> <span id="w6_2">DO</span> <span id="w6_3">CÉLIO</span></div></div>
+    <div id="g7" class="clip grupo" data-start="4.66" data-duration="0.82" data-track-index="2"><div class="caixa" id="cx7"><span id="w7_0">MAS</span> <span id="w7_1">VAMOS</span> <span id="w7_2">REFORÇAR</span></div></div>
+    <div id="g8" class="clip grupo" data-start="5.48" data-duration="0.52" data-track-index="2"><div class="caixa" id="cx8"><span id="w8_0">O</span> <span id="w8_1">ENDEREÇO</span></div></div>
+    <div id="g9" class="clip grupo" data-start="6.00" data-duration="0.54" data-track-index="2"><div class="caixa" id="cx9"><span id="w9_0">NÉ</span></div></div>
+    <div id="g10" class="clip grupo" data-start="6.54" data-duration="1.54" data-track-index="2"><div class="caixa" id="cx10"><span id="w10_0">AVENIDA</span> <span id="w10_1">SÃO</span> <span id="w10_2">NICOLAU</span></div></div>
+    <div id="g11" class="clip grupo" data-start="8.08" data-duration="1.16" data-track-index="2"><div class="caixa" id="cx11"><span id="w11_0">172</span></div></div>
+    <div id="g12" class="clip grupo" data-start="9.24" data-duration="0.90" data-track-index="2"><div class="caixa" id="cx12"><span id="w12_0">SANTA</span> <span id="w12_1">LUZIA</span></div></div>
+    <div id="g13" class="clip grupo" data-start="10.14" data-duration="0.62" data-track-index="2"><div class="caixa" id="cx13"><span id="w13_0">BAR</span> <span id="w13_1">DO</span> <span id="w13_2">CÉLIO</span></div></div>
+    <div id="g14" class="clip grupo" data-start="10.76" data-duration="0.42" data-track-index="2"><div class="caixa" id="cx14"><span id="w14_0">NÉ</span></div></div>
+    <div id="g15" class="clip grupo" data-start="11.18" data-duration="0.48" data-track-index="2"><div class="caixa" id="cx15"><span id="w15_0">É</span> <span id="w15_1">ISSO</span> <span id="w15_2">AÍ</span></div></div>
+    <div id="g16" class="clip grupo" data-start="11.66" data-duration="0.96" data-track-index="2"><div class="caixa" id="cx16"><span id="w16_0">NÃO</span> <span id="w16_1">ESQUECE</span></div></div>
+    <div id="g17" class="clip grupo" data-start="12.62" data-duration="1.92" data-track-index="2"><div class="caixa" id="cx17"><span id="w17_0">DIA</span> <span id="w17_1">12</span> <span id="w17_2">DE</span> <span id="w17_3">DEZEMBRO</span></div></div>
+    <div id="g18" class="clip grupo" data-start="14.54" data-duration="0.66" data-track-index="2"><div class="caixa" id="cx18"><span id="w18_0">MOÇADA</span></div></div>
+    <div id="g19" class="clip grupo" data-start="15.20" data-duration="1.92" data-track-index="2"><div class="caixa" id="cx19"><span id="w19_0">CERVEJA</span> <span id="w19_1">BARATA</span> <span id="w19_2">E</span> <span id="w19_3">MODA</span></div></div>
+    <div id="g20" class="clip grupo" data-start="17.12" data-duration="1.54" data-track-index="2"><div class="caixa" id="cx20"><span id="w20_0">CINCO</span> <span id="w20_1">HORAS</span> <span id="w20_2">DE</span> <span id="w20_3">MODA</span></div></div>
+    <div id="g21" class="clip grupo" data-start="18.66" data-duration="1.00" data-track-index="2"><div class="caixa" id="cx21"><span id="w21_0">CINCO</span> <span id="w21_1">HORAS</span> <span id="w21_2">DE</span> <span id="w21_3">MODA</span></div></div>
+    <div id="g22" class="clip grupo" data-start="19.66" data-duration="1.16" data-track-index="2"><div class="caixa" id="cx22"><span id="w22_0">ESTAVA</span> <span id="w22_1">FALTANDO</span></div></div>
+    <div id="g23" class="clip grupo" data-start="20.82" data-duration="1.52" data-track-index="2"><div class="caixa" id="cx23"><span id="w23_0">A</span> <span id="w23_1">PARTIR</span> <span id="w23_2">DAS</span> <span id="w23_3">14</span> <span id="w23_4">HORAS</span></div></div>
+    <div id="g25" class="clip grupo" data-start="22.34" data-duration="0.32" data-track-index="2"><div class="caixa" id="cx25"><span id="w25_0">E</span> <span id="w25_1">O</span> <span id="w25_2">NOSSO</span></div></div>
+    <div id="g26" class="clip grupo" data-start="22.66" data-duration="0.56" data-track-index="2"><div class="caixa" id="cx26"><span id="w26_0">CONVIDADO</span></div></div>
+    <div id="g27" class="clip grupo" data-start="23.22" data-duration="0.52" data-track-index="2"><div class="caixa" id="cx27"><span id="w27_0">FINCAPÉ</span></div></div>
+    <div id="g28" class="clip grupo" data-start="23.74" data-duration="0.26" data-track-index="2"><div class="caixa" id="cx28"><span id="w28_0">AQUI</span> <span id="w28_1">NO</span> <span id="w28_2">BAR</span></div></div>
+    <div id="g29" class="clip grupo" data-start="24.00" data-duration="0.66" data-track-index="2"><div class="caixa" id="cx29"><span id="w29_0">DO</span> <span id="w29_1">CÉLIO</span></div></div>
+    <div id="g30" class="clip grupo" data-start="24.66" data-duration="0.96" data-track-index="2"><div class="caixa" id="cx30"><span id="w30_0">VEM</span> <span id="w30_1">COM</span> <span id="w30_2">NÓS</span></div></div>
+    <div id="g31" class="clip grupo" data-start="25.62" data-duration="0.51" data-track-index="2"><div class="caixa" id="cx31"><span id="w31_0">RAPAZ</span></div></div>
+    <div id="faixa">
+      <div class="logo"></div><div class="div"></div>
+      <div class="info">
+        <div class="nome">BAR DO CÉLIO</div>
+        <div class="end" id="end"><svg viewBox="0 0 24 32"><path fill="#e9cf8f" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>AV. SÃO NICOLAU, 172 – SANTA LUZIA<br>CAMPO GRANDE - MS</div>
+        <div class="data" id="data">SÁBADO 12/12 · A PARTIR DAS 14H</div>
+      </div>
+      <div class="brilho" id="brilho"></div>
+    </div>
+    <div id="fim"><div class="t" id="fim-t">VEM COM NÓS!</div></div>
+    <div id="flash" data-layout-ignore></div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#flash", "#fim"], { opacity: 0 });
+      // faixa entra de baixo
+      tl.fromTo("#faixa", { y: 420, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "expo.out" }, 0.15);
+      tl.fromTo("#brilho", { x: 0 }, { x: 1500, duration: 0.9, ease: "power2.inOut" }, 0.5);
+      // destaque do endereço
+      tl.fromTo("#end", { scale: 1 }, { scale: 1.06, duration: 0.2, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "0% 50%" }, 6.5);
+      tl.fromTo("#brilho", { x: 0 }, { x: 1500, duration: 0.9, ease: "power2.inOut", immediateRender: false }, 6.6);
+      // destaque do horário (punch-in + flash)
+      tl.to("#flash", { opacity: 0.7, duration: 0.05 }, 20.85);
+      tl.to("#flash", { opacity: 0, duration: 0.3 }, 20.9);
+      tl.fromTo("#data", { scale: 1 }, { scale: 1.12, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "0% 50%" }, 21.6);
+      tl.fromTo("#brilho", { x: 0 }, { x: 1500, duration: 0.9, ease: "power2.inOut", immediateRender: false }, 21.6);
+      // final
+      tl.to("#flash", { opacity: 0.8, duration: 0.05 }, 24.6);
+      tl.to("#flash", { opacity: 0, duration: 0.35 }, 24.65);
+      tl.fromTo("#fim", { opacity: 0, scale: 1.6, filter: "blur(18px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, 24.65);
+      // legendas
+      tl.fromTo("#cx0", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 0.00);
+      tl.set("#w0_0", { className: "ativa" }, 0.00);
+      tl.fromTo("#cx1", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 0.64);
+      tl.set("#w1_0", { className: "ativa" }, 0.64);
+      tl.fromTo("#cx2", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 1.20);
+      tl.set("#w2_0", { className: "ativa" }, 1.20);
+      tl.set("#w2_0", { className: "" }, 1.40);
+      tl.set("#w2_1", { className: "ativa" }, 1.40);
+      tl.set("#w2_1", { className: "" }, 1.64);
+      tl.set("#w2_2", { className: "ativa" }, 1.64);
+      tl.fromTo("#cx3", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 1.78);
+      tl.set("#w3_0", { className: "ativa" }, 1.78);
+      tl.set("#w3_0", { className: "" }, 1.94);
+      tl.set("#w3_1", { className: "ativa" }, 1.94);
+      tl.set("#w3_1", { className: "" }, 2.02);
+      tl.set("#w3_2", { className: "ativa" }, 2.02);
+      tl.fromTo("#cx4", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 2.56);
+      tl.set("#w4_0", { className: "ativa" }, 2.56);
+      tl.set("#w4_0", { className: "" }, 2.60);
+      tl.set("#w4_1", { className: "ativa" }, 2.60);
+      tl.set("#w4_1", { className: "" }, 2.76);
+      tl.set("#w4_2", { className: "ativa" }, 2.76);
+      tl.fromTo("#cx5", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 3.04);
+      tl.set("#w5_0", { className: "ativa" }, 3.04);
+      tl.set("#w5_0", { className: "" }, 3.22);
+      tl.set("#w5_1", { className: "ativa" }, 3.22);
+      tl.set("#w5_1", { className: "" }, 3.50);
+      tl.set("#w5_2", { className: "ativa" }, 3.50);
+      tl.fromTo("#cx6", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 3.68);
+      tl.set("#w6_0", { className: "ativa" }, 3.68);
+      tl.set("#w6_0", { className: "" }, 3.84);
+      tl.set("#w6_1", { className: "ativa" }, 3.84);
+      tl.set("#w6_1", { className: "" }, 3.98);
+      tl.set("#w6_2", { className: "ativa" }, 3.98);
+      tl.set("#w6_2", { className: "" }, 4.28);
+      tl.set("#w6_3", { className: "ativa" }, 4.28);
+      tl.fromTo("#cx7", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 4.66);
+      tl.set("#w7_0", { className: "ativa" }, 4.66);
+      tl.set("#w7_0", { className: "" }, 4.76);
+      tl.set("#w7_1", { className: "ativa" }, 4.76);
+      tl.set("#w7_1", { className: "" }, 4.98);
+      tl.set("#w7_2", { className: "ativa" }, 4.98);
+      tl.fromTo("#cx8", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 5.48);
+      tl.set("#w8_0", { className: "ativa" }, 5.48);
+      tl.set("#w8_0", { className: "" }, 5.60);
+      tl.set("#w8_1", { className: "ativa" }, 5.60);
+      tl.fromTo("#cx9", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 6.00);
+      tl.set("#w9_0", { className: "ativa" }, 6.00);
+      tl.fromTo("#cx10", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 6.54);
+      tl.set("#w10_0", { className: "ativa" }, 6.54);
+      tl.set("#w10_0", { className: "" }, 6.98);
+      tl.set("#w10_1", { className: "ativa" }, 6.98);
+      tl.set("#w10_1", { className: "" }, 7.26);
+      tl.set("#w10_2", { className: "ativa" }, 7.26);
+      tl.fromTo("#cx11", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 8.08);
+      tl.set("#w11_0", { className: "ativa" }, 8.08);
+      tl.fromTo("#cx12", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 9.24);
+      tl.set("#w12_0", { className: "ativa" }, 9.24);
+      tl.set("#w12_0", { className: "" }, 9.44);
+      tl.set("#w12_1", { className: "ativa" }, 9.44);
+      tl.fromTo("#cx13", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 10.14);
+      tl.set("#w13_0", { className: "ativa" }, 10.14);
+      tl.set("#w13_0", { className: "" }, 10.26);
+      tl.set("#w13_1", { className: "ativa" }, 10.26);
+      tl.set("#w13_1", { className: "" }, 10.52);
+      tl.set("#w13_2", { className: "ativa" }, 10.52);
+      tl.fromTo("#cx14", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 10.76);
+      tl.set("#w14_0", { className: "ativa" }, 10.76);
+      tl.fromTo("#cx15", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 11.18);
+      tl.set("#w15_0", { className: "ativa" }, 11.18);
+      tl.set("#w15_0", { className: "" }, 11.32);
+      tl.set("#w15_1", { className: "ativa" }, 11.32);
+      tl.set("#w15_1", { className: "" }, 11.48);
+      tl.set("#w15_2", { className: "ativa" }, 11.48);
+      tl.fromTo("#cx16", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 11.66);
+      tl.set("#w16_0", { className: "ativa" }, 11.66);
+      tl.set("#w16_0", { className: "" }, 11.86);
+      tl.set("#w16_1", { className: "ativa" }, 11.86);
+      tl.fromTo("#cx17", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 12.62);
+      tl.set("#w17_0", { className: "ativa" }, 12.62);
+      tl.set("#w17_0", { className: "" }, 12.76);
+      tl.set("#w17_1", { className: "ativa" }, 12.76);
+      tl.set("#w17_1", { className: "" }, 13.12);
+      tl.set("#w17_2", { className: "ativa" }, 13.12);
+      tl.set("#w17_2", { className: "" }, 13.42);
+      tl.set("#w17_3", { className: "ativa" }, 13.42);
+      tl.fromTo("#cx18", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 14.54);
+      tl.set("#w18_0", { className: "ativa" }, 14.54);
+      tl.fromTo("#cx19", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 15.20);
+      tl.set("#w19_0", { className: "ativa" }, 15.20);
+      tl.set("#w19_0", { className: "" }, 15.52);
+      tl.set("#w19_1", { className: "ativa" }, 15.52);
+      tl.set("#w19_1", { className: "" }, 16.16);
+      tl.set("#w19_2", { className: "ativa" }, 16.16);
+      tl.set("#w19_2", { className: "" }, 16.50);
+      tl.set("#w19_3", { className: "ativa" }, 16.50);
+      tl.fromTo("#cx20", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 17.12);
+      tl.set("#w20_0", { className: "ativa" }, 17.12);
+      tl.set("#w20_0", { className: "" }, 17.42);
+      tl.set("#w20_1", { className: "ativa" }, 17.42);
+      tl.set("#w20_1", { className: "" }, 17.66);
+      tl.set("#w20_2", { className: "ativa" }, 17.66);
+      tl.set("#w20_2", { className: "" }, 17.92);
+      tl.set("#w20_3", { className: "ativa" }, 17.92);
+      tl.fromTo("#cx21", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 18.66);
+      tl.set("#w21_0", { className: "ativa" }, 18.66);
+      tl.set("#w21_0", { className: "" }, 18.86);
+      tl.set("#w21_1", { className: "ativa" }, 18.86);
+      tl.set("#w21_1", { className: "" }, 19.10);
+      tl.set("#w21_2", { className: "ativa" }, 19.10);
+      tl.set("#w21_2", { className: "" }, 19.32);
+      tl.set("#w21_3", { className: "ativa" }, 19.32);
+      tl.fromTo("#cx22", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 19.66);
+      tl.set("#w22_0", { className: "ativa" }, 19.66);
+      tl.set("#w22_0", { className: "" }, 19.82);
+      tl.set("#w22_1", { className: "ativa" }, 19.82);
+      tl.fromTo("#cx23", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 20.82);
+      tl.set("#w23_0", { className: "ativa" }, 20.82);
+      tl.set("#w23_0", { className: "" }, 21.00);
+      tl.set("#w23_1", { className: "ativa" }, 21.00);
+      tl.set("#w23_1", { className: "" }, 21.24);
+      tl.set("#w23_2", { className: "ativa" }, 21.24);
+      tl.set("#w23_2", { className: "" }, 21.44);
+      tl.set("#w23_3", { className: "ativa" }, 21.44);
+      tl.set("#w23_3", { className: "" }, 21.90);
+      tl.set("#w23_4", { className: "ativa" }, 21.90);
+      tl.fromTo("#cx25", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 22.34);
+      tl.set("#w25_0", { className: "ativa" }, 22.34);
+      tl.set("#w25_0", { className: "" }, 22.40);
+      tl.set("#w25_1", { className: "ativa" }, 22.40);
+      tl.set("#w25_1", { className: "" }, 22.50);
+      tl.set("#w25_2", { className: "ativa" }, 22.50);
+      tl.fromTo("#cx26", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 22.66);
+      tl.set("#w26_0", { className: "ativa" }, 22.66);
+      tl.fromTo("#cx27", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 23.22);
+      tl.set("#w27_0", { className: "ativa" }, 23.22);
+      tl.fromTo("#cx28", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 23.74);
+      tl.set("#w28_0", { className: "ativa" }, 23.74);
+      tl.set("#w28_0", { className: "" }, 23.80);
+      tl.set("#w28_1", { className: "ativa" }, 23.80);
+      tl.set("#w28_1", { className: "" }, 23.90);
+      tl.set("#w28_2", { className: "ativa" }, 23.90);
+      tl.fromTo("#cx29", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 24.00);
+      tl.set("#w29_0", { className: "ativa" }, 24.00);
+      tl.set("#w29_0", { className: "" }, 24.24);
+      tl.set("#w29_1", { className: "ativa" }, 24.24);
+      tl.fromTo("#cx30", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 24.66);
+      tl.set("#w30_0", { className: "ativa" }, 24.66);
+      tl.set("#w30_0", { className: "" }, 24.94);
+      tl.set("#w30_1", { className: "ativa" }, 24.94);
+      tl.set("#w30_1", { className: "" }, 25.10);
+      tl.set("#w30_2", { className: "ativa" }, 25.10);
+      tl.fromTo("#cx31", { scale: 0.82, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.16, ease: "back.out(2)" }, 25.62);
+      tl.set("#w31_0", { className: "ativa" }, 25.62);
+      window.__timelines["legendas"] = tl;
+    })();
+  </script>
+</template>
