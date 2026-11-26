@@ -1,0 +1,28 @@
+{
+  "video": "bruto/violada/video.mov",
+  "transcricao": "trabalho/video.transcricao.json",
+  "resumo": "Chamada de 20 s, vertical, gravada na Adega Nº1: Thiago & Vinicius convidam o público para a última Violada T&V do ano, sábado 26 de dezembro, com atração nacional. Público: seguidores no Instagram (stories e reels). Estrutura: saudação, anúncio da edição, data, atração nacional, local e chamada final.",
+  "duracao_original": 20.27,
+  "duracao_estimada_final": 22.9,
+  "cortes": [
+    {"id": "c1", "inicio": 4.84, "fim": 5.28, "tipo": "pausa", "motivo": "Respiro de 0,6 s entre 'né Thiago?' e 'O final do ano'; fica 0,1 s de cada lado"}
+  ],
+  "insercoes": [
+    {"id": "i1", "tipo": "letreiro", "inicio": 0.3, "fim": 4.7, "descricao": "Logo THIAGO & VINICIUS (branco, & roxo) entrando no terço inferior, acima das legendas", "texto": "THIAGO & VINICIUS"},
+    {"id": "i2", "tipo": "letreiro", "inicio": 8.3, "fim": 10.5, "descricao": "Logo VIOLADA T&V grande entra no centro quando falam 'última edição da Violada T&V', com 'ÚLTIMA DO ANO' em cima", "texto": "ÚLTIMA DO ANO · VIOLADA T&V"},
+    {"id": "i3", "tipo": "letreiro", "inicio": 10.56, "fim": 12.7, "descricao": "Data em destaque no centro: 'SÁBADO' vermelho + '26 DE DEZEMBRO' branco, entra batendo em 'Dia 26'", "texto": "SÁBADO · 26 DE DEZEMBRO"},
+    {"id": "i4", "tipo": "zoom", "inicio": 11.68, "fim": 12.66, "descricao": "Zoom in suave até 112% em 'você não pode ficar de fora'"},
+    {"id": "i5", "tipo": "letreiro", "inicio": 12.8, "fim": 16.22, "descricao": "'SHOW NACIONAL' (etiqueta roxa) + foto recortada de Juan Marcus & Vinícius subindo de baixo, com o logo deles; fica até 'fazendo parte desse evento'", "texto": "SHOW NACIONAL · JUAN MARCUS & VINÍCIUS"},
+    {"id": "i6", "tipo": "letreiro", "inicio": 16.9, "fim": 18.42, "descricao": "Logo da Adega Nº1 em branco aparece no canto quando falam 'aqui na Adega Nº1'", "texto": "ADEGA Nº1"},
+    {"id": "i7", "tipo": "letreiro", "inicio": 20.27, "fim": 22.9, "descricao": "Encerramento de ~2,6 s após a fala: flyer principal animado (fotos, logo VIOLADA T&V, Juan Marcus & Vinícius, DJ Antony, DJ Lino, data e local), música sobe", "texto": "Flyer principal"}
+  ],
+  "legendas": {"estilo": "Legenda dinâmica palavra a palavra, Montserrat branca com contorno escuro, palavra atual em lilás; terço inferior, dentro da área segura do Instagram", "trecho": "0,0 a 20,2 s"},
+  "audio": {"musica": "Música de fundo baixa (~-20 dB) sob a fala, sobe no encerramento; aguardando arquivo do usuário", "voz": "Normalizar a voz (está em -30 dB média)"},
+  "observacoes": [
+    "Legendas em todo o vídeo: sim ou não?",
+    "Encerramento com o flyer principal (+2,6 s) ou terminar seco no 'rapaziada'?",
+    "Aparecer DJ Antony e DJ Lino no vídeo além do encerramento?",
+    "Formato final: 1080x1920 para reels/story"
+  ],
+  "status": "aguardando_aprovacao"
+}
