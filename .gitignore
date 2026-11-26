@@ -15,3 +15,6 @@
 node_modules/
 __pycache__/
 .venv/
+# Pastas temporárias da renderização da HyperFrames
+final/.*.hf-transaction-*/
+final/work-*/
