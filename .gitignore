@@ -18,3 +18,7 @@ __pycache__/
 # Pastas temporárias da renderização da HyperFrames
 final/.*.hf-transaction-*/
 final/work-*/
+*.MOV
+*.MP4
+*.M4V
+!trabalho/*/assets/*.mp4
