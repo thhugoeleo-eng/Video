@@ -73,7 +73,10 @@
     /* Rodapé */
     #rodape { z-index: 10; position: absolute; left: 0; top: 1665px; width: 1080px; text-align: center; }
     #rodape .r1 { font-size: 74px; color: var(--color-gold); letter-spacing: 3px; text-shadow: 0 4px 0 #4a1c03, 0 0 20px rgba(255,140,20,.45); }
-    #rodape .r2 { font-family: "Oswald"; font-weight: 500; font-size: 34px; color: var(--color-ink); letter-spacing: 6px; margin-top: 6px; }
+    #rodape .r2 { font-family: "Oswald"; font-weight: 500; font-size: 31px; color: var(--color-ink); letter-spacing: 4px; margin-top: 6px; white-space: nowrap; }
+    #rodape .r2 .sep { color: var(--color-gold); margin: 0 12px; }
+    #rodape .r2 .relogio { width: 28px; height: 28px; vertical-align: -5px; margin-right: 8px; }
+    #bigdate .hora { font-family: "Oswald", sans-serif; font-weight: 600; font-size: 60px; color: var(--color-gold); letter-spacing: 4px; margin-top: 18px; text-shadow: 0 4px 14px rgba(0,0,0,.7); }
     #rodape .r2 svg { width: 22px; height: 30px; vertical-align: -4px; margin-right: 8px; }
 
     /* Texto fixo no topo */
@@ -108,6 +111,7 @@
       <div id="bigdate">
         <div class="num">20.DEZ</div>
         <div class="dia">DOMINGO</div>
+        <div class="hora">A PARTIR DAS 14 HORAS</div>
       </div>
 
       <div id="artistas">
@@ -140,7 +144,7 @@
       <div id="bottom-shade" class="full" data-layout-ignore></div>
       <div id="rodape">
         <div class="r1">TATERSAL · PARQUE DE EXPOSIÇÕES</div>
-        <div class="r2"><svg viewBox="0 0 24 32"><path fill="#ffc24a" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>BELA VISTA - MS</div>
+        <div class="r2"><svg viewBox="0 0 24 32"><path fill="#ffc24a" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>BELA VISTA - MS<span class="sep">·</span><svg class="relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#ffc24a" stroke-width="2.6"/><path d="M12 6.5V12l3.8 2.4" fill="none" stroke="#ffc24a" stroke-width="2.6" stroke-linecap="round"/></svg>A PARTIR DAS 14 HORAS</div>
       </div>
     </div>
 
@@ -200,6 +204,7 @@
       // ---------- 3.3–5.6  Data gigante ----------
       tl.fromTo("#bigdate", { opacity: 0, scale: 2.4, filter: "blur(22px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, 3.3);
       tl.fromTo("#bigdate .dia", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.4, ease: "power4.out" }, 3.6);
+      tl.fromTo("#bigdate .hora", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power4.out" }, 3.85);
       tl.fromTo("#fence", { scale: 1.12 }, { scale: 1.0, duration: 2.4, ease: "power1.out" }, 3.0);
       tl.to("#flash", { opacity: 0.55, duration: 0.05 }, 4.2);
       tl.to("#flash", { opacity: 0, duration: 0.25 }, 4.25);
