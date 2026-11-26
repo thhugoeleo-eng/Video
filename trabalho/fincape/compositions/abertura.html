@@ -21,11 +21,24 @@
       gap: 14px; font-family: "Oswald"; font-weight: 500; font-size: 32px; letter-spacing: 3px; color: #fff6e6; text-shadow: 0 2px 10px rgba(0,0,0,.8); }
     #ab-topo b { font-weight: 700; color: #ffc24a; }
     #ab-topo img { height: 44px; width: auto; }
+    #ab-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,4,2,.95) 0, rgba(10,4,2,.6) 18%, transparent 38%); }
+    #ab-rodape { position: absolute; left: 0; top: 1665px; width: 1080px; text-align: center; z-index: 10; }
+    #ab-rodape .r1 { font-size: 74px; color: #ffc24a; letter-spacing: 3px; text-shadow: 0 4px 0 #4a1c03, 0 0 20px rgba(255,140,20,.45); }
+    #ab-rodape .r2 { font-family: "Oswald"; font-weight: 500; font-size: 31px; color: #fff6e6; letter-spacing: 4px; margin-top: 6px; white-space: nowrap; }
+    #ab-rodape .r2 .sep { color: #ffc24a; margin: 0 12px; }
+    #ab-rodape .r2 svg { width: 22px; height: 30px; vertical-align: -4px; margin-right: 8px; }
+    #ab-rodape .r2 .relogio { width: 28px; height: 28px; vertical-align: -5px; margin-right: 8px; }
   </style>
 
   <div id="root" data-composition-id="abertura" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
     <div id="ab-bg"><video id="v-abertura" class="clip" src="assets/bg-abertura.mp4" data-start="0" data-duration="5.1" data-track-index="0" muted playsinline></video></div>
     <div id="ab-vig" data-layout-ignore></div>
+
+    <div id="ab-shade" data-layout-ignore></div>
+    <div id="ab-rodape">
+      <div class="r1">TATERSAL · PARQUE DE EXPOSIÇÕES</div>
+      <div class="r2"><svg viewBox="0 0 24 32"><path fill="#ffc24a" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>BELA VISTA - MS<span class="sep">·</span><svg class="relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#ffc24a" stroke-width="2.6"/><path d="M12 6.5V12l3.8 2.4" fill="none" stroke="#ffc24a" stroke-width="2.6" stroke-linecap="round"/></svg>A PARTIR DAS 14 HORAS</div>
+    </div>
 
     <div class="frase" id="f1"><div class="grande">VEM AÍ</div></div>
     <div class="frase" id="f2">

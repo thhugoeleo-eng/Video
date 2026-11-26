@@ -174,7 +174,7 @@
       const FLYER = ["#logo", "#selo", "#cidade", "#nomes", ...A];
 
       // ---------- Estados iniciais ----------
-      gsap.set(["#bg-palco2", "#fence", "#bigdate", "#live2", "#live4", "#live3", "#selo", "#cidade", "#warm", "#burst", "#rays", "#flash", "#rodape", "#bottom-shade", "#logo", "#nomes"], { opacity: 0 });
+      gsap.set(["#bg-palco2", "#fence", "#bigdate", "#live2", "#live4", "#live3", "#selo", "#cidade", "#warm", "#burst", "#rays", "#flash", "#logo", "#nomes"], { opacity: 0 });
       gsap.set(A, { opacity: 0, y: 700 });
       gsap.set("#logo", { scale: 1, filter: "blur(0px)", y: -466 });
       gsap.set("#bg-palco", { opacity: 1, scale: 1.15 });
@@ -193,7 +193,6 @@
       // Clarão de luz atravessando
       tl.fromTo("#leak", { x: -200, opacity: 0 }, { x: 1500, opacity: 1, duration: 0.9, ease: "power2.inOut" }, 0.45);
       tl.to("#leak", { opacity: 0, duration: 0.2 }, 1.36);
-      tl.to(["#rodape", "#bottom-shade"], { opacity: 1, duration: 0.4, ease: "power2.out" }, 1.0);
 
       // ---------- 2.9–3.4  Transição para a data ----------
       tl.to("#logo", { scale: 1.6, opacity: 0, filter: "blur(18px)", duration: 0.4, ease: "power3.in" }, 2.85);
