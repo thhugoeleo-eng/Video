@@ -211,6 +211,8 @@
 
       // ---------- 5.7–7.4  Artistas sobem ----------
       A.forEach((a, i) => tl.fromTo(a, { opacity: 0, y: 700 }, { opacity: 1, y: 0, duration: 0.8, ease: "expo.out" }, 5.75 + [0.12, 0, 0.06, 0.18][i]));
+      tl.set("#logo", { scale: 0.6, filter: "blur(14px)" }, 5.7);
+      tl.to("#logo", { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, 5.75);
 
       // ---------- 7.4–8.5  Clarão branco e arte completa ----------
       tl.to("#flash", { opacity: 1, duration: 0.12, ease: "power2.in" }, 7.35);
