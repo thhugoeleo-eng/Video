@@ -85,6 +85,48 @@
   #C .nomes em { font-style: normal; color: #d9b45a; margin: 0 10px; }
   #C .rod { position: absolute; top: 1710px; width: 100%; text-align: center; font-size: 52px; letter-spacing: 12px; color: #fff; }
   #C .rod span { color: #d9b45a; }
+
+  /* ============ D · SERTANEJO ============ */
+  @font-face { font-family: "Rye"; src: url("assets/rye.woff2"); }
+  @font-face { font-family: "AlfaSlab"; src: url("assets/alfaslabone.woff2"); }
+  body.d #D { display: block; }
+  #D { background: #1c0f07; font-family: "AlfaSlab"; }
+  #D .bg { filter: sepia(.7) saturate(1.25) contrast(1.1) brightness(.75) blur(3px); transform: scale(1.05); }
+  #D .couro { background:
+      radial-gradient(75% 55% at 50% 35%, rgba(120,60,20,.05), rgba(20,8,2,.8) 100%),
+      repeating-linear-gradient(115deg, rgba(255,220,170,.035) 0 2px, transparent 2px 9px); }
+  #D .poeira { background-image: radial-gradient(rgba(255,230,190,.10) 1.2px, transparent 1.6px); background-size: 23px 31px; mix-blend-mode: screen; }
+  /* placa de madeira com a data */
+  #D .corda { position: absolute; top: 230px; width: 10px; height: 110px;
+    background: repeating-linear-gradient(35deg, #c9a46a 0 6px, #8a6431 6px 11px); border-radius: 4px; }
+  #D .placa { position: absolute; left: 150px; top: 320px; width: 780px; height: 230px; border-radius: 14px;
+    background:
+      repeating-linear-gradient(0deg, rgba(0,0,0,.18) 0 2px, transparent 2px 38px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px 11px),
+      linear-gradient(180deg, #8a5426, #6a3c18 60%, #57300f);
+    box-shadow: 0 16px 30px rgba(0,0,0,.6), inset 0 0 0 6px #3e2008, inset 0 0 0 10px #a0703a;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; transform: rotate(-1.5deg); }
+  #D .placa .p1 { font-family: "Rye"; font-size: 46px; letter-spacing: 8px; color: #f3e2bf; text-shadow: 3px 3px 0 #2a1406; }
+  #D .placa .p2 { font-family: "Rye"; font-size: 80px; line-height: 1; white-space: nowrap; text-align: center; margin-top: 6px; color: #ffcf6b; text-shadow: 4px 5px 0 #2a1406, 0 0 18px rgba(255,170,60,.35); }
+  #D .prego { position: absolute; top: 22px; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #e8d3a8, #5b4126); }
+  /* artistas */
+  #D .art { -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%); mask-image: linear-gradient(to bottom, #000 80%, transparent 100%); }
+  #D .art img { filter: sepia(.18) saturate(1.05) drop-shadow(0 0 3px rgba(243,226,191,.55)) drop-shadow(0 22px 30px rgba(0,0,0,.75)); }
+  #D #a1 { left: -20px; top: 600px; width: 330px; } #D #a2 { left: 215px; top: 645px; width: 340px; }
+  #D #a3 { left: 500px; top: 655px; width: 360px; } #D #a4 { left: 760px; top: 615px; width: 330px; }
+  #D .fade { position: absolute; left: 0; top: 980px; width: 1080px; height: 940px; background: linear-gradient(to bottom, transparent, #1c0f07 32%); }
+  /* faixa de couro com os nomes */
+  #D .faixa { position: absolute; left: 40px; top: 1125px; width: 1000px; height: 96px; background: linear-gradient(180deg, #7a3b17, #5a2a0e);
+    border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,.55); outline: 3px dashed rgba(243,226,191,.6); outline-offset: -12px;
+    display: flex; align-items: center; justify-content: center; gap: 16px; font-size: 29px; white-space: nowrap; color: #f3e2bf; letter-spacing: 1px; text-shadow: 2px 2px 0 #2a1406; }
+  #D .faixa i { font-style: normal; color: #ffcf6b; font-size: 34px; }
+  /* logo marcado a ferro */
+  #D .logoD { left: 150px; top: 1250px; width: 780px; height: 322px; }
+  #D .logoD.sombra { background: #2a1406; transform: translate(8px, 10px); }
+  #D .logoD.creme { background: linear-gradient(180deg, #fff1cf, #f3e2bf 45%, #d9b777); }
+  #D .estrelas { position: absolute; top: 1605px; width: 100%; text-align: center; font-size: 30px; color: #c9a46a; letter-spacing: 26px; }
+  #D .cidade { position: absolute; top: 1650px; width: 100%; text-align: center; font-family: "Rye"; font-size: 92px; color: #f3e2bf; letter-spacing: 4px;
+    text-shadow: 4px 5px 0 #2a1406, 0 0 22px rgba(255,170,60,.3); }
 </style>
 </head>
 <body>
@@ -143,6 +185,26 @@
   <div class="logo logoC"></div>
   <div class="linha" style="top:1695px"></div>
   <div class="rod">JARDIM <span>—</span> MS</div>
+</div>
+
+<!-- D · SERTANEJO -->
+<div class="arte" id="D">
+  <img class="full bg" src="assets/cantor-bone.jpg" />
+  <div class="full couro"></div>
+  <div class="full poeira"></div>
+  <div class="corda" style="left:260px;transform:rotate(-8deg)"></div>
+  <div class="corda" style="left:810px;transform:rotate(8deg)"></div>
+  <div class="placa"><div class="prego" style="left:110px"></div><div class="prego" style="right:110px"></div>
+    <div class="p1">★ SÁBADO ★</div><div class="p2">19 DE DEZEMBRO</div></div>
+  <div class="art" id="a1"><img src="assets/artista1.png" /></div>
+  <div class="art" id="a2"><img src="assets/artista2.png" /></div>
+  <div class="art" id="a3"><img src="assets/artista3.png" /></div>
+  <div class="art" id="a4"><img src="assets/artista4.png" /></div>
+  <div class="fade"></div>
+  <div class="faixa">JOÃO PAULO <i>★</i> PAULO FIAPO <i>★</i> THIAGO &amp; VINICIUS</div>
+  <div class="logo logoD sombra"></div><div class="logo logoD creme"></div>
+  <div class="estrelas">★ ★ ★</div>
+  <div class="cidade">JARDIM - MS</div>
 </div>
 <script>document.body.classList.add(new URLSearchParams(location.search).get("d") || "a");</script>
 </body>
