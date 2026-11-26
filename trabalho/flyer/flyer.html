@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Flyer Fincapé</title>
+<style>
+  @font-face { font-family: "League Gothic"; src: url("assets/400-normal-1f5def0df34d.woff2") format("woff2"); font-weight: 400; }
+  @font-face { font-family: "Oswald"; src: url("assets/500-normal-80787391b94b.woff2") format("woff2"); font-weight: 500; }
+  @font-face { font-family: "Oswald"; src: url("assets/600-normal-80787391b94b.woff2") format("woff2"); font-weight: 600; }
+  @font-face { font-family: "Oswald"; src: url("assets/700-normal-80787391b94b.woff2") format("woff2"); font-weight: 700; }
+  :root { --gold: #ffc24a; --orange: #ff8a12; --ink: #fff6e6; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #140803; }
+  #arte { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #140803; font-family: "League Gothic", sans-serif; }
+  body.feed #arte { height: 1350px; }
+
+  #fundo { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; filter: brightness(.95); }
+  body.feed #fundo { top: -330px; }
+  #alambrado { position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(45deg, rgba(255,190,120,.16) 0 3px, transparent 3px 34px),
+      repeating-linear-gradient(-45deg, rgba(255,190,120,.16) 0 3px, transparent 3px 34px),
+      radial-gradient(60% 45% at 50% 40%, rgba(120,52,14,.35), rgba(10,4,2,.85)); }
+  #vinheta { position: absolute; inset: 0; background: radial-gradient(75% 60% at 50% 40%, transparent 40%, rgba(8,3,1,.85) 100%); }
+  #sombra-base { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,4,2,.97) 0, rgba(10,4,2,.75) 22%, transparent 45%); }
+
+  /* Grupo central: fotos, nomes e logo (mesma composição do reel) */
+  #grupo { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 560px; }
+  body.feed #grupo { transform: translateY(-250px) scale(.8); z-index: 5; }
+  .artista { position: absolute; bottom: 590px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%); mask-image: linear-gradient(to bottom, #000 82%, transparent 100%); }
+  .artista img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 30px rgba(0,0,0,.65)); }
+  #a1 { left: -40px; width: 420px; z-index: 2; }
+  #a2 { left: 190px; width: 460px; z-index: 3; }
+  #a3 { left: 450px; width: 480px; z-index: 3; }
+  #a4 { left: 700px; width: 410px; z-index: 2; }
+  #sombra-artistas { position: absolute; left: -300px; top: 1100px; width: 1680px; height: 820px; z-index: 4;
+    background: linear-gradient(to top, rgba(14,5,2,1) 35%, rgba(14,5,2,0)); }
+  #nomes { position: absolute; left: 0; top: 1098px; width: 1080px; height: 80px; z-index: 7; }
+  .nome { position: absolute; top: 0; text-align: center; font-size: 60px; letter-spacing: 2px; color: var(--ink); white-space: nowrap;
+    text-shadow: 0 4px 0 #2a0f02, 0 0 16px rgba(0,0,0,.95), 0 0 30px rgba(0,0,0,.8); }
+  .nome b { color: var(--gold); font-weight: 400; }
+  #n1 { left: -5px; width: 300px; } #n2 { left: 300px; width: 300px; } #n3 { left: 590px; width: 460px; }
+  .logo { position: absolute; left: 90px; top: 1180px; width: 900px; height: 372px; z-index: 6; }
+  .logo div { position: absolute; inset: 0; -webkit-mask: url("assets/fincape.png") center / contain no-repeat; mask: url("assets/fincape.png") center / contain no-repeat; }
+  .logo .glow { background: var(--orange); filter: blur(22px); opacity: .85; transform: scale(1.04); }
+  .logo .edge { background: #3a1503; transform: translate(6px, 8px); }
+  .logo .gold { background: linear-gradient(180deg, #fff7d6 0%, #ffd77a 30%, #ffae2e 55%, #e8710e 78%, #ffd36a 100%); }
+
+  /* Topo, selo e cidade */
+  #topo { position: absolute; left: 0; top: 214px; width: 1080px; height: 64px; display: flex; align-items: center; justify-content: center; gap: 14px;
+    font-family: "Oswald"; font-weight: 500; font-size: 32px; letter-spacing: 3px; color: var(--ink); text-shadow: 0 2px 10px rgba(0,0,0,.8); z-index: 10; }
+  #topo b { font-weight: 700; color: var(--gold); }
+  #topo img { height: 44px; width: auto; }
+  body.feed #topo { top: 34px; }
+  #selo { position: absolute; left: 70px; top: 330px; width: 220px; text-align: center; color: var(--gold); line-height: .9; z-index: 10;
+    text-shadow: 0 4px 0 #4a1c03, 0 0 18px rgba(255,140,20,.6); }
+  #selo .s1 { font-family: "Oswald"; font-weight: 700; font-size: 30px; letter-spacing: 4px; color: var(--ink); }
+  #selo .s2 { font-size: 150px; }
+  #selo .s3 { font-size: 40px; letter-spacing: 3px; background: linear-gradient(180deg,#ffd77a,#e8810e); color: #2a0f02; text-shadow: none; padding: 6px 0 4px; border-radius: 4px; }
+  #cidade { position: absolute; right: 70px; top: 350px; width: 220px; text-align: center; color: var(--ink); z-index: 10; }
+  #cidade svg { width: 46px; height: 60px; }
+  #cidade .c1 { font-size: 62px; line-height: .9; color: var(--gold); text-shadow: 0 4px 0 #4a1c03; }
+  #cidade .c2 { font-family: "Oswald"; font-weight: 700; font-size: 30px; letter-spacing: 6px; }
+  body.feed #selo { top: 112px; left: 48px; transform: scale(.82); transform-origin: left top; }
+  body.feed #cidade { top: 124px; right: 48px; transform: scale(.82); transform-origin: right top; }
+
+  /* Rodapé */
+  #rodape { position: absolute; left: 0; top: 1665px; width: 1080px; text-align: center; z-index: 10; }
+  body.feed #rodape { top: 1140px; }
+  #rodape .r1 { font-size: 74px; color: var(--gold); letter-spacing: 3px; text-shadow: 0 4px 0 #4a1c03, 0 0 20px rgba(255,140,20,.45); }
+  #rodape .r2 { font-family: "Oswald"; font-weight: 500; font-size: 31px; color: var(--ink); letter-spacing: 4px; margin-top: 6px; white-space: nowrap; }
+  #rodape .r2 .sep { color: var(--gold); margin: 0 12px; }
+  #rodape .r2 svg { width: 22px; height: 30px; vertical-align: -4px; margin-right: 8px; }
+  #rodape .r2 .relogio { width: 28px; height: 28px; vertical-align: -5px; margin-right: 8px; }
+
+  /* Faíscas */
+  .faisca { position: absolute; border-radius: 50%; background: #ffcf7a; box-shadow: 0 0 8px 2px rgba(255,150,40,.8); z-index: 9; }
+</style>
+</head>
+<body>
+<div id="arte">
+  <img id="fundo" src="assets/fundo.jpg" alt="" />
+  <div id="alambrado"></div>
+  <div id="vinheta"></div>
+
+  <div id="grupo">
+    <div class="artista" id="a1"><img src="assets/artista1.png" alt="" /></div>
+    <div class="artista" id="a2"><img src="assets/artista2.png" alt="" /></div>
+    <div class="artista" id="a3"><img src="assets/artista3.png" alt="" /></div>
+    <div class="artista" id="a4"><img src="assets/artista4.png" alt="" /></div>
+    <div id="sombra-artistas"></div>
+    <div id="nomes">
+      <div class="nome" id="n1">JOÃO PAULO</div>
+      <div class="nome" id="n2">PAULO FIAPO</div>
+      <div class="nome" id="n3">THIAGO <b>&amp;</b> VINICIUS</div>
+    </div>
+    <div class="logo"><div class="glow"></div><div class="edge"></div><div class="gold"></div></div>
+  </div>
+
+  <div id="sombra-base"></div>
+
+  <div id="topo">REALIZAÇÃO: <b>RÔMULO BARROS</b> + <img src="assets/fincape.png" alt="Fincapé" /></div>
+  <div id="selo"><div class="s1">DOMINGO</div><div class="s2">20</div><div class="s3">DE DEZEMBRO</div></div>
+  <div id="cidade">
+    <svg viewBox="0 0 24 32"><path fill="#ffc24a" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>
+    <div class="c1">BELA VISTA</div><div class="c2">MS</div>
+  </div>
+
+  <div id="rodape">
+    <div class="r1">TATERSAL · PARQUE DE EXPOSIÇÕES</div>
+    <div class="r2"><svg viewBox="0 0 24 32"><path fill="#ffc24a" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>BELA VISTA - MS<span class="sep">·</span><svg class="relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#ffc24a" stroke-width="2.6"/><path d="M12 6.5V12l3.8 2.4" fill="none" stroke="#ffc24a" stroke-width="2.6" stroke-linecap="round"/></svg>A PARTIR DAS 14 HORAS</div>
+  </div>
+</div>
+<script>
+  // formato: ?f=story (1080x1920) ou ?f=feed (1080x1350)
+  const f = new URLSearchParams(location.search).get("f") || "story";
+  document.body.classList.add(f);
+  // faíscas fixas (semente determinística)
+  let s = 2012; const rnd = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
+  const H = f === "feed" ? 1350 : 1920, arte = document.getElementById("arte");
+  for (let i = 0; i < 45; i++) {
+    const d = document.createElement("div"); d.className = "faisca"; const r = 2 + rnd() * 4;
+    Object.assign(d.style, { width: r + "px", height: r + "px", left: rnd() * 1080 + "px", top: H * 0.45 + rnd() * H * 0.55 + "px", opacity: 0.35 + rnd() * 0.6 });
+    arte.appendChild(d);
+  }
+</script>
+</body>
+</html>

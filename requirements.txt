@@ -1,0 +1,4 @@
+# Transcrição local com Whisper (via faster-whisper, sem PyTorch)
+faster-whisper==1.2.1
+# PyAV 19 quebra o faster-whisper 1.2.1 (erro "metadata_errors")
+av<19

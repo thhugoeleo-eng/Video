@@ -1,0 +1,24 @@
+# Vídeos e áudios não vão para o git (são grandes); guarde-os fora ou em outro serviço
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.m4v
+*.avi
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+# Artefatos locais
+.hyperframes/
+node_modules/
+__pycache__/
+.venv/
+# Pastas temporárias da renderização da HyperFrames
+final/.*.hf-transaction-*/
+final/work-*/
+*.MOV
+*.MP4
+*.M4V
+!trabalho/*/assets/*.mp4

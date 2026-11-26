@@ -1,0 +1,98 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #140803; font-family: "League Gothic", "Oswald", sans-serif; }
+    #ab-bg { position: absolute; inset: 0; }
+    #ab-bg video { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    #ab-vig { position: absolute; inset: 0; background: radial-gradient(70% 55% at 50% 48%, rgba(20,8,3,.15) 30%, rgba(8,3,1,.9) 100%); }
+    .frase { position: absolute; left: 0; top: 700px; width: 1080px; text-align: center; transform-origin: 540px 260px; }
+    .grande { font-size: 300px; line-height: .9; color: #ff9a1a; letter-spacing: 4px;
+      text-shadow: 0 0 44px rgba(255,120,10,.6), 0 10px 0 #5a2405; }
+    .media { font-size: 190px; line-height: .92; color: #ffc24a; letter-spacing: 3px;
+      text-shadow: 0 0 36px rgba(255,120,10,.55), 0 8px 0 #5a2405; }
+    .pequena { font-family: "Oswald", sans-serif; font-weight: 600; font-size: 64px; color: #fff6e6; letter-spacing: 6px;
+      display: inline-block; transform: skewX(-10deg); text-shadow: 0 6px 18px rgba(0,0,0,.7); }
+    #f1 { top: 760px; }
+    #f2 { top: 640px; }
+    #f3 { top: 680px; }
+    #ab-flash { position: absolute; inset: 0; background: #fff8ec; mix-blend-mode: screen; }
+    #ab-leak { position: absolute; left: -400px; top: 300px; width: 700px; height: 1400px; mix-blend-mode: screen;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255,214,140,.9), rgba(255,140,30,.4) 45%, transparent 70%); transform: rotate(18deg); }
+    #ab-topo { position: absolute; left: 0; top: 214px; width: 1080px; height: 64px; display: flex; align-items: center; justify-content: center;
+      gap: 14px; font-family: "Oswald"; font-weight: 500; font-size: 32px; letter-spacing: 3px; color: #fff6e6; text-shadow: 0 2px 10px rgba(0,0,0,.8); }
+    #ab-topo b { font-weight: 700; color: #ffc24a; }
+    #ab-topo img { height: 44px; width: auto; }
+    #ab-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,4,2,.95) 0, rgba(10,4,2,.6) 18%, transparent 38%); }
+    #ab-rodape { position: absolute; left: 0; top: 1665px; width: 1080px; text-align: center; z-index: 10; }
+    #ab-rodape .r1 { font-size: 74px; color: #ffc24a; letter-spacing: 3px; text-shadow: 0 4px 0 #4a1c03, 0 0 20px rgba(255,140,20,.45); }
+    #ab-rodape .r2 { font-family: "Oswald"; font-weight: 500; font-size: 31px; color: #fff6e6; letter-spacing: 4px; margin-top: 6px; white-space: nowrap; }
+    #ab-rodape .r2 .sep { color: #ffc24a; margin: 0 12px; }
+    #ab-rodape .r2 svg { width: 22px; height: 30px; vertical-align: -4px; margin-right: 8px; }
+    #ab-rodape .r2 .relogio { width: 28px; height: 28px; vertical-align: -5px; margin-right: 8px; }
+  </style>
+
+  <div id="root" data-composition-id="abertura" data-width="1080" data-height="1920" data-layout-allow-overlap data-layout-allow-overflow>
+    <div id="ab-bg"><video id="v-abertura" class="clip" src="assets/bg-abertura.mp4" data-start="0" data-duration="5.1" data-track-index="0" muted playsinline></video></div>
+    <div id="ab-vig" data-layout-ignore></div>
+
+    <div id="ab-shade" data-layout-ignore></div>
+    <div id="ab-rodape">
+      <div class="r1">TATERSAL · PARQUE DE EXPOSIÇÕES</div>
+      <div class="r2"><svg viewBox="0 0 24 32"><path fill="#ffc24a" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.5 12 32 12 32s12-11.5 12-20.3C24 5.2 18.6 0 12 0zm0 16.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>BELA VISTA - MS<span class="sep">·</span><svg class="relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#ffc24a" stroke-width="2.6"/><path d="M12 6.5V12l3.8 2.4" fill="none" stroke="#ffc24a" stroke-width="2.6" stroke-linecap="round"/></svg>A PARTIR DAS 14 HORAS</div>
+    </div>
+
+    <div class="frase" id="f1"><div class="grande">VEM AÍ</div></div>
+    <div class="frase" id="f2">
+      <div class="pequena">PELA PRIMEIRA VEZ EM</div>
+      <div class="media">BELA VISTA-MS</div>
+    </div>
+    <div class="frase" id="f3">
+      <div class="pequena">COM VÁRIAS</div>
+      <div class="media">ATRAÇÕES</div>
+    </div>
+
+    <div id="ab-leak" data-layout-ignore></div>
+    <div id="ab-flash" data-layout-ignore></div>
+    <div id="ab-topo">REALIZAÇÃO: <b>RÔMULO BARROS</b> + <img src="assets/fincape.png" alt="Fincapé" /></div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      gsap.set(["#f1", "#f2", "#f3", "#ab-flash", "#ab-leak"], { opacity: 0 });
+      gsap.set("#ab-bg", { scale: 1.15 });
+      tl.to("#ab-bg", { scale: 1, duration: 5.1, ease: "none" }, 0);
+      // texto do topo acompanha o movimento: leve recuo e tremidas nos flashes
+      tl.fromTo("#ab-topo", { scale: 1.08 }, { scale: 1, duration: 5.1, ease: "none" }, 0);
+      const abShake = (t, amp) => [[1, -0.6], [-0.8, 0.9], [0.6, -1], [-0.4, 0.5], [0, 0]].forEach((q, i) =>
+        tl.to("#ab-topo", { x: q[0] * amp, y: q[1] * amp, duration: 0.04, ease: "none" }, t + i * 0.04));
+      abShake(1.5, 10); abShake(3.25, 10); abShake(4.98, 14);
+
+      // VEM AÍ (0.0–1.55)
+      tl.fromTo("#f1", { opacity: 0, scale: 2.2, filter: "blur(24px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, 0.0);
+      tl.to("#f1", { scale: 1.06, duration: 0.88, ease: "none" }, 0.5);
+      tl.to("#f1", { opacity: 0, scale: 1.5, filter: "blur(20px)", duration: 0.17, ease: "power3.in" }, 1.38);
+
+      // flash
+      tl.to("#ab-flash", { opacity: 0.7, duration: 0.05 }, 1.5);
+      tl.to("#ab-flash", { opacity: 0, duration: 0.25 }, 1.55);
+
+      // PELA PRIMEIRA VEZ EM BELA VISTA-MS (1.55–3.3)
+      tl.fromTo("#f2", { opacity: 0, scale: 0.7, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, 1.55);
+      tl.fromTo("#f2 .media", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "power4.out" }, 1.75);
+      tl.fromTo("#ab-leak", { x: -200, opacity: 0 }, { x: 1500, opacity: 1, duration: 1.0, ease: "power2.inOut" }, 2.0);
+      tl.to("#f2", { opacity: 0, scale: 1.4, filter: "blur(20px)", duration: 0.17, ease: "power3.in" }, 3.13);
+
+      // flash
+      tl.to("#ab-flash", { opacity: 0.7, duration: 0.05 }, 3.25);
+      tl.to("#ab-flash", { opacity: 0, duration: 0.25 }, 3.3);
+
+      // COM VÁRIAS ATRAÇÕES (3.3–5.1)
+      tl.fromTo("#f3", { opacity: 0, scale: 2, filter: "blur(22px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, 3.3);
+      tl.to("#f3", { scale: 1.05, duration: 1.1, ease: "none" }, 3.8);
+      tl.to("#f3", { opacity: 0, scale: 1.6, filter: "blur(22px)", duration: 0.16, ease: "power3.in" }, 4.9);
+      tl.to("#ab-flash", { opacity: 1, duration: 0.1, ease: "power2.in" }, 4.98);
+
+      window.__timelines["abertura"] = tl;
+    })();
+  </script>
+</template>
