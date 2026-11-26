@@ -16,12 +16,17 @@
 
   #fundo { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; filter: brightness(.95); }
   body.feed #fundo { top: -330px; }
+  #alambrado { position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(45deg, rgba(255,190,120,.16) 0 3px, transparent 3px 34px),
+      repeating-linear-gradient(-45deg, rgba(255,190,120,.16) 0 3px, transparent 3px 34px),
+      radial-gradient(60% 45% at 50% 40%, rgba(120,52,14,.35), rgba(10,4,2,.85)); }
   #vinheta { position: absolute; inset: 0; background: radial-gradient(75% 60% at 50% 40%, transparent 40%, rgba(8,3,1,.85) 100%); }
   #sombra-base { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,4,2,.97) 0, rgba(10,4,2,.75) 22%, transparent 45%); }
 
   /* Grupo central: fotos, nomes e logo (mesma composição do reel) */
   #grupo { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 560px; }
-  body.feed #grupo { transform: translateY(-318px) scale(.86); z-index: 5; }
+  body.feed #grupo { transform: translateY(-250px) scale(.8); z-index: 5; }
   .artista { position: absolute; bottom: 590px;
     -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%); mask-image: linear-gradient(to bottom, #000 82%, transparent 100%); }
   .artista img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 30px rgba(0,0,0,.65)); }
@@ -76,6 +81,7 @@
 <body>
 <div id="arte">
   <img id="fundo" src="assets/fundo.jpg" alt="" />
+  <div id="alambrado"></div>
   <div id="vinheta"></div>
 
   <div id="grupo">
