@@ -11,7 +11,7 @@ const path = require('path'), http = require('http'), fs = require('fs');
   await new Promise(r => srv.once('listening', r));
   const base = `http://127.0.0.1:${srv.address().port}/`;
   const b = await chromium.launch();
-  for (const d of (process.argv[2] || 'abcd').split('')) {
+  for (const d of (process.argv[2] || 'abcde').split('')) {
     const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
     await p.goto(base + 'teste.html?d=' + d);
     await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
