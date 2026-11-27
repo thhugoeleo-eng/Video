@@ -1,0 +1,27 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Leg,Gloria Hallelujah,50,&H00FFFFFF,&H00FFFFFF,&H90000000,&H80000000,0,0,0,0,100,100,2,0,1,1.6,2,2,60,60,430,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,-1:59:59.95,0:00:01.59,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}EU {\alpha&HFF&\t(430,650,\alpha&H00&)}SEI {\alpha&HFF&\t(650,870,\alpha&H00&)}QUE {\alpha&HFF&\t(870,1090,\alpha&H00&)}VOCÊ {\alpha&HFF&\t(1190,1410,\alpha&H00&)}PODERIA
+Dialogue: 0,0:00:01.59,0:00:03.37,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}SÓ {\alpha&HFF&\t(390,610,\alpha&H00&)}PEDIR {\alpha&HFF&\t(630,850,\alpha&H00&)}ELA {\alpha&HFF&\t(790,1010,\alpha&H00&)}EM {\alpha&HFF&\t(930,1150,\alpha&H00&)}NAMORO
+Dialogue: 0,0:00:03.37,0:00:05.15,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(49,269,\alpha&H00&)}MAS {\alpha&HFF&\t(149,369,\alpha&H00&)}MANDA {\alpha&HFF&\t(370,590,\alpha&H00&)}ESSA {\alpha&HFF&\t(589,809,\alpha&H00&)}AQUI {\alpha&HFF&\t(790,1010,\alpha&H00&)}PRA {\alpha&HFF&\t(990,1210,\alpha&H00&)}ELA
+Dialogue: 0,0:00:05.15,0:00:06.65,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(49,269,\alpha&H00&)}EU {\alpha&HFF&\t(409,629,\alpha&H00&)}TROCO {\alpha&HFF&\t(809,1029,\alpha&H00&)}MINHA {\alpha&HFF&\t(1109,1329,\alpha&H00&)}PAZ
+Dialogue: 0,0:00:06.65,0:00:08.15,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(49,269,\alpha&H00&)}POR {\alpha&HFF&\t(330,550,\alpha&H00&)}UM {\alpha&HFF&\t(489,709,\alpha&H00&)}BEIJO {\alpha&HFF&\t(1049,1269,\alpha&H00&)}SEU
+Dialogue: 0,0:00:08.15,0:00:09.81,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}EU {\alpha&HFF&\t(570,790,\alpha&H00&)}TROCO {\alpha&HFF&\t(930,1150,\alpha&H00&)}MEU {\alpha&HFF&\t(1170,1390,\alpha&H00&)}DESTINO
+Dialogue: 0,0:00:09.81,0:00:11.41,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}PRA {\alpha&HFF&\t(350,570,\alpha&H00&)}VIVER {\alpha&HFF&\t(810,1030,\alpha&H00&)}NO {\alpha&HFF&\t(1230,1450,\alpha&H00&)}SEU
+Dialogue: 0,0:00:11.41,0:00:12.95,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}EU {\alpha&HFF&\t(509,729,\alpha&H00&)}TROCO {\alpha&HFF&\t(910,1130,\alpha&H00&)}MINHA {\alpha&HFF&\t(1230,1450,\alpha&H00&)}CAMA
+Dialogue: 0,0:00:12.95,0:00:14.51,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}PRA {\alpha&HFF&\t(390,610,\alpha&H00&)}DORMIR {\alpha&HFF&\t(770,990,\alpha&H00&)}NA {\alpha&HFF&\t(1210,1430,\alpha&H00&)}SUA
+Dialogue: 0,0:00:14.51,0:00:16.31,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}EU {\alpha&HFF&\t(550,770,\alpha&H00&)}TROCO {\alpha&HFF&\t(970,1190,\alpha&H00&)}MIL {\alpha&HFF&\t(1250,1470,\alpha&H00&)}ESTRELAS
+Dialogue: 0,0:00:16.31,0:00:17.91,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}PRA {\alpha&HFF&\t(310,530,\alpha&H00&)}TE {\alpha&HFF&\t(610,830,\alpha&H00&)}DAR {\alpha&HFF&\t(810,1030,\alpha&H00&)}A {\alpha&HFF&\t(1110,1330,\alpha&H00&)}LUA
+Dialogue: 0,0:00:17.91,0:00:20.29,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}E {\alpha&HFF&\t(350,570,\alpha&H00&)}TUDO {\alpha&HFF&\t(589,809,\alpha&H00&)}QUE {\alpha&HFF&\t(850,1070,\alpha&H00&)}VOCÊ {\alpha&HFF&\t(1530,1750,\alpha&H00&)}QUISER
+Dialogue: 0,0:00:20.29,0:00:23.07,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}E {\alpha&HFF&\t(949,1169,\alpha&H00&)}SE {\alpha&HFF&\t(1269,1489,\alpha&H00&)}VOCÊ {\alpha&HFF&\t(1949,2169,\alpha&H00&)}QUISER
+Dialogue: 0,0:00:23.07,0:00:28.22,Leg,,0,0,0,,{\fad(0,180)}{\alpha&HFF&\t(50,270,\alpha&H00&)}TE {\alpha&HFF&\t(489,709,\alpha&H00&)}DOU {\alpha&HFF&\t(710,930,\alpha&H00&)}MEU {\alpha&HFF&\t(1070,1290,\alpha&H00&)}SOBRENOME

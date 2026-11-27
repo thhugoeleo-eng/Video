@@ -1,0 +1,363 @@
+{
+  "arquivo": "bruto/cantando/A001_11181550_C190.mov",
+  "idioma": "pt",
+  "duracao": 31.691,
+  "modelo": "medium",
+  "frases": [
+    {
+      "id": 1,
+      "inicio": 0.0,
+      "fim": 4.6,
+      "texto": "Eu sei que você poderia só pedir ela em namoro, mas manda essa aqui pra ela.",
+      "palavras": [
+        {
+          "inicio": 0.0,
+          "fim": 0.38,
+          "palavra": "Eu"
+        },
+        {
+          "inicio": 0.38,
+          "fim": 0.6,
+          "palavra": "sei"
+        },
+        {
+          "inicio": 0.6,
+          "fim": 0.82,
+          "palavra": "que"
+        },
+        {
+          "inicio": 0.82,
+          "fim": 1.14,
+          "palavra": "você"
+        },
+        {
+          "inicio": 1.14,
+          "fim": 1.64,
+          "palavra": "poderia"
+        },
+        {
+          "inicio": 1.64,
+          "fim": 1.98,
+          "palavra": "só"
+        },
+        {
+          "inicio": 1.98,
+          "fim": 2.22,
+          "palavra": "pedir"
+        },
+        {
+          "inicio": 2.22,
+          "fim": 2.38,
+          "palavra": "ela"
+        },
+        {
+          "inicio": 2.38,
+          "fim": 2.52,
+          "palavra": "em"
+        },
+        {
+          "inicio": 2.52,
+          "fim": 3.08,
+          "palavra": "namoro,"
+        },
+        {
+          "inicio": 3.42,
+          "fim": 3.52,
+          "palavra": "mas"
+        },
+        {
+          "inicio": 3.52,
+          "fim": 3.74,
+          "palavra": "manda"
+        },
+        {
+          "inicio": 3.74,
+          "fim": 3.96,
+          "palavra": "essa"
+        },
+        {
+          "inicio": 3.96,
+          "fim": 4.16,
+          "palavra": "aqui"
+        },
+        {
+          "inicio": 4.16,
+          "fim": 4.36,
+          "palavra": "pra"
+        },
+        {
+          "inicio": 4.36,
+          "fim": 4.6,
+          "palavra": "ela."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "inicio": 5.2,
+      "fim": 11.46,
+      "texto": "Eu troco minha paz por um beijo seu Eu troco meu destino pra viver no seu",
+      "palavras": [
+        {
+          "inicio": 5.2,
+          "fim": 5.56,
+          "palavra": "Eu"
+        },
+        {
+          "inicio": 5.56,
+          "fim": 5.96,
+          "palavra": "troco"
+        },
+        {
+          "inicio": 5.96,
+          "fim": 6.26,
+          "palavra": "minha"
+        },
+        {
+          "inicio": 6.26,
+          "fim": 6.7,
+          "palavra": "paz"
+        },
+        {
+          "inicio": 6.7,
+          "fim": 6.98,
+          "palavra": "por"
+        },
+        {
+          "inicio": 6.98,
+          "fim": 7.14,
+          "palavra": "um"
+        },
+        {
+          "inicio": 7.14,
+          "fim": 7.7,
+          "palavra": "beijo"
+        },
+        {
+          "inicio": 7.7,
+          "fim": 8.2,
+          "palavra": "seu"
+        },
+        {
+          "inicio": 8.2,
+          "fim": 8.72,
+          "palavra": "Eu"
+        },
+        {
+          "inicio": 8.72,
+          "fim": 9.08,
+          "palavra": "troco"
+        },
+        {
+          "inicio": 9.08,
+          "fim": 9.32,
+          "palavra": "meu"
+        },
+        {
+          "inicio": 9.32,
+          "fim": 9.86,
+          "palavra": "destino"
+        },
+        {
+          "inicio": 9.86,
+          "fim": 10.16,
+          "palavra": "pra"
+        },
+        {
+          "inicio": 10.16,
+          "fim": 10.62,
+          "palavra": "viver"
+        },
+        {
+          "inicio": 10.62,
+          "fim": 11.04,
+          "palavra": "no"
+        },
+        {
+          "inicio": 11.04,
+          "fim": 11.46,
+          "palavra": "seu"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "inicio": 11.46,
+      "fim": 17.96,
+      "texto": "Eu troco minha cama pra dormir na sua Eu troco mil estrelas pra te dar a lua",
+      "palavras": [
+        {
+          "inicio": 11.46,
+          "fim": 11.92,
+          "palavra": "Eu"
+        },
+        {
+          "inicio": 11.92,
+          "fim": 12.32,
+          "palavra": "troco"
+        },
+        {
+          "inicio": 12.32,
+          "fim": 12.64,
+          "palavra": "minha"
+        },
+        {
+          "inicio": 12.64,
+          "fim": 13.0,
+          "palavra": "cama"
+        },
+        {
+          "inicio": 13.0,
+          "fim": 13.34,
+          "palavra": "pra"
+        },
+        {
+          "inicio": 13.34,
+          "fim": 13.72,
+          "palavra": "dormir"
+        },
+        {
+          "inicio": 13.72,
+          "fim": 14.16,
+          "palavra": "na"
+        },
+        {
+          "inicio": 14.16,
+          "fim": 14.56,
+          "palavra": "sua"
+        },
+        {
+          "inicio": 14.56,
+          "fim": 15.06,
+          "palavra": "Eu"
+        },
+        {
+          "inicio": 15.06,
+          "fim": 15.48,
+          "palavra": "troco"
+        },
+        {
+          "inicio": 15.48,
+          "fim": 15.76,
+          "palavra": "mil"
+        },
+        {
+          "inicio": 15.76,
+          "fim": 16.36,
+          "palavra": "estrelas"
+        },
+        {
+          "inicio": 16.36,
+          "fim": 16.62,
+          "palavra": "pra"
+        },
+        {
+          "inicio": 16.62,
+          "fim": 16.92,
+          "palavra": "te"
+        },
+        {
+          "inicio": 16.92,
+          "fim": 17.12,
+          "palavra": "dar"
+        },
+        {
+          "inicio": 17.12,
+          "fim": 17.42,
+          "palavra": "a"
+        },
+        {
+          "inicio": 17.42,
+          "fim": 17.96,
+          "palavra": "lua"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "inicio": 17.96,
+      "fim": 23.12,
+      "texto": "E tudo que você quiser E se você quiser",
+      "palavras": [
+        {
+          "inicio": 17.96,
+          "fim": 18.26,
+          "palavra": "E"
+        },
+        {
+          "inicio": 18.26,
+          "fim": 18.5,
+          "palavra": "tudo"
+        },
+        {
+          "inicio": 18.5,
+          "fim": 18.76,
+          "palavra": "que"
+        },
+        {
+          "inicio": 18.76,
+          "fim": 19.44,
+          "palavra": "você"
+        },
+        {
+          "inicio": 19.44,
+          "fim": 20.34,
+          "palavra": "quiser"
+        },
+        {
+          "inicio": 20.34,
+          "fim": 21.24,
+          "palavra": "E"
+        },
+        {
+          "inicio": 21.24,
+          "fim": 21.56,
+          "palavra": "se"
+        },
+        {
+          "inicio": 21.56,
+          "fim": 22.24,
+          "palavra": "você"
+        },
+        {
+          "inicio": 22.24,
+          "fim": 23.12,
+          "palavra": "quiser"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "inicio": 23.12,
+      "fim": 27.62,
+      "texto": "Te dou meu sogrão e...",
+      "palavras": [
+        {
+          "inicio": 23.12,
+          "fim": 23.56,
+          "palavra": "Te"
+        },
+        {
+          "inicio": 23.56,
+          "fim": 23.78,
+          "palavra": "dou"
+        },
+        {
+          "inicio": 23.78,
+          "fim": 24.14,
+          "palavra": "meu"
+        },
+        {
+          "inicio": 24.14,
+          "fim": 25.56,
+          "palavra": "sogrão"
+        },
+        {
+          "inicio": 25.56,
+          "fim": 27.62,
+          "palavra": "e..."
+        }
+      ]
+    }
+  ]
+}
