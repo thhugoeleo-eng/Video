@@ -73,27 +73,36 @@ ff("-i", VOZ, "-af",
    "pan=mono|c0=0.5*c0+0.5*c1,aresample=48000,highpass=f=90:p=2," + voz_eq +
    ",deesser=i=0.4:f=0.5,acompressor=threshold=-24dB:ratio=4:attack=5:release=90:makeup=4,"
    "acompressor=threshold=-14dB:ratio=2:attack=15:release=200", str(TMP / "voz_seca.wav"))
-# Violão: curva da referência limitada a ±6 dB, compressão leve
-vio_eq = eq(f"{PREF}_gtr", lim_baixo=[(20000, 6)])
-ff("-i", VIO, "-af",
-   "pan=mono|c0=0.5*c0+0.5*c1,aresample=48000,highpass=f=60:p=2," + vio_eq +
-   ",acompressor=threshold=-30dB:ratio=2.5:attack=20:release=220:makeup=3", str(TMP / "vio_seco.wav"))
+# Violão: se MIX_VIOLAO_PRONTO=1, VIO já vem tratado em estéreo pelo violao.py (EQ, compressão, dobra, reverb)
+VIOLAO_PRONTO = os.environ.get("MIX_VIOLAO_PRONTO") == "1"
+if VIOLAO_PRONTO:
+    ff("-i", VIO, "-ac", "2", "-ar", "48000", str(TMP / "vio_seco.wav"))
+else:
+    # curva da referência limitada a ±6 dB, compressão leve
+    vio_eq = eq(f"{PREF}_gtr", lim_baixo=[(20000, 6)])
+    ff("-i", VIO, "-af",
+       "pan=mono|c0=0.5*c0+0.5*c1,aresample=48000,highpass=f=60:p=2," + vio_eq +
+       ",acompressor=threshold=-30dB:ratio=2.5:attack=20:release=220:makeup=3", str(TMP / "vio_seco.wav"))
 
 # Equilíbrio: voz VOZ_ACIMA_DO_VIOLAO LU acima do violão
 gv = -18 - lufs(TMP / "voz_seca.wav")
 gg = -18 - VOZ_ACIMA_DO_VIOLAO - lufs(TMP / "vio_seco.wav")
 
+if VIOLAO_PRONTO:
+    violao = (f"[1:a]volume={gg:.2f}dB[gw];[ir2]anullsink;"
+              "anullsrc=r=48000:cl=stereo,atrim=0:0.1[grev];")
+else:
+    violao = (f"[1:a]volume={gg:.2f}dB,asplit=3[g1][g2][g3];"
+              # violão aberto: esquerdo direto, direito atrasado (Haas) + reverb
+              "[g2]adelay=13,volume=-1dB[gd];[g1][gd]join=inputs=2:channel_layout=stereo[gw];"
+              "[g3]pan=stereo|c0=c0|c1=c0[gs];[gs][ir2]afir=dry=0:wet=1[gr];[gr]volume=-19dB[grev];")
 ff("-i", str(TMP / "voz_seca.wav"), "-i", str(TMP / "vio_seco.wav"), "-i", str(ir), "-filter_complex",
    f"[0:a]volume={gv:.2f}dB,asplit[v1][v2];"
-   f"[1:a]volume={gg:.2f}dB,asplit=3[g1][g2][g3];"
-   "[2:a]asplit[ir1][ir2];"
+   "[2:a]asplit[ir1][ir2];" + violao +
    # voz no centro + reverb estéreo
    "[v1]pan=stereo|c0=c0|c1=c0[vc];"
    "[v2]pan=stereo|c0=c0|c1=c0[vs];[vs][ir1]afir=dry=0:wet=1[vr];[vr]volume=-15dB[vrev];"
-   # violão aberto: esquerdo direto, direito atrasado (Haas) + reverb
-   "[g2]adelay=13,volume=-1dB[gd];[g1][gd]join=inputs=2:channel_layout=stereo[gw];"
-   "[g3]pan=stereo|c0=c0|c1=c0[gs];[gs][ir2]afir=dry=0:wet=1[gr];[gr]volume=-19dB[grev];"
-   "[vc][vrev][gw][grev]amix=inputs=4:normalize=0[mix];"
+   "[vc][vrev][gw][grev]amix=inputs=4:normalize=0:duration=first[mix];"
    # master: cola, brilho leve, limitador
    f"[mix]acompressor=threshold=-20dB:ratio={MASTER_RATIO}:attack=30:release=250:makeup=1,{MASTER_EQ}[m]", "-map", "[m]", "-ar", "48000", str(TMP / "mix.wav"))
 
