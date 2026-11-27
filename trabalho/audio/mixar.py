@@ -5,6 +5,7 @@ Uso: python3 mixar.py VOZ.wav VIOLAO.wav CURVAS.json PREFIXO SAIDA.wav
   CURVAS.json: saída da análise (bandas + curvas "<PREFIXO>_voz" e "<PREFIXO>_gtr" em dB)
 """
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -14,7 +15,13 @@ import numpy as np
 
 VOZ, VIO, CURVAS, PREF, SAIDA = sys.argv[1:6]
 SR = 48000
-VOZ_ACIMA_DO_VIOLAO = 3.4   # LU, medido na mix de referência
+# LU de voz acima do violão (3.4 = mix "Pele Não Mente"; 6.4 = vídeo de referência do dueto)
+VOZ_ACIMA_DO_VIOLAO = float(os.environ.get("MIX_VOZ_ACIMA", "3.4"))
+# EQ do master (ffmpeg); padrão = ajuste B2
+MASTER_EQ = os.environ.get("MIX_MASTER_EQ",
+                           "highpass=f=35,lowshelf=f=120:g=3,equalizer=f=6000:t=o:w=1.3:g=-2.2,highshelf=f=10000:g=1")
+# compressão de cola do master (ratio)
+MASTER_RATIO = float(os.environ.get("MIX_MASTER_RATIO", "2"))
 ALVO_LUFS = -11.5
 TMP = Path(tempfile.mkdtemp())
 
@@ -88,8 +95,7 @@ ff("-i", str(TMP / "voz_seca.wav"), "-i", str(TMP / "vio_seco.wav"), "-i", str(i
    "[g3]pan=stereo|c0=c0|c1=c0[gs];[gs][ir2]afir=dry=0:wet=1[gr];[gr]volume=-19dB[grev];"
    "[vc][vrev][gw][grev]amix=inputs=4:normalize=0[mix];"
    # master: cola, brilho leve, limitador
-   "[mix]acompressor=threshold=-20dB:ratio=2:attack=30:release=250:makeup=1,"
-   "highpass=f=35,lowshelf=f=120:g=3,equalizer=f=6000:t=o:w=1.3:g=-2.2,highshelf=f=10000:g=1[m]", "-map", "[m]", "-ar", "48000", str(TMP / "mix.wav"))
+   f"[mix]acompressor=threshold=-20dB:ratio={MASTER_RATIO}:attack=30:release=250:makeup=1,{MASTER_EQ}[m]", "-map", "[m]", "-ar", "48000", str(TMP / "mix.wav"))
 
 ganho = ALVO_LUFS - lufs(TMP / "mix.wav")
 ff("-i", str(TMP / "mix.wav"), "-af",
