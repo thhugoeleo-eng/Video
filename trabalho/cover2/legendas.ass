@@ -12,15 +12,15 @@ Style: Letra,Reenie Beanie,80,&H00FFFFFF,&H00FFFFFF,&H00FFFFFF,&H00000000,0,0,0,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.31,0:00:03.09,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}ESQUEÇA QUE EU TE AMO
-Dialogue: 1,0:00:00.31,0:00:03.09,Letra,,0,0,0,,{\fad(120,120)}ESQUEÇA QUE EU TE AMO
-Dialogue: 0,0:00:03.09,0:00:06.85,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}QUE EU VOU ME VIRANDO
-Dialogue: 1,0:00:03.09,0:00:06.85,Letra,,0,0,0,,{\fad(120,120)}QUE EU VOU ME VIRANDO
-Dialogue: 0,0:00:07.25,0:00:09.65,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}SEGUE A SUA VIDA
-Dialogue: 1,0:00:07.25,0:00:09.65,Letra,,0,0,0,,{\fad(120,120)}SEGUE A SUA VIDA
-Dialogue: 0,0:00:09.69,0:00:16.60,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}VAI SER MELHOR ASSIM
-Dialogue: 1,0:00:09.69,0:00:16.60,Letra,,0,0,0,,{\fad(120,120)}VAI SER MELHOR ASSIM
-Dialogue: 0,0:00:16.86,0:00:19.30,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}SE NÃO TÁ MAIS A FIM
-Dialogue: 1,0:00:16.86,0:00:19.30,Letra,,0,0,0,,{\fad(120,120)}SE NÃO TÁ MAIS A FIM
-Dialogue: 0,0:00:19.33,0:00:24.65,Letra,,0,0,0,,{\fad(120,300)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}NÃO VEJO OUTRA SAÍDA
-Dialogue: 1,0:00:19.33,0:00:24.65,Letra,,0,0,0,,{\fad(120,300)}NÃO VEJO OUTRA SAÍDA
+Dialogue: 0,0:00:02.06,0:00:04.84,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}ESQUEÇA QUE EU TE AMO
+Dialogue: 1,0:00:02.06,0:00:04.84,Letra,,0,0,0,,{\fad(120,120)}ESQUEÇA QUE EU TE AMO
+Dialogue: 0,0:00:04.84,0:00:08.60,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}QUE EU VOU ME VIRANDO
+Dialogue: 1,0:00:04.84,0:00:08.60,Letra,,0,0,0,,{\fad(120,120)}QUE EU VOU ME VIRANDO
+Dialogue: 0,0:00:09.00,0:00:11.40,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}SEGUE A SUA VIDA
+Dialogue: 1,0:00:09.00,0:00:11.40,Letra,,0,0,0,,{\fad(120,120)}SEGUE A SUA VIDA
+Dialogue: 0,0:00:11.44,0:00:18.35,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}VAI SER MELHOR ASSIM
+Dialogue: 1,0:00:11.44,0:00:18.35,Letra,,0,0,0,,{\fad(120,120)}VAI SER MELHOR ASSIM
+Dialogue: 0,0:00:18.61,0:00:21.05,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}SE NÃO TÁ MAIS A FIM
+Dialogue: 1,0:00:18.61,0:00:21.05,Letra,,0,0,0,,{\fad(120,120)}SE NÃO TÁ MAIS A FIM
+Dialogue: 0,0:00:21.08,0:00:26.40,Letra,,0,0,0,,{\fad(120,300)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}NÃO VEJO OUTRA SAÍDA
+Dialogue: 1,0:00:21.08,0:00:26.40,Letra,,0,0,0,,{\fad(120,300)}NÃO VEJO OUTRA SAÍDA
