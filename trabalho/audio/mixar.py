@@ -89,7 +89,7 @@ ff("-i", str(TMP / "voz_seca.wav"), "-i", str(TMP / "vio_seco.wav"), "-i", str(i
    "[vc][vrev][gw][grev]amix=inputs=4:normalize=0[mix];"
    # master: cola, brilho leve, limitador
    "[mix]acompressor=threshold=-20dB:ratio=2:attack=30:release=250:makeup=1,"
-   "highshelf=f=10000:g=1[m]", "-map", "[m]", "-ar", "48000", str(TMP / "mix.wav"))
+   "highpass=f=35,lowshelf=f=120:g=3,equalizer=f=6000:t=o:w=1.3:g=-2.2,highshelf=f=10000:g=1[m]", "-map", "[m]", "-ar", "48000", str(TMP / "mix.wav"))
 
 ganho = ALVO_LUFS - lufs(TMP / "mix.wav")
 ff("-i", str(TMP / "mix.wav"), "-af",
