@@ -6,6 +6,7 @@
 
 Uso: python3 pipeline.py VOZ_STEM VIOLAO_STEM REF_VIOLAO REF_VOZ REF_MIX PASTA_SAIDA
 """
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -16,7 +17,12 @@ VOZ, VIO, REF_VIO, REF_VOZ, REF_MIX, OUT = sys.argv[1:7]
 OUT = Path(OUT)
 OUT.mkdir(parents=True, exist_ok=True)
 SR = 48000
-ALVO_LUFS = -11.5
+ALVO_LUFS = float(os.environ.get("MIX_ALVO_LUFS", "-11.5"))
+VOZ_ACIMA = float(os.environ.get("MIX_VOZ_ACIMA", "3.4"))          # LU de voz acima do violão
+VIOLAO_MONO = os.environ.get("MIX_VIOLAO_MONO") == "1"             # sem Haas nem reverb no violão
+VOZ_REVERB_DB = float(os.environ.get("MIX_VOZ_REVERB_DB", "-15"))
+VIO_DYN_EXTRA = float(os.environ.get("MIX_VIO_DYN_EXTRA", "2"))    # dB de dinâmica a mais que a referência do violão
+VOZ_GRAVE_MAX = float(os.environ.get("MIX_VOZ_GRAVE_MAX", "3"))    # reforço máximo da voz até 250 Hz
 BANDAS = [50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250, 1600, 2000, 2500, 3150,
           4000, 5000, 6300, 8000, 10000, 12500, 16000]
 B = np.array(BANDAS)
@@ -136,13 +142,16 @@ salvar(OUT / "vio_cru.wav", vio)
 ff("-i", str(OUT / "vio_cru.wav"), "-af", "highpass=f=70,highpass=f=70", "-c:a", "pcm_f32le", str(OUT / "vio_hp.wav"))
 eq_arquivo(OUT / "vio_hp.wav", OUT / "vio_eq.wav",
            curva(perfil(ref_vio), perfil(carregar(OUT / "vio_hp.wav")), sobe=8, desce=9, limites=[(80, 0)]))
-thr, ratio = escolher_compressao(OUT / "vio_eq.wav", "anull", dinamica(ref_vio) + 2,
+thr, ratio = escolher_compressao(OUT / "vio_eq.wav", "anull", dinamica(ref_vio) + VIO_DYN_EXTRA,
                                  [(-30, 2), (-32, 3), (-34, 3), (-36, 4), (-38, 4)], OUT / "vio_comp.wav")
-# estéreo como na B2 (Haas 13 ms) + reverb leve
-ff("-i", str(OUT / "vio_comp.wav"), "-i", str(ir), "-filter_complex",
-   "[0:a]asplit=3[a][b][c];[b]adelay=13,volume=-1dB[bd];[a][bd]join=inputs=2:channel_layout=stereo[w];"
-   "[c]pan=stereo|c0=c0|c1=c0[cs];[cs][1:a]afir=dry=0:wet=1,volume=-19dB[r];"
-   "[w][r]amix=inputs=2:normalize=0:duration=first", str(OUT / "vio_pre.wav"))
+if VIOLAO_MONO:
+    ff("-i", str(OUT / "vio_comp.wav"), "-af", "pan=stereo|c0=c0|c1=c0", "-c:a", "pcm_f32le", str(OUT / "vio_pre.wav"))
+else:
+    # estéreo como na B2 (Haas 13 ms) + reverb leve
+    ff("-i", str(OUT / "vio_comp.wav"), "-i", str(ir), "-filter_complex",
+       "[0:a]asplit=3[a][b][c];[b]adelay=13,volume=-1dB[bd];[a][bd]join=inputs=2:channel_layout=stereo[w];"
+       "[c]pan=stereo|c0=c0|c1=c0[cs];[cs][1:a]afir=dry=0:wet=1,volume=-19dB[r];"
+       "[w][r]amix=inputs=2:normalize=0:duration=first", str(OUT / "vio_pre.wav"))
 eq_arquivo(OUT / "vio_pre.wav", OUT / "vio_pre_eq.wav",
            curva(perfil(ref_vio), perfil(carregar(OUT / "vio_pre.wav")), sobe=6, desce=6, limites=[(80, 0)]))
 ff("-i", str(OUT / "vio_pre_eq.wav"), "-af", "alimiter=limit=0.8:attack=3:release=60:level=false",
@@ -156,19 +165,19 @@ salvar(OUT / "voz_cru.wav", voz)
 # sem reforço abaixo de 100 Hz e no máximo +3 dB até 250 Hz (a referência é AAC com vazamento de violão)
 ff("-i", str(OUT / "voz_cru.wav"), "-af", "highpass=f=90:p=2", "-c:a", "pcm_f32le", str(OUT / "voz_hp.wav"))
 eq_arquivo(OUT / "voz_hp.wav", OUT / "voz_eq.wav",
-           curva(perfil(ref_voz), perfil(carregar(OUT / "voz_hp.wav")), sobe=5, desce=9, limites=[(100, 0), (250, 3)]))
+           curva(perfil(ref_voz), perfil(carregar(OUT / "voz_hp.wav")), sobe=5, desce=9, limites=[(100, 0), (250, VOZ_GRAVE_MAX)]))
 thr, ratio = escolher_compressao(OUT / "voz_eq.wav", "deesser=i=0.4:f=0.5", dinamica(ref_voz),
-                                 [(-20, 2), (-22, 3), (-24, 3), (-24, 4), (-26, 4)], OUT / "voz_comp.wav")
+                                 [(-14, 1.5), (-16, 2), (-20, 2), (-22, 3), (-24, 3), (-24, 4), (-26, 4)], OUT / "voz_comp.wav")
 ff("-i", str(OUT / "voz_comp.wav"), "-i", str(ir), "-filter_complex",
    "[0:a]pan=mono|c0=c0,asplit[a][b];[a]pan=stereo|c0=c0|c1=c0[d];[b]pan=stereo|c0=c0|c1=c0[bs];"
-   "[bs][1:a]afir=dry=0:wet=1,volume=-15dB[r];[d][r]amix=inputs=2:normalize=0:duration=first",
+   f"[bs][1:a]afir=dry=0:wet=1,volume={VOZ_REVERB_DB}dB[r];[d][r]amix=inputs=2:normalize=0:duration=first",
    "-c:a", "pcm_f32le", str(OUT / "2_voz.wav"))
 print(f"voz: compressão {thr} dB / {ratio}:1")
 relatorio("2 voz x voz da referência", carregar(OUT / "2_voz.wav"), ref_voz)
 
 # ---------- 3) mix + master ----------
 gv = -18 - lufs(OUT / "2_voz.wav")
-gg = -18 - 3.4 - lufs(OUT / "1_violao.wav")        # voz 3,4 LU acima do violão, como na mix de referência
+gg = -18 - VOZ_ACIMA - lufs(OUT / "1_violao.wav")
 ff("-i", str(OUT / "2_voz.wav"), "-i", str(OUT / "1_violao.wav"), "-filter_complex",
    f"[0:a]volume={gv:.2f}dB[v];[1:a]volume={gg:.2f}dB[g];[v][g]amix=inputs=2:normalize=0:duration=first,"
    "acompressor=threshold=-20dB:ratio=2:attack=30:release=250:makeup=1", "-c:a", "pcm_f32le", str(OUT / "mix_pre.wav"))
