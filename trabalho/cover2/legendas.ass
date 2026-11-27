@@ -1,0 +1,26 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Gancho,Reenie Beanie,92,&H00FFFFFF,&H00FFFFFF,&H00FFFFFF,&H00000000,0,0,0,0,100,100,4,0,1,0.9,0,8,60,60,230,1
+Style: Letra,Reenie Beanie,80,&H00FFFFFF,&H00FFFFFF,&H00FFFFFF,&H00000000,0,0,0,0,100,100,4,0,1,0.9,0,2,60,60,400,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.31,0:00:03.09,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}ESQUEÇA QUE EU TE AMO
+Dialogue: 1,0:00:00.31,0:00:03.09,Letra,,0,0,0,,{\fad(120,120)}ESQUEÇA QUE EU TE AMO
+Dialogue: 0,0:00:03.09,0:00:06.85,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}QUE EU VOU ME VIRANDO
+Dialogue: 1,0:00:03.09,0:00:06.85,Letra,,0,0,0,,{\fad(120,120)}QUE EU VOU ME VIRANDO
+Dialogue: 0,0:00:07.25,0:00:09.65,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}SEGUE A SUA VIDA
+Dialogue: 1,0:00:07.25,0:00:09.65,Letra,,0,0,0,,{\fad(120,120)}SEGUE A SUA VIDA
+Dialogue: 0,0:00:09.69,0:00:16.60,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}VAI SER MELHOR ASSIM
+Dialogue: 1,0:00:09.69,0:00:16.60,Letra,,0,0,0,,{\fad(120,120)}VAI SER MELHOR ASSIM
+Dialogue: 0,0:00:16.86,0:00:19.30,Letra,,0,0,0,,{\fad(120,120)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}SE NÃO TÁ MAIS A FIM
+Dialogue: 1,0:00:16.86,0:00:19.30,Letra,,0,0,0,,{\fad(120,120)}SE NÃO TÁ MAIS A FIM
+Dialogue: 0,0:00:19.33,0:00:24.65,Letra,,0,0,0,,{\fad(120,300)}{\3c&H000000&\1c&H000000&\1a&H50&\3a&H50&\bord5\blur6}NÃO VEJO OUTRA SAÍDA
+Dialogue: 1,0:00:19.33,0:00:24.65,Letra,,0,0,0,,{\fad(120,300)}NÃO VEJO OUTRA SAÍDA

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Zoom suave (subpixel) para o cover: lê o vídeo, aplica o zoom e devolve quadros 1080x1920 crus em stdout.
 
-Uso: python3 zoom_suave.py ENTRADA DURACAO | ffmpeg -f rawvideo -pix_fmt bgr24 -s 1080x1920 -r 30 -i - ...
+Uso: python3 zoom_suave.py ENTRADA DURACAO [CONFIG.json] | ffmpeg -f rawvideo -pix_fmt bgr24 -s 1080x1920 -r 30 -i - ...
 """
+import json
 import subprocess
 import sys
 
@@ -20,6 +21,15 @@ TRECHOS = [(0, 5.1, 1.00, 1.08), (5.2, 11.6, 1.00, 1.08), (11.66, 17.6, 1.14, 1.
            (23.32, 27.4, 1.10, 1.25), (27.4, 99, 1.25, 1.25)]
 
 
+INICIO = 0.0   # segundos cortados do começo do vídeo de origem
+CX_FIXO = None
+if len(sys.argv) > 3:
+    cfg = json.load(open(sys.argv[3]))
+    TRECHOS = [tuple(x) for x in cfg["trechos"]]
+    INICIO = cfg.get("inicio", 0.0)
+    CX_FIXO = cfg.get("centro_x")
+
+
 def suave(p):
     p = min(max(p, 0.0), 1.0)
     return p * p * (3 - 2 * p)
@@ -33,10 +43,12 @@ def zoom(t):
 
 
 def centro_x(t):
+    if CX_FIXO is not None:
+        return CX_FIXO
     return 0.5 if t < 23.32 else 0.5 - 0.08 * suave((t - 23.32) / 4.08)
 
 
-dec = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-t", str(DUR), "-i", ENT, "-vf", f"scale={SW}:{SH}",
+dec = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-ss", str(INICIO), "-t", str(DUR), "-i", ENT, "-vf", f"scale={SW}:{SH}",
                         "-f", "rawvideo", "-pix_fmt", "bgr24", "-"], stdout=subprocess.PIPE)
 tam = SW * SH * 3
 out = sys.stdout.buffer
