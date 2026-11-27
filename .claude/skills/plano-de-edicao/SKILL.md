@@ -17,6 +17,8 @@ corrigir um JSON do que refazer uma renderização.
 - `estilo/ESTILO.md`: preferências do canal (tom, ritmo, cores, fontes, quando usar zoom,
   palavras a evitar...). Leia inteiro e siga. Se não existir, avise, use bom senso para um
   vídeo de YouTube e sugira preencher o modelo em `estilo/ESTILO.md`.
+- `estilo/PROMPTS.md`: regras de edição (pausas, ritmo, gancho, legenda, áudio). Siga
+  junto com o ESTILO.md; em conflito, vale o ESTILO.md.
 
 ## Passos
 
